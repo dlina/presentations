@@ -1,4 +1,4 @@
-er<html lang="en">
+<html lang="en">
 
     <head>
         <meta charset="utf-8" />
@@ -40,79 +40,172 @@ er<html lang="en">
             <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
                 <section>
-                    <h1>Lina.Digital</h1>
-                    <h3>Presentation</h3>
+                    <h2>Digital Network Analysis of Dramatic Texts</h1>
+                    <p>Frank Fischer, Mathias Göbel, Dario Kampkaspar, Peer Trilcke</p>
                     <p>
-                        <small>Created by dlina research group</small>
+                        <small>Sydney, <a href="http://dh2015.org/">#DH2015</a>, 2 July 2015</small>
                     </p>
                 </section>
                 <section>
-                    <h2>Content</h2>
+                    <h2>ToC</h2>
                     <ol>
-                        <li>approach</li>
-                        <li>data mining</li>
-                        <li>data editing</li>
-                        <li>data modeling</li>
-                        <li>to come</li>
+                        <li>Approach</li>
+                        <li>Data Mining</li>
+                        <li>Data Editing</li>
+                        <li>Display &amp; Analysis</li>
+                        <li>Further Research</li>
                     </ol>
                 </section>
                 <!-- Example of nested vertical slides -->
                 <section>
                     <section>
-                        <h2>approach</h2>
-                        <p>Slides can be nested inside of each other.</p>
+                        <h2>Approach</h2>
+						<h4>Basic Ideas</h4>
+						<ul>
+							<li>following the tradition of structuralist approaches in Literary Studies (Barthes 1972, Lotman 1977, Titzmann 1977, etc.)</li>
+							<li>basing it on automated data analysis</li>
+							<li>long-term objective: structural description of (a large number of) dramatic texts</li>
+						</ul>
                     </section>
                     <section>
-                        <h3>2 examples – different types of structural styles </h3>
-                        <p>A paragraph contains at least one sentence.</p>
-						<section>
+                        <h2>Approach</h2>
+						<h4>Different Styles of Structural Composition</h4>
+						<p>Two examples:</p>
 							<img width="300" src="sydney-images/1787-Goethe_Johann_Wolfgang_von-Iphigenie_auf_Tauris-speakers.png">
 							<img width="300" src="sydney-images/1773-Goethe_Johann_Wolfgang_von-Götz_von_Berlichingen_mit_der_eisernen_Hand-speakers.png">
-</section>
                     </section>
                     <section>
-                        <h3>Slide 1</h3>
-                        <p>A paragraph contains at least one sentence.</p>
+                        <h2>Approach</h2>
+						<h4>The Digital Spectator</h4>
+						<ul>
+							<li>combining Literary Studies with Social Network Analysis (cf. Wasserman/Faust 1994, Scott Carrington 2011) as done by Stiller/Nettle/Dunbar 2003, de Nooy 2005, Stiller/Hudson 2005, Elson/Dames/McKeown 2010, Moretti 2011, Rydberg-Cox 2011</li>
+							<li>specific definition of structure (following Romanian mathematician Solomon Marcus): imagining a spectator who can only see who is talking on stage in each scene</li>
+						</ul>
                     </section>
                     <section>
-                        <h3>Slide 1</h3>
+                        <h2>Approach</h2>
+						<h4>465 Network Graphs</h4>
                         <iframe src="http://wl.figshare.com/articles/1461761/embed?show_title=1" width="568" height="469" frameborder="0"></iframe>
+						<p><small>At a glance: 465 German-language dramas from 1731 to 1929.</small></p>
+                    </section>
+                    <section>
+                        <h2>Approach</h2>
+						<h4>Workflow</h4>
+						<p>Data Mining &#x2192; Data Editing &#x2192; Display &amp; Analysis</p>
                     </section>
                 </section>
                 <section>
                     <section>
-                        <h2>data mining</h2>
+                        <h2>Data Mining</h2>
+						<h4>Corpus</h4>
+						<ul>
+							<li>TextGrid Repository: biggest TEI-tagged corpus of German literary texts (contains 666 dramatic texts)</li>
+							<li>workflow optimised to work with problematic data (faulty TEI, bad OCR, etc.)</li>
+						</ul>
                     </section>
                     <section>
-                        <h3>Slide 1</h3>
-                        <p>A paragraph contains at least one sentence.</p>
-                    </section>
-                </section>
-                <section>
-                    <section>
-                        <h2>data editing</h2>
-                    </section>
-                    <section>
-                        <h3>Slide 1</h3>
-                        <p>A paragraph contains at least one sentence.</p>
-                    </section>
-                </section>
-                <section>
-                    <section>
-                        <h2>data modelling</h2>
-                    </section>
-                    <section>
-                        <h3>Slide 1</h3>
-                        <p>A paragraph contains at least one sentence.</p>
+                        <h2>Data Mining</h2>
+						<h4>DLINA Corpus 15.07 (»Codename Sydney«)</h4>
+						<ul><li>included texts only from 1731 to 1929</li>
+							<li>excluded texts following these criteria:
+								<ul>
+									<li>translations of foreign-language play</li>
+									<li>texts w/o actual speakers (e.g., pantomime plays)</li>
+									<li>fragments</li>
+									<li>plays with very defective markup</li>
+								</ul>
+							</li>
+							<li>result: 465 dramatic texts (Sydney corpus)</li>
+						</ul>
                     </section>
                 </section>
                 <section>
                     <section>
-                        <h2>to come</h2>
+                        <h2>Data Editing</h2>
+						<h4>Extracting Structural Data</h4>
+						<ul>
+							<li>left the original TEI files untouched and only extracted the data we were interested in</li>
+							<li>introduction of intermediary format ("zwischenformat", XML):
+								<ul>
+									<li>validated against a specific RNG schema</li>
+									<li>zwischenformat file created for each drama</li>
+									<li>stores metadata, structural data, documentation</li>
+								</ul>
+							</li>
+						</ul>
                     </section>
                     <section>
-                        <h3>Slide 1</h3>
-                        <p>A paragraph contains at least one sentence.</p>
+                        <h2>Data Editing</h2>
+						<h4>Editing Process</h4>
+						<p>Extracted structural data was still full of bugs:</p>
+						<ul>
+							<li>Errors due to automated conversion:
+								<ul>
+									<li>OCR errors</li>
+									<li>...</li>
+								</ul>
+							</li>
+							<li>Intrinsic problems:
+								<ul>
+									<li>variation of character names</li>
+									<li>...</li>
+								</ul>
+							</li>
+						</ul>
+						<p>Complete editing rules including examples can be found <a href="https://dlina.github.io/Editing-Rules/">on our blog</a>.</p>
+                    </section>
+                    <section>
+                        <h2>Data Editing</h2>
+						<h4>Outlook</h4>
+						<p><small>Correction of structural bugs with crowd-editing approach:</small></p>
+							<img width="300" src="sydney-images/1787-Goethe_Johann_Wolfgang_von-Iphigenie_auf_Tauris-speakers.png">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Display &amp; Analysis</h3>
+                        <p>One homepage for each of the <a href="https://dlina.github.io/linas/">465 dramas</a> leading to four visualisations and source files:</p>
+						<ul>
+							<li>Network (sticky-node and static)</li>
+							<li>Matrix</li>
+							<li>Amounts</li>
+							<li>Zwischenformat</li>
+						</ul>
+					</section>
+                    <section>
+                        <h2>Display &amp; Analysis</h3>
+                        <p>Example Lessing:</p>
+							<img width="300" src="sydney-images/1787-Goethe_Johann_Wolfgang_von-Iphigenie_auf_Tauris-speakers.png">
+							<img width="300" src="sydney-images/1787-Goethe_Johann_Wolfgang_von-Iphigenie_auf_Tauris-speakers.png">
+							<img width="300" src="sydney-images/1787-Goethe_Johann_Wolfgang_von-Iphigenie_auf_Tauris-speakers.png">
+							<img width="300" src="sydney-images/1787-Goethe_Johann_Wolfgang_von-Iphigenie_auf_Tauris-speakers.png">
+                    </section>
+                    <section>
+                        <h2>Display &amp; Analysis</h3>
+                        <p>Example Lessing:</p>
+                    </section>
+                    <section>
+                        <h2>Display &amp; Analysis</h3>
+                        <p>Network size by decade (1730–1930):</p>
+						<img src="sydney-images/figure-01.png">
+                        <p><small>Cf. blog post <a href="https://dlina.github.io/200-Years-of-Literary-Network-Data/">"200 Years of Literary Network Data"</a>.</small></p>
+                    </section>
+                    <section>
+                        <h2>Display &amp; Analysis</h3>
+                        <p>Network density (average) by genre and century:</p>
+						<img src="sydney-images/figure-01.png">
+                        <p><small>Cf. blog post <a href="https://dlina.github.io/200-Years-of-Literary-Network-Data/">"200 Years of Literary Network Data"</a>.</small></p>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Further Research</h2>
+						<ul>
+							<li>More statistics</li>
+							<li>Bigger (German-language) corpus</li>
+							<li>Foreign-language corpora</li>
+							<li>again, as shown on first slide: long-term objective: structural description of (a large number of) dramatic texts</li>
+						</ul>
                     </section>
                 </section>
                 <section>
