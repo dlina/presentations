@@ -1,4 +1,10 @@
 /* overwrite reveal standrads */
+/* dlina-blog font
+@import url(//fonts.googleapis.com/css?family=Montserrat);
+.reveal , .reveal h1{
+    font-family: 'Montserrat', Helvetica, sans-serif;
+}
+*/
 .reveal h1 {
     font-size: 1.7em;
 }
