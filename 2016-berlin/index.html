@@ -1,0 +1,226 @@
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Digital Network Analysis of Dramatic Texts</title>
+
+        <meta name="description"
+            content="Digital Network Analysis of Dramatic Texts" />
+        <meta name="author" content="Frank Fischer" />
+        <meta name="author" content="Mathias Göbel" />
+        <meta name="author" content="Dario Kampkaspar" />
+        <meta name="author" content="Peer Trilcke" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+        <link rel="stylesheet" href="../lib/reveal/css/reveal.css" />
+        <link rel="stylesheet" href="../lib/reveal/css/theme/white.css" id="theme" />
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="../lib/reveal/lib/css/zenburn.css" />
+
+<!-- DLINA Customization -->
+        <link rel="stylesheet" href="dlina.css" />
+        <!-- Printing and PDF exports -->
+        <script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal/css/print/pdf.css' : '../lib/reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+        <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+    </head>
+
+    <body>
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Digitale Netzwerkanalyse dramatischer Texte</h1>
+                    <p>
+                        <small><a href="http://lina.digital">https://lina.digital</a></small>
+                    </p>
+                    <p>Peer Trilcke¹, Mathias Göbel², Dario Kampkaspar³</p>
+                    
+                        <small><ol>
+<li>Seminar für Deutsche Philologie, Univ. Göttingen</li>
+<li>Staats- und Universitätsbibliothek Göttingen</li>
+<li>Herzog August Bibliothek Wolfenbüttel</li>
+</ol></small>
+                  
+                    <p>Berlin, Tagung »<a href="http://www.clarin-d.de/de/aktuelles/312-konferenz-digitale-geschichtswissenschaft-neue-tools-fuer-neue-fragen" target="_blank">Digitale Geschichtswissenschaft</a>«, 8.2.2016</p>
+<p><small>Präsentation lizenziert unter <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a>.</small></p>
+                </section>
+<section>
+<h2>Gliederung</h2>
+<ol>
+<li>Das dlina-Projekt</li>
+<li>Zur Datenedition
+<ol>    
+<li>(Dario)</li>
+<li>Play(s). Crowd Editing</li>
+</ol>
+</li>
+<li>»from numbers to meaning«</li>
+</ol>
+</section>
+<section>
+    <section data-background="../dlina-corpus-465-cleaned-drama-networks-superposter-900px.jpg"></section>
+    <section>
+	<h2>Das dlina-Projekt</h2>
+	<img alt="465 netzwerke" height="50%" src="../dlina-corpus-465-cleaned-drama-networks-superposter-900px.jpg"/>
+	<p class="caption">465 Netzwerkgraphen zu deutschsprachigen Dramen 1731-1929</p>
+	<p><a href="https://figshare.com/articles/Drama_Networks_Superposter_465_Cleaned_Graphs_Extracted_from_DLINA_Corpus_15_07_Codename_Sydney_/1461761" target="_blank">Download des Posters</a></p>
+	</section>
+	<section>
+	<h3>1772-Lessing_Gotthold_Ephraim-Emilia_Galotti-speakers</h3>
+	<table style="font-size:0.5em;" cellspacing="0" cellpadding="4" border="1">
+          <tbody><tr> <th>Character</th> <th>Degree</th> <th>Betweenness Centrality</th> <th>Average Distance</th> <th>Closeness Centrality</th> </tr> <tr align="center"> <td>MARINELLI</td> <td>9</td> <td>16.3</td> <td>1.25</td> <td>0.8</td> </tr> <tr align="center"> <td>DER PRINZ</td> <td>8</td> <td>30.83</td> <td>1.33</td> <td>0.75</td> </tr> <tr align="center"> <td>CLAUDIA GALOTTI</td> <td>7</td> <td>3.0</td> <td>1.67</td> <td>0.6</td> </tr> <tr align="center"> <td>ODOARDO GALOTTI</td> <td>6</td> <td>3.63</td> <td>1.5</td> <td>0.67</td> </tr> <tr align="center"> <td>EMILIA</td> <td>6</td> <td>3.63</td> <td>1.5</td> <td>0.67</td> </tr> <tr align="center"> <td>PIRRO</td> <td>5</td> <td>1.75</td> <td>1.83</td> <td>0.55</td> </tr> <tr align="center"> <td>ORSINA</td> <td>4</td> <td>0.8</td> <td>1.67</td> <td>0.6</td> </tr> <tr align="center"> <td>APPIANI</td> <td>4</td> <td>0.25</td> <td>1.92</td> <td>0.52</td> </tr> <tr align="center"> <td>BATTISTA</td> <td>4</td> <td>0.8</td> <td>1.67</td> <td>0.6</td> </tr> <tr align="center"> <td>ANGELO</td> <td>2</td> <td></td> <td>2.08</td> <td>0.48</td> </tr> <tr align="center"> <td>DER KAMMERDIENER</td> <td>1</td> <td></td> <td>2.25</td> <td>0.44</td> </tr> <tr align="center"> <td>CONTI</td> <td>1</td> <td></td> <td>2.25</td> <td>0.44</td> </tr> <tr align="center"> <td>CAMILLO ROTA</td> <td>1</td> <td></td> <td>2.25</td> <td>0.44</td> </tr> </tbody>
+	</table>
+<p class="caption">Zentralitätswerte zu Figuren aus Lessings Emilia Galotti (1772). Ausschnitt aus der Datei <a href="http://htmlpreview.github.io/?https://raw.githubusercontent.com/lehkost/dramavis/master/output_(465_cleaned_graphs_from_sydney_corpus)/drama_character_values.html">drama_character_values.html</a>.
+    Werte berechnet mit dramavis (Frank Fischer / Christopher Kittel), siehe <a href="http://dlina.github.io/dramavis/">Blogpost</a> sowie <a href=" https://github.com/lehkost/dramavis">dramavis</a></p>
+	</section>
+	<section>
+	    <blockquote cite="http://litlab.stanford.edu/LiteraryLabPamphlet4.pdf">
+	        »The general methodological problem of the digital humanities can be bluntly stated: How do we get from numbers to meaning? The objects being tracked, the evidence collected, the ways they’re analyzed—all of these are quantitative. How to move from this kind of evidence and object to qualitative arguments and insights about humanistic subjects—culture, literature, art, etc.—is not clear.«
+	    </blockquote>
+	    <p class="caption">
+	        Ryan Heuser &amp; Long Le-Khac: A Quantitativ Literary History of 2,958 Nineteenth-Century British Novels: The Semantic Cohort Method (= Pamphlets of the Stanford Literary Lab 4), Mai 2012, S. 46. URL: http://litlab.stanford.edu/LiteraryLabPamphlet4.pdf.
+	        <br/>
+	        Vgl. auch dies.: Learning to Read Data. Bringing out the Humanistic in the Digital Humanities, in: Victorian Studies 54.1 (2011), S. 79–86.
+	    </p>
+
+	</section>
+    <section>
+        <ul>
+            <li>dlina = digital literary network analysis</li>
+            <li>interinstitutionelle Arbeitsgruppe aus Literaturwissenschaftlern und Informatikern</li>
+            <br/>
+            <li>Kernmitglieder: Frank Fischer, Dario Kampkaspar, Mathias Göbel, Peer Trilcke</li>
+            <li>assoziierte Mitglieder derzeit: Christopher Kittel, Hanna-Lena Meiners</li> 
+        </ul>
+    </section>
+    <section><ul>
+        <li>Vorarbeiten (theoretische Sondierung u. Vorstudie): Social Network Analysis (SNA) als Methode einer textempirischen Literaturwissenschaft, in: Philip Ajouri, Katja Mellmann u. Christoph Rauen (Hg.): Empirie in der Literaturwissenschaft, Münster 2013, S. 201-247.</li>
+        <li>Gründung der Arbeitsgruppe 2014</li>
+        <li>Seit 2015 Dokumentation auf https://dlina.github.io und https://github.com/dlina </li>
+        <li>Teilprojekte
+            <ul>
+                <li>dramaviz (Frank Fischer &amp; Christopher Kittel), siehe https://github.com/lehkost/ dramavis und http://dlina.github.io/dramavis/</li> 
+                <li>play(s) (Mathias Göbel &amp; Hanna-Lena Meiners), siehe https://personae.gcdh.de/ </li>
+            </ul>
+        </li>
+        
+        </ul>
+    </section>
+    <section>
+        <h3>Ziel: Extraktion und Analyse von Netzwerkdaten aus dramatischen Texten</h3>
+       
+        <table>
+            <tbody>
+                <tr>
+                    <td><span class="fragment" data-fragment-index="1">Rohkorpus</span>
+                    <img style="outline: none; border:none;" src="../arrow.png" alt="arrow" class="fragment" data-fragment-index="2"/></td>
+                    
+                    <td><span class="fragment" data-fragment-index="3">Struktur- und Metadaten
+                        (philologisch qualitätsgesichert)
+                       </span>
+                    </td>
+                    
+                    <td><span class="fragment" data-fragment-index="5">Werte und Visualisierungen</span>
+                        <img style="outline: none; border:none;     transform: translateX(-100px) rotate(-10deg);" src="../arrow2.png" alt="arrow" class="fragment" data-fragment-index="4"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="fragment" data-fragment-index="2">›Preprocessing‹<br/>Datenextraktion und -edition </span>
+                    </td>
+                    <td/>
+                    <td><span class="fragment" data-fragment-index="4">›Postprocessing‹ 
+                        Datenanalyse und -visualisierung </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section>
+        <h3>Korpus</h3>
+        <h4>Korpora mit deutschsprachigen Dramen</h4>
+        <ul>
+            <li>Deutsches Text Archiv: sehr gute Qualität, aber wenig Dramen (ca. 70)</li> 
+            <li>Projekt Gutenberg-DE: sehr schlechte Qualität, aber viele Dramen (über 600)</li> 
+            <li><span>TextGrid Repository</span>: mittlere Qualität und viele Dramen (je nach Zählung: 690 oder 666, siehe Blogpost: https://dlina.github.io/A-Not-So-Simple-Question/</li>              
+        </ul>
+    </section>
+    <section>
+        <p>Entscheidung für das TextGrid Repository, auf dessen Grundlage 
+            das »dlina Corpus 15.07« entstand (mit 465 Dramen, zum Korpus 
+            siehe Blogpost: https://dlina.github.io/Introducing-DLINA-Corpus-15-07-Codename-Sydney/)
+        </p>        
+    </section>
+</section>
+
+
+<section>
+<h2>Zur Datenedition</h2>
+</section>
+
+<section>
+    <section>
+<h2>»from numbers to meaning«</h2>
+    </section>
+    <section>
+        <svg width="700" height="400"><g transform="translate(60,20)"><g class="x axis" transform="translate(0,180)"><g class="tick" transform="translate(25.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1730 (N=5)</text></g><g class="tick" transform="translate(55.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1740 (N=18)</text></g><g class="tick" transform="translate(85.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1750 (N=10)</text></g><g class="tick" transform="translate(115.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1760 (N=15)</text></g><g class="tick" transform="translate(145.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1770 (N=36)</text></g><g class="tick" transform="translate(175.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1780 (N=20)</text></g><g class="tick" transform="translate(205.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1790 (N=20)</text></g><g class="tick" transform="translate(235.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1800 (N=23)</text></g><g class="tick" transform="translate(265.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1810 (N=24)</text></g><g class="tick" transform="translate(295.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1820 (N=31)</text></g><g class="tick" transform="translate(325.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1830 (N=31)</text></g><g class="tick" transform="translate(355.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1840 (N=43)</text></g><g class="tick" transform="translate(385.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1850 (N=16)</text></g><g class="tick" transform="translate(415.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1860 (N=11)</text></g><g class="tick" transform="translate(445.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1870 (N=14)</text></g><g class="tick" transform="translate(475.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1880 (N=14)</text></g><g class="tick" transform="translate(505.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1890 (N=36)</text></g><g class="tick" transform="translate(535.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1900 (N=49)</text></g><g class="tick" transform="translate(565.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1910 (N=33)</text></g><g class="tick" transform="translate(595.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1920 (N=16)</text></g><path class="domain" d="M0,6V0H620V6"></path></g><g class="y axis"><g class="tick" transform="translate(0,177.88235294117646)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">4</text></g><g class="tick" transform="translate(0,160.94117647058823)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">6</text></g><g class="tick" transform="translate(0,144)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">8</text></g><g class="tick" transform="translate(0,127.05882352941175)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">10</text></g><g class="tick" transform="translate(0,110.11764705882354)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">12</text></g><g class="tick" transform="translate(0,93.17647058823528)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">14</text></g><g class="tick" transform="translate(0,76.23529411764707)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">16</text></g><g class="tick" transform="translate(0,59.29411764705883)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">18</text></g><g class="tick" transform="translate(0,42.352941176470594)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">20</text></g><g class="tick" transform="translate(0,25.411764705882362)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">22</text></g><g class="tick" transform="translate(0,8.470588235294127)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">24</text></g><path class="domain" d="M-6,0H0V180H-6"></path><text transform="rotate(-90)" y="6" dy=".71em" style="text-anchor: end; font-size: 0.7em;">Number of Characters (Median)</text></g><g><path class="line" d="M25.5,118.58823529411765Q54.5,143.64705882352942,55.5,144C57,144.52941176470588,84,140.18823529411767,85.5,139.76470588235296S114,127.90588235294116,115.5,127.05882352941175S144,107.04705882352943,145.5,105.88235294117648S174,82.16470588235295,175.5,80.47058823529412S204,38.01176470588236,205.5,38.117647058823536S234,85.23529411764706,235.5,84.70588235294117S264,19.058823529411768,265.5,16.941176470588236S294,0.42352941176470627,295.5,0S324,-1.694117647058825,325.5,0S354,66.17647058823529,355.5,67.76470588235294S384,64.37647058823529,385.5,63.52941176470588S414,35.04705882352941,415.5,33.88235294117647S444,17.364705882352943,445.5,16.941176470588236S474,15.24705882352941,475.5,16.941176470588236S504,81.74117647058823,505.5,84.70588235294117S534,136.16470588235293,535.5,135.52941176470588S564,62.57647058823531,565.5,59.29411764705883Q566.5,57.10588235294119,595.5,4.235294117647063" style="fill: none; stroke: rgb(100, 149, 237); stroke-width: 3px;"></path></g><circle class="dot" r="5" cx="25.5" cy="118.58823529411765" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="55.5" cy="144" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="85.5" cy="139.76470588235296" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="115.5" cy="127.05882352941175" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="145.5" cy="105.88235294117648" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="175.5" cy="80.47058823529412" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="205.5" cy="38.117647058823536" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="235.5" cy="84.70588235294117" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="265.5" cy="16.941176470588236" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="295.5" cy="0" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="325.5" cy="0" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="355.5" cy="67.76470588235294" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="385.5" cy="63.52941176470588" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="415.5" cy="33.88235294117647" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="445.5" cy="16.941176470588236" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="475.5" cy="16.941176470588236" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="505.5" cy="84.70588235294117" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="535.5" cy="135.52941176470588" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="565.5" cy="59.29411764705883" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="595.5" cy="4.235294117647063" style="fill: steelblue;"></circle><text class="dotlabel" x="28.5" y="113.58823529411765" style="fill: black;">11</text><text class="dotlabel" x="58.5" y="139" style="fill: black;">8</text><text class="dotlabel" x="88.5" y="134.76470588235296" style="fill: black;">8.5</text><text class="dotlabel" x="118.5" y="122.05882352941175" style="fill: black;">10</text><text class="dotlabel" x="148.5" y="100.88235294117648" style="fill: black;">12.5</text><text class="dotlabel" x="178.5" y="75.47058823529412" style="fill: black;">15.5</text><text class="dotlabel" x="208.5" y="33.117647058823536" style="fill: black;">20.5</text><text class="dotlabel" x="238.5" y="79.70588235294117" style="fill: black;">15</text><text class="dotlabel" x="268.5" y="11.941176470588236" style="fill: black;">23</text><text class="dotlabel" x="298.5" y="-5" style="fill: black;">25</text><text class="dotlabel" x="328.5" y="-5" style="fill: black;">25</text><text class="dotlabel" x="358.5" y="62.76470588235294" style="fill: black;">17</text><text class="dotlabel" x="388.5" y="58.52941176470588" style="fill: black;">17.5</text><text class="dotlabel" x="418.5" y="28.88235294117647" style="fill: black;">21</text><text class="dotlabel" x="448.5" y="11.941176470588236" style="fill: black;">23</text><text class="dotlabel" x="478.5" y="11.941176470588236" style="fill: black;">23</text><text class="dotlabel" x="508.5" y="79.70588235294117" style="fill: black;">15</text><text class="dotlabel" x="538.5" y="130.52941176470588" style="fill: black;">9</text><text class="dotlabel" x="568.5" y="54.29411764705883" style="fill: black;">18</text><text class="dotlabel" x="598.5" y="-0.7647058823529367" style="fill: black;">24.5</text></g></svg>
+        <p class="caption">Netzwerkgröße von 465 deutschsprachigen Dramen (1731-1929) – Median pro Jahrzehnt
+            Vgl. Blogpost https://dlina.github.io/200-Years-of-Literary-Network-Data/ 
+        </p>
+    </section>
+    <section>
+        <svg width="480" height="640"><g transform="translate(60,20)"><g class="x axis" transform="translate(0,420)"><g class="tick" transform="translate(44,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end;">Corpus (Average) N=465</text></g><g class="tick" transform="translate(122,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end;">Tragedy (Average) N=101</text></g><g class="tick" transform="translate(200,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end;">Comedy (Average) N=92</text></g><g class="tick" transform="translate(278,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end;">Libretto (Average) N=56</text></g><g class="tick" transform="translate(356,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end;">Other (Average) N=216</text></g><path class="domain" d="M0,6V0H400V6"></path></g><g class="y axis"><g class="tick" transform="translate(0,420)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0.0</text></g><g class="tick" transform="translate(0,357.3134328358209)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0.1</text></g><g class="tick" transform="translate(0,294.6268656716418)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0.2</text></g><g class="tick" transform="translate(0,231.9402985074627)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0.3</text></g><g class="tick" transform="translate(0,169.25373134328362)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0.4</text></g><g class="tick" transform="translate(0,106.56716417910451)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0.5</text></g><g class="tick" transform="translate(0,43.88059701492541)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0.6</text></g><path class="domain" d="M-6,0H0V420H-6"></path><text transform="rotate(-90)" y="6" dy=".71em" style="text-anchor: end;">Frequency</text></g><rect class="bar" x="9" width="70" y="50.149253731343336" height="369.8507462686567"></rect><rect class="bar" x="87" width="70" y="94.02985074626865" height="325.97014925373134"></rect><rect class="bar" x="165" width="70" y="0" height="420"></rect><rect class="bar" x="243" width="70" y="18.80597014925374" height="401.19402985074623"></rect><rect class="bar" x="321" width="70" y="50.149253731343336" height="369.8507462686567"></rect></g></svg>
+        <p class="caption">
+            Dichte deutschsprachiger Dramen (1731-1929) – Median nach Genre<br/>
+            Vgl. Blogpost http://dlina.github.io/Network-Values-by-Genre/ 
+           
+        </p>
+    </section>
+</section>
+            </div>
+<div class="license"><img alt="cc-by-4.0" src="../cc-by-black.png"/></div>
+        </div>
+        <script src="../lib/reveal/lib/js/head.min.js"></script>
+        <script src="../lib/reveal/js/reveal.js"></script>
+        <script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../lib/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../lib/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../lib/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../lib/reveal/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../lib/reveal/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../lib/reveal/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+    </body>
+</html>
+
