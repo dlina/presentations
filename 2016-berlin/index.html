@@ -167,7 +167,79 @@
 
 
 <section>
+    <section>
 <h2>Zur Datenedition</h2>
+    </section>
+    <section>
+        <h3>Fokus auf der Edition von spezifischen Strukturdaten, i.e. Netzwerkdaten</h3>
+
+        <p>Netzwerkdaten: Interaktionen zwischen Figuren
+        </p>
+        <p>Operationalisierung von Interkation: Wenn zwei Figuren innerhalb 
+            eines vorgegebenen Segments (Szene/Auftritt; Akt/Aufzug) des 
+            dramatischen Textes jeweils einen Sprechakt vollziehen, dann 
+            interagieren sie miteinander.  
+        </p>
+        
+        
+    </section>
+    <section>
+        <h3>Die rudimentäre kompositorische Struktur eines dramatischen Textes</h3>
+        <div class="highlight"><pre><code data-lang="xml" class="language-xml"><span class="nt">&lt;segment&gt;</span>
+ <span class="nt">&lt;sp</span> <span class="na">who=</span><span class="s">"#speaker1"</span><span class="nt">&gt;&lt;/sp&gt;</span>
+ <span class="nt">&lt;sp</span> <span class="na">who=</span><span class="s">"#speaker2"</span><span class="nt">&gt;&lt;/sp&gt;</span>
+ <span class="nt">&lt;sp</span> <span class="na">who=</span><span class="s">"#speaker3"</span><span class="nt">&gt;&lt;/sp&gt;</span>
+ <span class="nt">&lt;sp</span> <span class="na">who=</span><span class="s">"#speaker1"</span><span class="nt">&gt;&lt;/sp&gt;</span>
+ <span class="nt">&lt;sp</span> <span class="na">who=</span><span class="s">"#speaker3"</span><span class="nt">&gt;&lt;/sp&gt;</span>
+ ...
+<span class="nt">&lt;/segment&gt;</span>
+<span class="nt">&lt;segment&gt;</span>
+ <span class="nt">&lt;sp</span> <span class="na">who=</span><span class="s">"#speaker4"</span><span class="nt">&gt;&lt;/sp&gt;</span>
+ <span class="nt">&lt;sp</span> <span class="na">who=</span><span class="s">"#speaker2"</span><span class="nt">&gt;&lt;/sp&gt;</span>
+ ...
+<span class="nt">&lt;/segment&gt;</span>
+...</code></pre></div>
+    </section>
+    <section>
+        <h3>Unzureichender Datenbestand</h3> 
+        <p>Fehler in Folge der automatischen TEI-Konvertierung, z.B.
+        <ul>
+            <li>OCR-Fehler (etwa statt »Der König« -> »Der Kbnig«)</li>
+            <li>Intrinsische Probleme, z.B.</li> 
+            <li>Variationen bei den Figurenbezeichnungen (etwa »Der König« und »König«; oder »Odoardo Galloti« und »Odoardo»)</li> 
+            <li>Kollektiva (etwa »Beide«, »Alle« usw.) </li>
+            <li>etc.</li>
+        </ul>
+        </p>
+        
+    </section>
+    <section>
+        <h3>Edition dieser Daten</h3>
+        <p>Formulierung von Editionsregeln (siehe Blogpost: 
+            https://dlina.github.io/Editing-Rules/)</p>
+        <p>Edition erfolgt nicht in der Volltext-TEI-Datei, 
+           sondern in einem eigenen ›Strukturdatenformat‹,
+           dem dlina-›Zwischenformat‹</p>
+    </section>
+    <section>
+        <h3>lina-Zwischenformat</h3>
+        <p>Ergebnis der Extraktion von (noch unsauberen) Strukturdaten aus den Texten des Korpus – stellt eine strukturelle Abstraktion des dramatischen Textes dar;</p>
+        <p>Vorteile z.B.: die Originaldateien bleiben unverändert (u.a. Nachvollziehbarkeit), die Datenedition erfolgt im übersichtlicheren Zwischenformat (Einfachheit).</p> 
+        
+    </section>
+    <section>
+        <h3>lina-Zwischenformat</h3>
+        <ul>
+        <li>wird für jedes Drama erstellt und ist Basis für die Analysen und Visualisierungen; </li>
+        <li>ist eine XML-Datei, validiert gegen ein eigenes RNG Schema;</li>
+        <li>speichert neben den Strukturdaten auch einige Metadaten; darüber hinaus lassen sich editorische Entscheidungen dokumentieren; </li>
+        <li>zudem werden weitere quantitative Daten erfasst (z.B. Anzahl der Sprechakte jeder Figur; Anzahl der gesprochenen Wörter pro Figur – siehe dazu auch den Blogpost: https://dlina.github.io/The-Biggest-Chatterbox-in-German-Literature/ )</li>
+        </ul>
+       <p> Siehe auch den Blogpost: https://dlina.github.io/Introducing-Our-Zwischenformat/
+           sowie die lina.xmls zu sämtlichen Dramen unseres Korpus unter 
+           https://github.com/dlina/project/tree/master/data/zwischenformat 
+       </p>     
+    </section>
 </section>
 
 <section>
@@ -246,7 +318,7 @@
 					{ src: '../lib/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: '../lib/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: '../lib/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../lib/reveal/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+//					{ src: '../lib/reveal/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: '../lib/reveal/plugin/zoom-js/zoom.js', async: true },
 					{ src: '../lib/reveal/plugin/notes/notes.js', async: true }
 				]
