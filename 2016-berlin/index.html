@@ -213,7 +213,7 @@
     </section>
     <section>
     	<h3>2. Der Prozess der Datenedition</h3>
-        <h4>Unzureichender Datenbestand</4> 
+        <h4>Unzureichender Datenbestand</h4> 
         <ul>
         <li>Fehler in Folge der automatischen TEI-Konvertierung, z.B.
         	<ul>
@@ -258,6 +258,92 @@
            sowie die lina.xmls zu sämtlichen Dramen unseres Korpus unter 
            <a href="https://github.com/dlina/project/tree/master/data/zwischenformat">https://github.com/dlina/project/tree/master/data/zwischenformat</a> 
        </p>     
+    </section>
+</section>
+
+<section>
+    <section>
+        <h2>3. Play(s). Crowd Editing</h2>
+    </section>
+    <section>
+        <h3>3. Play(s). Crowd Editing</h3>
+        <p>Bei insgesamt 666 Dramen aus dem TextGrid-Repository (inkl. 
+            der 465 aus dem DLINA-Subkorpus) gilt es, diese Probleme 
+            zu lösen.</p>
+        <p><span class="fragment highlight-blue">20118</span> unterschiedliche Werte innerhalbt von tei:speaker 
+            müssen hierfür überprüft und ausgezeichnet werden, so 
+            dass schließlich alle <span class="fragment highlight-blue">438457</span> Sprechakte mit einem who-
+            Attribut versehen werden können.</p>
+    </section>
+    <section>
+        <h3>3. Play(s). Crowd Editing</h3>
+        <h4>Gamification</h4>
+        <blockquote>
+            The process of game-thinking and game mechanics to engage users and solve
+            problems.
+        </blockquote>
+        <p>Vgl. Zichermann, G. &amp; Cunningham, C. (2011): Gamification by design: Implementing Game Mechanics in
+            Web and Mobile Apps, S. xiv.</p>
+    </section>
+    <section>
+        <h3>3. Play(s). Crowd Editing</h3>
+        <h4>Social Editing</h4>
+        <blockquote>The social edition is a work that brings communities together to 
+            engage in conversation around a text formed and reformed through an 
+            ongoing, iterative, public editorial process.</blockquote>
+        <p>User:Cultures92: "The Devonshire Manuscript/A Note on this Edition", 
+            <a href="https://en.wikibooks.org/w/index.php?title=The_Devonshire_Manuscript/A_Note_on_this_Edition&oldid=2659306" 
+                target="_blank">https://en.wikibooks.org/wiki
+                /The_Devonshire_Manuscript/A_Note_on_this_Edition</a> </p>
+    </section>
+    <section>
+        <h3>3. Play(s). Crowd Editing</h3>
+        <h4>Android App</h4>
+        <img class="stretch" alt="screenshot von Play(s)" src="android-lvl1-claudia.png"/>
+    </section>
+    <section>
+        <h3>3. Play(s). Crowd Editing</h3>
+        <h4>Android App</h4>
+        <div id="player"></div>
+        
+        <script>
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'Q6WnVJF0yhA',
+          playerVars: { 'autoplay': 1, 'controls': 0 , 'rel': 0, 'showinfo': 0}
+        });
+      }
+    </script>
+
+    </section>
+    <section>
+        <h3>3. Play(s). Crowd Editing</h3>
+        <h4>Design/Status</h4>
+        <ul><li>Server-Client-Lösung
+            <ul>
+                <li>Datenbestand beliebig erweiterbar</li>
+                <li>Aufgaben beliebig erweiterbar</li>
+                <li>Zentrale Verwaltung der Eingaben</li>
+                <li>hier ausschließlich SSL-verschlüsselt</li>
+            </ul>
+        </li>
+        <li>WebView App 
+            <ul>
+                <li>Vielzahl unterstützer Systeme (Android, Firefox OS)</li>
+                <li>App-Entwicklung = Webseiten-Entwicklung</li>
+                <li>dennoch folgt die App Googles <a target="_blank" href="https://www.google.com/design/spec/material-design/introduction.html">Material Design</a></li>
+        </ul></li>
+        </ul>
+        <p>Android App derzeit in geschlossener Alpha via Play Store, offene Beta für nächste Woche geplant</p>
     </section>
 </section>
 
