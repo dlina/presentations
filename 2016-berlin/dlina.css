@@ -23,7 +23,9 @@
 .slides table > tbody > tr > td {
 border-bottom-width: 0px;
 }
-
+.reveal blockquote {
+	width: 95%;
+}
 /* own styles */
 div.backgrounds > div.slide-background.stack.present > div.slide-background.present{
     background-repeat: no-repeat;
