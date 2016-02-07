@@ -32,6 +32,12 @@ border-bottom-width: 0px;
 .reveal blockquote {
 	width: 95%;
 }
+blockquote::before {
+    content: "»";
+}
+blockquote::after {
+    content: "«";
+}
 /* own styles */
 div.backgrounds > div.slide-background.stack.present > div.slide-background.present{
     background-repeat: no-repeat;
