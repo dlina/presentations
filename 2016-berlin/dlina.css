@@ -23,6 +23,9 @@
 .slides table > tbody > tr > td {
 border-bottom-width: 0px;
 }
+.reveal ul li {
+    margin-top: 6px;
+}
 .reveal blockquote {
 	width: 95%;
 }
