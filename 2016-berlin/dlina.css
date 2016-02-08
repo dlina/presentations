@@ -28,6 +28,7 @@ border-bottom-width: 0px;
 }
 .reveal ul li {
     margin-top: 6px;
+    list-style: unset !important;
 }
 .reveal ul li ul {
     font-size: 0.88em;
