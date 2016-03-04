@@ -12,12 +12,12 @@
     font-size: 1.5em;
 }
 .reveal section img {
-    margin: 15px 0px;
+    /* margin: 15px 0px;
     background: rgba(255, 255, 255, 0.12);
     outline: 1px solid grey;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    outline-offset: 10px;
-	border:none;
+    outline-offset: 10px; */
+    border:none;
 }
 
 .slides table > tbody > tr > td {
