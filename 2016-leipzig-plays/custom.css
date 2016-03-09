@@ -84,7 +84,9 @@ p.license {
     right: 24px;
     height: 25px;
 }
-
+.license img {
+    height: 100%;
+}
 /* SVG styles  */
 svg:not(:root) {
     overflow: hidden;
