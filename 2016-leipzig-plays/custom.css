@@ -1,0 +1,11 @@
+.reveal .progress { height: 10px;}
+img.no-border{border: none !important;}
+blockquote:before {
+  content: '“';
+}
+blockquote:after {
+  content: '‟';
+}
+code {
+    font-size: 0.85em !important;
+}
