@@ -8,7 +8,7 @@
 }
 */
 table#fuckingtable img {
-    width: 100% !important;
+    width: 250px !important;
 }
 
 body > div > div.slides > section.stack.present > section.present > table > tbody > tr:nth-child(2) > td:nth-child(2) > img {
