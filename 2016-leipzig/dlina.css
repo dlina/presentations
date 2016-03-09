@@ -7,14 +7,9 @@
     font-family: 'Montserrat', Helvetica, sans-serif;
 }
 */
-section.present:nth-child(3) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > span:nth-child(1) > img:nth-child(1),
-{
-    height: 250px !important;
-    width: auto !important;
-}
-section.present:nth-child(3) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2) > img:nth-child(1){
-    height: 200px !important;
-    width: auto !important;	
+body > div > div.slides > section.stack.present > section.present > table > tbody > tr:nth-child(2) > td:nth-child(1) > span > img {
+    height: 275px;
+    width: auto;
 }
 .reveal h1 {
     font-size: 1.7em;
