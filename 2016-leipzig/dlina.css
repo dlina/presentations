@@ -15,10 +15,11 @@ body > div > div.slides > section.stack.present > section.present > table > tbod
     height: 275px !important;
     width: auto !important;
 }
+/* 
 body > div > div.slides > section.stack.present > section.present > table > tbody > tr:nth-child(2) > td:nth-child(2) > img {
     height: 200px !important;
     width: auto !important;
-}
+} */
 /* body > div > div.slides > section.stack.present > section.present > table > tbody > tr:nth-child(2) > td:nth-child(2) > img {
     height: auto !important;
     width: 100% !important;
