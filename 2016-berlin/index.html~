@@ -1,0 +1,537 @@
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Digital Network Analysis of Dramatic Texts</title>
+
+        <meta name="description"
+            content="Digital Network Analysis of Dramatic Texts" />
+        <meta name="author" content="Frank Fischer" />
+        <meta name="author" content="Mathias Göbel" />
+        <meta name="author" content="Dario Kampkaspar" />
+        <meta name="author" content="Peer Trilcke" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+        <link rel="stylesheet" href="../lib/reveal/css/reveal.css" />
+        <link rel="stylesheet" href="../lib/reveal/css/theme/white.css" id="theme" />
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="../lib/reveal/lib/css/zenburn.css" />
+
+<!-- DLINA Customization -->
+        <link rel="stylesheet" href="dlina.css" />
+        <!-- Printing and PDF exports -->
+        <script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal/css/print/pdf.css' : '../lib/reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+        <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+    </head>
+
+    <body>
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Digitale Netzwerkanalyse dramatischer Texte</h1>
+                    <p>
+                        <small><a href="http://lina.digital">https://lina.digital</a></small>
+                    </p>
+                    <p>Peer Trilcke¹, Mathias Göbel², Dario Kampkaspar³</p>
+                    
+                        <small><ol>
+<li>Seminar für Deutsche Philologie, Univ. Göttingen</li>
+<li>Staats- und Universitätsbibliothek Göttingen</li>
+<li>Herzog August Bibliothek Wolfenbüttel</li>
+</ol></small>
+                    <p>Präsentation: <a href="http://lina.digital/presentations/2016-berlin">http://lina.digital/presentations/2016-berlin/</a></p>
+                  
+                    <p>Berlin, Tagung »<a href="http://www.clarin-d.de/de/aktuelles/312-konferenz-digitale-geschichtswissenschaft-neue-tools-fuer-neue-fragen" target="_blank">Digitale Geschichtswissenschaft</a>«, 8.2.2016</p>
+<p><small>Präsentation lizenziert unter <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a>.</small></p>
+                </section>
+<section>
+<h2>Gliederung</h2>
+<ol>
+<li>Das dlina-Projekt. Ein Überblick</li>
+<li>Der Prozess der Datenedition</li>
+<li>Play(s). Crowd Editing</li>
+<li>»from numbers to meaning«</li>
+</ol>
+</section>
+<section>
+    <section>
+		<h2>1. Das dlina-Projekt. Ein Überblick</h2>
+    </section>
+    <section>
+	<h3>1. Das dlina-Projekt. Ein Überblick</h3>
+	<h4>465 Dramennetzwerke</h4>
+	<img alt="465 netzwerke" height="460px" src="../dlina-corpus-465-cleaned-drama-networks-superposter-900px.jpg"/>
+	<p><a href="https://figshare.com/articles/Drama_Networks_Superposter_465_Cleaned_Graphs_Extracted_from_DLINA_Corpus_15_07_Codename_Sydney_/1461761" target="_blank">Download des Posters</a></p>
+	</section>
+	<section>
+	<h3>1. Das dlina-Projekt. Ein Überblick</h3>	
+	<h4>Zentralitätswerte zu Figuren aus »Emilia Galotti«</h4>
+	<table style="font-size:0.5em;" cellspacing="0" cellpadding="4" border="1">
+          <tbody><tr> <th>Character</th> <th>Degree</th> <th>Betweenness Centrality</th> <th>Average Distance</th> <th>Closeness Centrality</th> </tr> <tr align="center"> <td>MARINELLI</td> <td>9</td> <td>16.3</td> <td>1.25</td> <td>0.8</td> </tr> <tr align="center"> <td>DER PRINZ</td> <td>8</td> <td>30.83</td> <td>1.33</td> <td>0.75</td> </tr> <tr align="center"> <td>CLAUDIA GALOTTI</td> <td>7</td> <td>3.0</td> <td>1.67</td> <td>0.6</td> </tr> <tr align="center"> <td>ODOARDO GALOTTI</td> <td>6</td> <td>3.63</td> <td>1.5</td> <td>0.67</td> </tr> <tr align="center"> <td>EMILIA</td> <td>6</td> <td>3.63</td> <td>1.5</td> <td>0.67</td> </tr> <tr align="center"> <td>PIRRO</td> <td>5</td> <td>1.75</td> <td>1.83</td> <td>0.55</td> </tr> <tr align="center"> <td>ORSINA</td> <td>4</td> <td>0.8</td> <td>1.67</td> <td>0.6</td> </tr> <tr align="center"> <td>APPIANI</td> <td>4</td> <td>0.25</td> <td>1.92</td> <td>0.52</td> </tr> <tr align="center"> <td>BATTISTA</td> <td>4</td> <td>0.8</td> <td>1.67</td> <td>0.6</td> </tr> <tr align="center"> <td>ANGELO</td> <td>2</td> <td></td> <td>2.08</td> <td>0.48</td> </tr> <tr align="center"> <td>DER KAMMERDIENER</td> <td>1</td> <td></td> <td>2.25</td> <td>0.44</td> </tr> <tr align="center"> <td>CONTI</td> <td>1</td> <td></td> <td>2.25</td> <td>0.44</td> </tr> <tr align="center"> <td>CAMILLO ROTA</td> <td>1</td> <td></td> <td>2.25</td> <td>0.44</td> </tr> </tbody>
+	</table>
+<p class="caption">Ausschnitt aus der Datei <a href="http://htmlpreview.github.io/?https://raw.githubusercontent.com/lehkost/dramavis/master/output_(465_cleaned_graphs_from_sydney_corpus)/drama_character_values.html">drama_character_values.html</a>.
+    Werte berechnet mit dramavis (Frank Fischer / Christopher Kittel), siehe <a href="https://dlina.github.io/dramavis/">Blogpost zu dramavis</a> sowie <a href=" https://github.com/lehkost/dramavis">dramavis bei GitHub</a></p>
+	</section>
+	<section>
+	<h3>1. Das dlina-Projekt. Ein Überblick</h3>
+	    <blockquote cite="http://litlab.stanford.edu/LiteraryLabPamphlet4.pdf">The
+	    general methodological problem of the digital humanities can be bluntly 
+	    stated: <b>How do we get from numbers to meaning?</b> The objects being tracked, 
+	    the evidence collected, the ways they’re analyzed—all of these are 
+	    quantitative. How to move from this kind of evidence and object to 
+	    qualitative arguments and insights about humanistic subjects—culture, 
+	    literature, art, etc.—is not clear.</blockquote>
+	    <p class="caption">
+	        Ryan Heuser &amp; Long Le-Khac: A Quantitativ Literary History of 2,958 Nineteenth-Century British Novels: The Semantic Cohort Method (= Pamphlets of the Stanford Literary Lab 4), Mai 2012, S. 46. URL: <a href="http://litlab.stanford.edu/LiteraryLabPamphlet4.pdf">http://litlab.stanford.edu/LiteraryLabPamphlet4.pdf</a>.
+	    </p>
+	</section>
+    <section>
+    	<h3>1. Das dlina-Projekt. Ein Überblick</h3>
+    	<h4>Wer wir sind</h4>
+        <ul>
+            <li>dlina = digital literary network analysis</li>
+            <li>interinstitutionelle Arbeitsgruppe aus Literaturwissenschaftlern und Informatikern</li>
+            <br/>
+            <li>Kernmitglieder: Frank Fischer, Dario Kampkaspar, Mathias Göbel, Peer Trilcke</li>
+            <li>assoziierte Mitglieder derzeit: Christopher Kittel, Hanna-Lena Meiners</li> 
+        </ul>
+    </section>
+    <section>
+    	<h3>1. Das dlina-Projekt. Ein Überblick</h3>
+    	<h4>Was wir machen</h4>
+    	<ul>
+        <li>2013 - Vorarbeiten (theoretische Sondierung u. Vorstudie)</li>
+        <li>2014 - Gründung der Arbeitsgruppe</li>
+        <li>seit 2015 - Dokumentation im <a href="https://dlina.github.io">Blog</a> und bei <a href="https://github.com/dlina">GitHub</a> </li>
+        <li>flankierende Teilprojekte
+            <ul>
+                <li>dramavis (Frank Fischer &amp; Christopher Kittel), siehe <a href="https://dlina.github.io/dramavis/">Dramavis bei GitHub</a> und <a href="https://dlina.github.io/dramavis/">Blogpost zu dramavis</a></li> 
+                <li>play(s) (Mathias Göbel &amp; Hanna-Lena Meiners), siehe <a href="https://personae.gcdh.de/">https://personae.gcdh.de/</a></li>
+            </ul>
+        </li>
+        
+        </ul>
+    </section>
+    <section>
+    	<h3>1. Das dlina-Projekt. Ein Überblick</h3>
+        <h4>Ziel: Extraktion und Analyse von Netzwerkdaten aus dramatischen Texten</h4>
+        <br/>
+         <table>
+            <tbody>
+                <tr>
+                    <td align="center" style="font-size:0.7em;"><b>Rohkorpus</b></td>    
+                    <td align="center" style="color: #2a76dd; font-size:2.5em;">&#10142;</td> 
+                    <td align="center" style="font-size:0.7em;"><b>Struktur- und Metadaten</b></td>
+                    <td align="center" style="color: #2a76dd; font-size:2.5em;">&#10142;</td> 
+                    <td align="center" style="font-size:0.7em;"><b>Werte und Visualisierungen</b></td>
+                </tr>
+                <tr style="font-size:0.55em;">
+                    <td></td>
+                    <td align="center" style="color: #2a76dd;">›Preprocessing‹<br/>Datenextraktion und -edition</td>
+                    <td></td>
+                    <td align="center" style="color: #2a76dd;">›Postprocessing‹<br/>Datenanalyse und <br/>-visualisierung</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section>
+    	<h3>1. Das dlina-Projekt. Ein Überblick</h3>
+        <h4>Korpora mit deutschsprachigen Dramen</h4>
+        <ul>
+            <li>Deutsches Text Archiv: sehr gute Qualität, aber wenige Dramen (ca. 70)</li> 
+            <li>Projekt Gutenberg-DE: sehr schlechte Qualität, aber viele Dramen (über 600)</li> 
+            <li><span>TextGrid Repository</span>: mittlere Qualität und viele Dramen 
+            (je nach Zählung: 690 oder 666, siehe den Blogpost <a href="https://dlina.github.io/A-Not-So-Simple-Question/">»A (Not So) Simple Question«</a>)</li>              
+        </ul>
+    </section>
+    <section>
+    	<h3>1. Das dlina-Projekt. Ein Überblick</h3>
+        <h4>Das »dlina Corpus 15.07«</h4>
+        <ul>
+        <li>entstanden auf Basis des TextGrid Repository</li>
+        <li>umfasst derzeit 465 deutschsprachige Dramen aus der Zeit 1731 bis 1929</li>
+        <li>zur Zusammensetzung siehe den Blogpost <a href="https://dlina.github.io/Introducing-DLINA-Corpus-15-07-Codename-Sydney/">Introducing DLINA Corpus 15.07</a></li>     
+        </ul>   
+    </section>
+</section>
+
+
+<section>
+    <section>
+<h2>2. Der Prozess der Datenedition</h2>
+    </section>
+    <section>
+    	<h3>2. Der Prozess der Datenedition</h3>
+        <h4>Fokus auf spezifische Strukturdaten, i.e. Netzwerkdaten</h4>
+	<ul>
+		<li>Netzwerkdaten = Interaktionen zwischen Figuren</li>
+		<br/>
+		<li>Operationalisierung von Interaktion: 
+			<ul>
+				<li>Wenn zwei Figuren innerhalb eines vorgegebenen Segments (Szene/Auftritt; Akt/Aufzug) des Dramas jeweils einen Sprechakt vollziehen, dann interagieren sie miteinander.</li>
+			</ul>
+		</li>
+	</ul>
+    </section>
+    <section>
+    	<h3>2. Der Prozess der Datenedition</h3>
+        <h4>Annahme: Rudimentäre Struktur eines Dramas</h4>
+        <div class="highlight"><pre><code data-lang="xml" class="language-xml"><span class="nt">&lt;segment&gt;</span>
+ <span class="nt">&lt;sp</span> <span class="na">who=</span><span class="s">"#speaker1"</span><span class="nt">&gt;&lt;/sp&gt;</span>
+ <span class="nt">&lt;sp</span> <span class="na">who=</span><span class="s">"#speaker2"</span><span class="nt">&gt;&lt;/sp&gt;</span>
+ <span class="nt">&lt;sp</span> <span class="na">who=</span><span class="s">"#speaker3"</span><span class="nt">&gt;&lt;/sp&gt;</span>
+ <span class="nt">&lt;sp</span> <span class="na">who=</span><span class="s">"#speaker1"</span><span class="nt">&gt;&lt;/sp&gt;</span>
+ <span class="nt">&lt;sp</span> <span class="na">who=</span><span class="s">"#speaker3"</span><span class="nt">&gt;&lt;/sp&gt;</span>
+ ...
+<span class="nt">&lt;/segment&gt;</span>
+<span class="nt">&lt;segment&gt;</span>
+ <span class="nt">&lt;sp</span> <span class="na">who=</span><span class="s">"#speaker4"</span><span class="nt">&gt;&lt;/sp&gt;</span>
+ <span class="nt">&lt;sp</span> <span class="na">who=</span><span class="s">"#speaker2"</span><span class="nt">&gt;&lt;/sp&gt;</span>
+ ...
+<span class="nt">&lt;/segment&gt;</span>
+...</code></pre></div>
+    </section>
+    <section>
+    	<h3>2. Der Prozess der Datenedition</h3>
+        <h4>Mangelhafte Datenqualität</h4> 
+        <ul>
+        <li>Fehler in Folge der automatischen TEI-Konvertierung, z.B.
+        	<ul>
+            		<li>OCR-Fehler (etwa statt »Der König« -> »Der Kbnig«);</li>
+        		<li>etc.</li>
+        	</ul>
+        </li>
+        <li>Intrinsische Probleme, z.B.
+        	<ul>
+            		<li>Variationen bei den Figurenbezeichnungen (etwa »Der König« und »König«; oder »Claudia Galloti« und »Claudia»);</li> 
+            		<li>Kollektiva (etwa »Beide«, »Alle« usw.);</li>
+            		<li>etc.</li>
+            	</ul>
+        </li>
+        </ul>
+    </section>
+    <section>
+    	<h3>2. Der Prozess der Datenedition</h3>
+        <h4>Edition der Strukturdaten</h4>
+        <ul>
+        <li>Formulierung von Editionsregeln (siehe den Blogpost <a href="https://dlina.github.io/Editing-Rules/">Editing Rules</a>)</li>
+        <li>Edition nicht in der Volltext-TEI-Datei, sondern in einem eigenen ›Strukturdatenformat‹ (lina-Zwischenformat)</li>
+        </ul>
+    </section>
+    <section>
+    	<h3>2. Der Prozess der Datenedition</h3>
+        <h4>Das lina-Zwischenformat (lina.xml) - Idee</h4>
+        <ul>
+        	<li>Ergebnis der Extraktion von (noch unsauberen) Strukturdaten aus den Texten des Korpus</li>	
+        	<li>stellt eine strukturelle Abstraktion des dramatischen Textes dar</li>
+        	<li>Vorteile z.B.:
+        		<ul>
+        			<li>die Originaldateien bleiben unverändert (u.a. Nachvollziehbarkeit)</li>
+        			<li>das Zwischenformat ist sehr viel übersichtlicher (Einfachheit)</li>
+        		</ul>
+        	</li>
+        </ul>
+    </section>
+    <section>
+    	<h3>2. Der Prozess der Datenedition</h3>
+        <h4>Das lina-Zwischenformat (lina.xml) - Features</h4>
+        <ul>
+        	<li>wird für jedes Drama erstellt und ist Basis für die Analysen und Visualisierungen</li>
+        	<li>ist eine XML-Datei, validiert gegen ein eigenes RNG Schema</li>
+        	<li>speichert neben den Strukturdaten auch einige Metadaten 
+        	<li>bietet die Möglichkeit, editorische Entscheidungen zu dokumentieren</li>
+        </ul>
+   </section>
+   <section>
+    	<h3>2. Der Prozess der Datenedition</h3>
+        <h4>Das lina-Zwischenformat (lina.xml) - Extras</h4>
+        <ul>
+        	<li>Erfasung weiterer quantitativer Daten, z.B.  
+        		<ul>
+        			<li>Anzahl der Sprechakte pro Figur</li>
+        			<li>Anzahl der gesprochenen Wörter pro Figur</li>
+        			<li>siehe auch den Blogpost <a href="https://dlina.github.io/The-Biggest-Chatterbox-in-German-Literature/">The Biggest Chatterbox in German Literature</a></li>
+			</ul>
+        	</li>
+        	<br/>
+        	<li>Zum lina-Zwischenformat siehe auch den Blogpost <a href="https://dlina.github.io/Introducing-Our-Zwischenformat/">Introducing Our Zwischenformat</a></li>
+        </ul>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h2>3. Play(s). Crowd Editing</h2>
+    </section>
+    <section>
+        <h3>3. Play(s). Crowd Editing</h3>
+        <p>Bei insgesamt 666 Dramen aus dem TextGrid Repository (inkl. 
+            der 465 aus dem dlina-Subkorpus) gilt es, diese Probleme 
+            zu lösen.</p>
+        <p><span class="fragment highlight-blue">20118</span> unterschiedliche Werte innerhalb von tei:speaker 
+            müssen hierfür überprüft und ausgezeichnet werden, so 
+            dass schließlich alle <span class="fragment highlight-blue">438457</span> Sprechakte mit einem who-
+            Attribut versehen werden können.</p>
+        
+        <aside class="notes">
+            Bei den insgesamt 666 Dramen des TextGrid-Repositories 
+            (inkl. der 465 für das DLINA-Subkorpus ausgewählten) gilt
+            es, die eben beschriebenen Probleme unter Berücksichtigung 
+            der in diesem Zusammenhang genannten Editionsregeln zu bearbeiten. 
+            Es müssen also 20118 unterschiedliche Werte innerhalb des 
+            tei:speaker-Elementes durchgesehen werden, unterschiedliche 
+            Sprecher und Kollektiva erkannt und eindeutlig aufgelöst bzw. 
+            zugeordnet werden. Das klingt nach einer Aufgabe, 
+            für die man 2 Hilfskräfte einige Monate beschäftigen könnte – 
+            ohne das uns Personalmittel zur Verfügung stehen. Peer und Dario 
+            haben das tatsächlich für das DLINA-Korpus auch getan, allerdings 
+            fehlen hier nach wie vor weitere Metadaten, zum Beispiel zum 
+            Geschlecht der Akteure, sofern bestimmbar. Die Idee, diese Aufgabe 
+            nicht mit einem Text- oder XML-Editor zu machen, sondern statt 
+            dessen ein Webinterface zu gestalten, welches die unterschiedlichen 
+            Sprecher auflistet und eine Zuordnung ermöglicht, lag recht nahe. 
+            Vergibt man für jede dieser Zuordnungen und für die Erfassung 
+            weiterer Metadaten auch noch Punkte, versammelt die Nutzer geordnet 
+            nach erreichter Punktzahl dann auf einer Liste – einer Highscore-Liste, 
+            führt dann zu Gamification...
+        </aside>
+    </section>
+    <section>
+        <h3>3. Play(s). Crowd Editing</h3>
+        <h4>Gamification</h4>
+        <blockquote>The process of game-thinking and game mechanics to engage users and solve
+            problems.</blockquote>
+        <p class="caption">Gabe Zichermann &amp; Christopher Cunningham: Gamification by Design: Implementing Game Mechanics in
+            Web and Mobile Apps, Beijing [u.a.] 2011, S. XIV.</p>
+        <aside class="notes">
+            Beispiele dafür gibt es international bereits:
+            Digitalkoot: http://www.digitalkoot.fi/
+            Zooniverse: zooniverse.org
+            Im deutschsprachigen Raum wäre Artigo zu nennen, 
+            bei dem Spielerinnen kunsthistorische Werke verschlagworten.
+            Bezieht man eine möglichst große Gruppe in die Editionsarbeit ein, 
+            erreicht man, was auch unter dem Begriff...
+        </aside>
+    </section>
+    <section>
+        <h3>3. Play(s). Crowd Editing</h3>
+        <h4>Social Editing</h4>
+        <blockquote>The social edition is a work that brings communities together to 
+            engage in conversation around a text formed and reformed through an 
+            ongoing, iterative, public editorial process.</blockquote>
+        <p class="caption">User:Cultures92: »The Devonshire Manuscript. A Note on this Edition«, 23.5.2014, URL:
+            <a href="https://en.wikibooks.org/w/index.php?title=The_Devonshire_Manuscript/A_Note_on_this_Edition&oldid=2659306" target="_blank">https://en.wikibooks.org/wiki
+                /The_Devonshire_Manuscript/A_Note_on_this_Edition</a></p>
+        <aside class="notes">
+            social editing bekannt ist. Auch dafür gibt es Beispiele:
+            das amerikanische Projekt Transcribe Bentham oder
+            Devonshire Manuscript,
+            beide auf Wiki-Systemen basierend.
+            Nutzerinnen wird hier ein ganzer Katalog von Transkriptionsregeln zur 
+            Verfügung gestellt und auch philologisch streitbare Details wie unklare 
+            Lesarten müssen selbstständig ausgezeichnet werden.
+            Wir müssen keine Volltexte bearbeiten, die Schwierigkeit ist eher in 
+            der möglichst kleinen Dimensionierung der Aufgaben zu sehen. 
+            Unterschiedliche Aufgaben bauen aufeinander auf und daraus ergebene 
+            sich die zu bewältigenden Levels.
+        </aside>
+    </section>
+    <section>
+        <h3>3. Play(s). Crowd Editing</h3>
+        <h4>Android App</h4>
+        <img class="stretch" alt="screenshot von Play(s)" src="android-lvl1-claudia.png"/>
+        <aside class="notes">
+            Level 1: Auflösung der Dopplungen („Claudia“ = „Claudia Galotti“)
+        </aside>
+    </section>
+    <section>
+        <h3>3. Play(s). Crowd Editing</h3>
+        <h4>Android App</h4>
+        <div id="player" class="stretch"><img height="100%" class="stretch" alt="screenshot von Play(s)" src="android-lvl1-claudia.png"/></div>
+        <aside class="notes">
+            Level 2: Aggregationen/Kollektiva ausfindig machen („Robert und Helfer“, „Alle“)
+            Level 3: Instanzen den Gruppen zuordnen („Robert und Helfer“: [„Robert“, „Helfer“])
+            Level 4: Bestimmung der Geschlechter (mit Option „unknown“)
+            Level 5: Genauere Bestimmung der mit unbestimmbaren Geschlecht ausgezeichneten (Moral, Tier, Geist, …)
+            Level 6: Bühnenanweisungen typisieren (hierfür gibt es bei TEI Richtlinien)
+            +++ BONUSPUNKTE +++
+        </aside>
+        <script>
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'Q6WnVJF0yhA',
+          playerVars: { 'autoplay': 1, 'controls': 0 , 'rel': 0, 'showinfo': 0}
+        });
+      }
+    </script>
+
+    </section>
+    <section>
+        <h3>3. Play(s). Crowd Editing</h3>
+        <h4>Design/Status</h4>
+        <ul><li>Server-Client-Lösung
+            <ul>
+                <li>Datenbestand und Aufgaben beliebig erweiterbar</li>
+                <li>Zentrale Verwaltung der Eingaben</li>
+                <li>hier ausschließlich SSL-verschlüsselt</li>
+            </ul>
+        </li>
+        <li>WebView App 
+            <ul>
+                <li>Vielzahl unterstützer Systeme (Android, Firefox OS)</li>
+                <li>App-Entwicklung = Webseiten-Entwicklung</li>
+                <li>dennoch folgt die App Googles <a target="_blank" href="https://www.google.com/design/spec/material-design/introduction.html">Material Design</a></li>
+        </ul></li>
+        </ul>
+        <p>Android App derzeit in geschlossener Alpha via Play Store, offene Beta für nächste Woche geplant</p>
+        <aside class="notes">
+            Sowohl die Struktur des Spiels, als auch das zu Grunde liegende Korpus sind erweiterbar.
+            Die resultierende „Lösung“ muss dann rückführbar auf die Daten des Korpus sein. 
+            In diesem Fall wird die Datenquelle unangetastet in der eXist-db belassen, in der 
+            Prozessierung werden den einzelnen Sprechern ids entsprechend ihres ersten Auftretens 
+            im Drama zugewiesen. Diese ids sind jeweils wiederherstellbar und können schließlich 
+            genutzt werden, um die TEI-Dokumente mit den erzeugten Daten zu verbessern. Diese 
+            ließen sich dann problemlos wieder im TextGrid-Repository ablegen.
+        </aside>
+    </section>
+</section>
+
+<section>
+    <section>
+<h2>4. »from numbers to meaning«</h2>
+    </section>
+    <section>
+    	<h3>4. »from numbers to meaning«</h3>
+    	<h4>Netzwerkgröße von 465 deutschsprachigen Dramen (1731-1929) – Median pro Jahrzehnt</h4>
+        <svg width="700" height="350" style="transform: scale(1.5);"><g transform="translate(60,60)"><g class="x axis" transform="translate(0,180)"><g class="tick" transform="translate(25.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1730 (N=5)</text></g><g class="tick" transform="translate(55.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1740 (N=18)</text></g><g class="tick" transform="translate(85.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1750 (N=10)</text></g><g class="tick" transform="translate(115.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1760 (N=15)</text></g><g class="tick" transform="translate(145.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1770 (N=36)</text></g><g class="tick" transform="translate(175.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1780 (N=20)</text></g><g class="tick" transform="translate(205.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1790 (N=20)</text></g><g class="tick" transform="translate(235.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1800 (N=23)</text></g><g class="tick" transform="translate(265.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1810 (N=24)</text></g><g class="tick" transform="translate(295.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1820 (N=31)</text></g><g class="tick" transform="translate(325.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1830 (N=31)</text></g><g class="tick" transform="translate(355.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1840 (N=43)</text></g><g class="tick" transform="translate(385.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1850 (N=16)</text></g><g class="tick" transform="translate(415.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1860 (N=11)</text></g><g class="tick" transform="translate(445.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1870 (N=14)</text></g><g class="tick" transform="translate(475.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1880 (N=14)</text></g><g class="tick" transform="translate(505.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1890 (N=36)</text></g><g class="tick" transform="translate(535.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1900 (N=49)</text></g><g class="tick" transform="translate(565.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1910 (N=33)</text></g><g class="tick" transform="translate(595.5,0)" style="opacity: 1;"><line y2="6" x2="0"></line><text dy=".15em" y="9" x="0" dx="-.8em" transform="rotate(-65)" style="text-anchor: end; font-size: 0.7em;">1920 (N=16)</text></g><path class="domain" d="M0,6V0H620V6"></path></g><g class="y axis"><g class="tick" transform="translate(0,177.88235294117646)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">4</text></g><g class="tick" transform="translate(0,160.94117647058823)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">6</text></g><g class="tick" transform="translate(0,144)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">8</text></g><g class="tick" transform="translate(0,127.05882352941175)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">10</text></g><g class="tick" transform="translate(0,110.11764705882354)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">12</text></g><g class="tick" transform="translate(0,93.17647058823528)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">14</text></g><g class="tick" transform="translate(0,76.23529411764707)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">16</text></g><g class="tick" transform="translate(0,59.29411764705883)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">18</text></g><g class="tick" transform="translate(0,42.352941176470594)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">20</text></g><g class="tick" transform="translate(0,25.411764705882362)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">22</text></g><g class="tick" transform="translate(0,8.470588235294127)" style="opacity: 1;"><line x2="-6" y2="0"></line><text dy=".32em" x="-9" y="0" style="text-anchor: end;">24</text></g><path class="domain" d="M-6,0H0V180H-6"></path><text transform="rotate(-90)" y="6" dy=".71em" style="text-anchor: end; font-size: 0.7em;">Number of Characters (Median)</text></g><g><path class="line" d="M25.5,118.58823529411765Q54.5,143.64705882352942,55.5,144C57,144.52941176470588,84,140.18823529411767,85.5,139.76470588235296S114,127.90588235294116,115.5,127.05882352941175S144,107.04705882352943,145.5,105.88235294117648S174,82.16470588235295,175.5,80.47058823529412S204,38.01176470588236,205.5,38.117647058823536S234,85.23529411764706,235.5,84.70588235294117S264,19.058823529411768,265.5,16.941176470588236S294,0.42352941176470627,295.5,0S324,-1.694117647058825,325.5,0S354,66.17647058823529,355.5,67.76470588235294S384,64.37647058823529,385.5,63.52941176470588S414,35.04705882352941,415.5,33.88235294117647S444,17.364705882352943,445.5,16.941176470588236S474,15.24705882352941,475.5,16.941176470588236S504,81.74117647058823,505.5,84.70588235294117S534,136.16470588235293,535.5,135.52941176470588S564,62.57647058823531,565.5,59.29411764705883Q566.5,57.10588235294119,595.5,4.235294117647063" style="fill: none; stroke: rgb(100, 149, 237); stroke-width: 3px;"></path></g><circle class="dot" r="5" cx="25.5" cy="118.58823529411765" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="55.5" cy="144" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="85.5" cy="139.76470588235296" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="115.5" cy="127.05882352941175" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="145.5" cy="105.88235294117648" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="175.5" cy="80.47058823529412" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="205.5" cy="38.117647058823536" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="235.5" cy="84.70588235294117" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="265.5" cy="16.941176470588236" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="295.5" cy="0" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="325.5" cy="0" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="355.5" cy="67.76470588235294" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="385.5" cy="63.52941176470588" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="415.5" cy="33.88235294117647" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="445.5" cy="16.941176470588236" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="475.5" cy="16.941176470588236" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="505.5" cy="84.70588235294117" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="535.5" cy="135.52941176470588" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="565.5" cy="59.29411764705883" style="fill: steelblue;"></circle><circle class="dot" r="5" cx="595.5" cy="4.235294117647063" style="fill: steelblue;"></circle><text class="dotlabel" x="28.5" y="113.58823529411765" style="fill: black;">11</text><text class="dotlabel" x="58.5" y="139" style="fill: black;">8</text><text class="dotlabel" x="88.5" y="134.76470588235296" style="fill: black;">8.5</text><text class="dotlabel" x="118.5" y="122.05882352941175" style="fill: black;">10</text><text class="dotlabel" x="148.5" y="100.88235294117648" style="fill: black;">12.5</text><text class="dotlabel" x="178.5" y="75.47058823529412" style="fill: black;">15.5</text><text class="dotlabel" x="208.5" y="33.117647058823536" style="fill: black;">20.5</text><text class="dotlabel" x="238.5" y="79.70588235294117" style="fill: black;">15</text><text class="dotlabel" x="268.5" y="11.941176470588236" style="fill: black;">23</text><text class="dotlabel" x="298.5" y="-5" style="fill: black;">25</text><text class="dotlabel" x="328.5" y="-5" style="fill: black;">25</text><text class="dotlabel" x="358.5" y="62.76470588235294" style="fill: black;">17</text><text class="dotlabel" x="388.5" y="58.52941176470588" style="fill: black;">17.5</text><text class="dotlabel" x="418.5" y="28.88235294117647" style="fill: black;">21</text><text class="dotlabel" x="448.5" y="11.941176470588236" style="fill: black;">23</text><text class="dotlabel" x="478.5" y="11.941176470588236" style="fill: black;">23</text><text class="dotlabel" x="508.5" y="79.70588235294117" style="fill: black;">15</text><text class="dotlabel" x="538.5" y="130.52941176470588" style="fill: black;">9</text><text class="dotlabel" x="568.5" y="54.29411764705883" style="fill: black;">18</text><text class="dotlabel" x="598.5" y="-0.7647058823529367" style="fill: black;">24.5</text></g></svg>
+        <br/>
+        <br/>
+        <p class="caption">Siehe den Blogpost <a href="https://dlina.github.io/200-Years-of-Literary-Network-Data/">200 Years of Literary Network Data</a> 
+        </p>
+    </section>
+    <section>
+    	<h3>4. »from numbers to meaning«</h3>
+    	<h4>Dichte deutschsprachiger Dramen (1731-1929) – Mittelwert nach Genre</h4>
+    	<img class="stretch" src="genre.png" alt="median per genre"/>
+        <p class="caption">Siehe den Blogpost <a href="https://dlina.github.io/Network-Values-by-Genre/">Network Values by Genre</a>
+        </p>
+    </section>
+    <section>
+    	<h3>4. »from numbers to meaning«</h3>
+        <h4>Laufende Forschung: Netzwerktypen</h3>
+        <img src="watts-strogatz.jpg" alt="small words network examples" height="50%"/>
+        <p class="caption">Abb. aus Duncan J. Watts &amp; Steven H. Strogatz: Collective Dynamics of ›Small World‹ Networks.
+            <br/>In: Nature 393, 4.6.1998, S. 440-442, hier S. 441.</p>
+    </section>
+</section>
+                <section style="font-size:0.7em;">
+                    <h3>Infos und Updates</h3>
+                    <p>Präsentation: <a href="http://lina.digital/presentations/2016-berlin">http://lina.digital/presentations/2016-berlin/</a></p>
+                    <p>Blog: <a href="http://lina.digital">https://dlina.github.io/</a></p>
+                    <p>Github: <a href="http://lina.digital/presentations/2016-berlin">https://github.com/dlina</a></p>
+                    <p>
+                        <ul style="list-style:none;"><li>Twitter: <ul>
+                       	    <li><a href="https://twitter.com/search?f=tweets&vertical=default&q=%23dlina&src=typd&lang=de">#dlina</a></li>
+                            <li>Frank Fischer (<a href="https://twitter.com/umblaetterer">@umblaetterer</a>)</li>
+                            <li>Mathias Göbel (<a href="https://twitter.com/goebel_m">@goebel_m</a>)</li>
+                            <li>Peer Trilcke (<a href="https://twitter.com/peertrilcke">@peertrilcke</a>)</li>
+                    </ul></li></ul></p>
+                    <br/>
+                    <p>Vorträge <a href="https://www.conftool.pro/dhd2016/sessions.php">DHd 2016 in Leipzig</a></p>
+                    <table>
+                    	<tbody>
+                    		<tr style="font-size:0.7em;">
+                    			<td><a href="https://www.conftool.pro/dhd2016/index.php?page=browseSessions&form_session=38&presentations=show">Do. 10.3.<br/> 9.00-10.30</a></td>
+                    			<td>Dramen als <i>small worlds</i>? Netzwerkdaten zur Geschichte<br/> und Typologie deutschsprachiger Dramen 1730-1930</td>
+                    			<td>Fischer, Göbel,<br/> Kampkaspar, Trilcke</td>
+                    		</tr>
+                    		<tr>
+                    		        <td></td>
+                    			<td></td>
+                    			<td></td>	
+                    		</tr>
+                    		<tr style="font-size:0.7em;">
+                    			<td><a href="https://www.conftool.pro/dhd2016/index.php?page=browseSessions&form_session=40&presentations=show">Do. 10.3.<br/> 11.00-12.30</a></td>
+                    			<td>Play(s): Crowdbasierte Anreicherung <br/>eines literarischen Volltext-Korpus</td>
+                    			<td>Göbel, Meiners</td>
+                    		</tr>
+                    	</tbody>
+                    </table>
+                    
+                    <!--
+                    <p>
+                        <ul style="list-style:none;"><li>Vorträge #dhd2016: <ul>
+                            <li>Dramen als small worlds? Netzwerkdaten zur Geschichte und Typologie deutschsprachiger Dramen 1730-1930 (Trilcke, Fischer, Göbel, Kampkaspar) 
+                            <ul>
+                                <li>Do. 10.3., 9-10.30</li>
+                            </ul>
+                            </li>
+                            <li>Play(s): Crowdbasierte Anreicherung eines literarischen Volltext-Korpus (Göbel, Meiners) 
+                                <ul>
+                                    <li>Do. 10.3., 11-12.30</li>
+                                </ul>
+                            </li>
+                           
+                        </ul></li></ul>
+                    </p> -->
+                    
+                </section>
+            </div>
+<div class="license"><img alt="cc-by-4.0" src="../cc-by-black.png"/></div>
+        </div>
+        <script src="../lib/reveal/lib/js/head.min.js"></script>
+        <script src="../lib/reveal/js/reveal.js"></script>
+        <script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../lib/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../lib/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../lib/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+//					{ src: '../lib/reveal/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../lib/reveal/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../lib/reveal/plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+    </body>
+</html>
+
