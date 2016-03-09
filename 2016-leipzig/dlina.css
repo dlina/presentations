@@ -8,8 +8,12 @@
 }
 */
 body > div > div.slides > section.stack.present > section.present > table > tbody > tr:nth-child(2) > td:nth-child(1) > span > img {
-    height: 275px;
-    width: auto;
+    height: 275px !important;
+    width: auto !important;
+}
+body > div > div.slides > section.stack.present > section.present > table > tbody > tr:nth-child(2) > td:nth-child(2) > img {
+    height: 200px !important;
+    width: auto !important;
 }
 .reveal h1 {
     font-size: 1.7em;
