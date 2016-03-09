@@ -266,14 +266,13 @@
                 	</section>
                 	<section>
                 		<h4>1. Kriterium: Clustering Coefficient</h4>
-				<p style="font-size:0.8em;"><b>Kriterien (Indikatoren) im Überblick</b></p>
                 		<ul>
                 			<li style="font-size:0.8em;">Der Clustering Coefficient (C) des beobachteten Netzwerks ist signifikant höher als der C eines entsprechenden Random-Netzwerks</li>
                 			<li style="font-size:0.8em;">Vorgehen:
                 				<ul>
 							<li>Berechnung von 1000 Randomnetzwerke zu jedem einzelnen Dramen-Netzwerk</li>
 							<li>Berechnung des Mittelwerts für die Randomnetzwerke -> Clustering Coefficient (C Random)</li>
-							<li>Bildung des Quotienten aus C und C Random -> CLustering Coefficient Abweichung (C Abw)</li>
+							<li>Bildung des Quotienten aus C und C Random -> Clustering Coefficient Abweichung (C Abw)</li>
 							<li>Identifizierung der Dramen mit einem signifikant höheren C Abw (signifikant höher = größer als Mean+2*SD)</li>
                 				</ul>
                 			</li>
@@ -283,7 +282,7 @@
                 		<h4>1. Kriterium: Clustering Coefficient</h4>
                 		<img alt="Nach 1. Runde" src="leipzig-images/3-5.1.23.Small-World-Kandidaten.png">
                 	</section>
-                	<section> 
+                	<!-- <section> 
                 		<h4>2. Kriterium: Average Path Length</h4>
                 		<p style="font-size:0.8em;"><b>Aussortiert aufgrund des 2. Kriteriums</b></p>
 				<table style="font-size:0.5em;" cellspacing="0" cellpadding="4" border="1">
@@ -304,6 +303,20 @@
 					<li style="font-size:0.6em;">Grenzwerte also: Mean-2*SD = 0,872; Mean+2*SD = 1,148</li>
 					<li style="font-size:0.6em;">alle Dramen, die außerhalb der Grenzwerte liegen, scheiden aus</li>
 				</ul>
+                	</section> -->
+                	<section>
+				<h4>2. Kriterium: Average Path Length</h4>
+                		<ul>
+                			<li style="font-size:0.8em;">Die Average Path Length (APL) des beobachteten Netzwerks weicht nicht signfikant ab von der APL eines entsprechenden Random-Netzwerks</li>
+                			<li style="font-size:0.8em;">Vorgehen:
+                				<ul>
+							<li>Berechnung von 1000 Randomnetzwerke zu jedem einzelnen Dramen-Netzwerk</li>
+							<li>Berechnung des Mittelwerts für die Randomnetzwerke -> Average Path Length (APL Random)</li>
+							<li>Bildung des Quotienten aus APL und APL Random -> Average Path Length Abweichung (APL Abw)</li>
+							<li>Aussortierung der Dramen die signifikant abweichen (kleiner als Mean-2*SD bzw. größer als Mean+2*SD)</li>
+                				</ul>
+                			</li>
+                		</ul>
                 	</section>
                 	<section> 
                 		<h4>2. Kriterium: Average Path Length</h4>
