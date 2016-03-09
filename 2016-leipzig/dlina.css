@@ -19,6 +19,9 @@ section.present:nth-child(6) > table:nth-child(3) > tbody:nth-child(1) > tr > td
     width: 100% !important;
     height: auto !important;
 }
+section.present:nth-child(14) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(1) img {
+    width: 100% !important;
+}
 .reveal h1 {
     font-size: 1.7em;
 }
