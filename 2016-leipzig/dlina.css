@@ -7,6 +7,9 @@
     font-family: 'Montserrat', Helvetica, sans-serif;
 }
 */
+tr > td > img {
+    width: 100%;
+}
 .reveal h1 {
     font-size: 1.7em;
 }
