@@ -313,11 +313,15 @@
 							<li>Berechnung von 1000 Randomnetzwerke zu jedem einzelnen Dramen-Netzwerk</li>
 							<li>Berechnung des Mittelwerts für die Randomnetzwerke -> Average Path Length (APL Random)</li>
 							<li>Bildung des Quotienten aus APL und APL Random -> Average Path Length Abweichung (APL Abw)</li>
-							<li>Aussortierung der Dramen die signifikant abweichen (kleiner als Mean-2*SD bzw. größer als Mean+2*SD)</li>
+							<li>Aussortierung der Dramen, die Kriterium 1 erfüllen, <b>aber bei ABL Abw signifikant abweichen</b> (kleiner als Mean-2*SD bzw. größer als Mean+2*SD)</li>
                 				</ul>
                 			</li>
                 		</ul>
                 	</section>
+                	<section> 
+                		<h4>2. Kriterium: Average Path Length</h4>
+                		<img alt="in 2. Runde ausgeschieden" src="3-5.2b.Small-World-Kandidaten.-.ausgeschieden.in.2.Runde.png">
+                	</section>                  	
                 	<section> 
                 		<h4>2. Kriterium: Average Path Length</h4>
                 		<img alt="Nach 2. Runde" src="leipzig-images/3-5.3.17.Small-World-Kandidaten.png">
@@ -348,7 +352,7 @@
 					</tbody>
 				</table>
                 	</section>
-                	<section> 
+                	<!-- <section> 
                 		<h4>3. Kriterium: Power Law Distribution</h4>
                 		<p style="font-size:0.8em;"><b>Beispiel für Aussortierung</b></p>
                 	        <table>
@@ -360,7 +364,24 @@
 					</tbody>
 				</table>
 				<p style="font-size:0.6em; margin-top:30px;">Das Bestimmtheitsmaß (R²) für die exponentielle Regression ist größer als das für die Power Law-Regression</p>
-                	</section>  
+                	</section>  -->
+                	<section>
+				<h4>3. Kriterium: Power Law Distribution</h4>
+                		<ul>
+                			<li style="font-size:0.8em;">Die Node Degree Distribution lässt sich am besten mit einer Power Law-Regression beschreiben</li>
+                			<li style="font-size:0.8em;">Vorgehen:
+                				<ul>
+							<li>Mapping der Node Degree Distribution</li>
+							<li>Berechnung der Bestimmtheitsmaße (R²) für diverse Regressionen (linear, quadratisch, exponentiell, logarithmisch, Power Law)</li>
+							<li>Aussortierung aller Dramen, die Kriterium 1 &amp; 2 erfüllen, aber <b>keine Power Law-Regression aufweisen</b></li>
+                				</ul>
+                			</li>
+                		</ul>
+                	</section>
+                	<section> 
+                		<h4>3. Kriterium: Power Law Distribution</h4>
+                		<img alt="in 3. Runde ausgeschieden" src="leipzig-images/3-5.4 ausgeschieden in 3. Runde.png">
+                	</section>      
                 	<section> 
                 		<h4>3. Kriterium: Power Law Distribution</h4>
                 		<img alt="Nach 3. Runde" src="leipzig-images/3-5.5.5.Scale.Free.Dramen.png">
