@@ -49,13 +49,14 @@
 ## Crowdbasierte Anreicherung eines literarischen Volltext-Korpus
 
 
-<small><a href="https://mathias-goebel.github.io">Mathias Göbel</a> / <a
-        href="https://twitter.com/goebel_m">@goebel_m</a>, <a href="#">Hanna-Lena Meiners</a></small>
+<small><a href="https://mathias-goebel.github.io">Mathias Göbel</a>, <a href="#">Hanna-Lena Meiners</a></small>
 <br/>
 <a href="https://lina.digital/">https://lina.digital/</a>
 <br/>
 <br/>
 <small>DHd 2016 - [ˈlaɪ̯bdsʃ], 10.3.2016</small>
+
+
 <small>Content licensed under CC-BY 4.0</small>
 
 ---
@@ -78,7 +79,7 @@ Netzwerke zu 465 Dramen der deutschsprachigen Literaturgeschichte, #DHd2016 Post
 
 ## #dlina
 - interinstitutionelle Arbeitsgruppe aus Literaturwissenschaftlern und Informatikern
-- Kernmitglieder: Frank&nbsp;Fischer, Dario&nbsp;Kampkaspar, Mathias&nbsp;Göbel, Peer&nbsp;Trilcke, Christopher&nbsp;Kittel, Hanna-Lena&nbsp;Meiners, Andreas&nbsp;Vogel
+- Mitglieder: Frank&nbsp;Fischer, Dario&nbsp;Kampkaspar, Mathias&nbsp;Göbel, Peer&nbsp;Trilcke, Christopher&nbsp;Kittel, Hanna-Lena&nbsp;Meiners, Andreas&nbsp;Vogel
 - Dokumentation: <!-- .element style="margin-top:20px;" -->
   - [Blog](https://lina.digital)
   - [dlina auf GitHub](https://github.com/dlina)
@@ -250,15 +251,11 @@ Attribut versehen werden können.</p>
 
 | Spiel als Medium                                                                                 | Anreicherung eines spielfremden Kontextes                                                                 |
 |--------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
-|Serious Games; Games with a Purpose; Meaningful Play |Gamification; Crowdsourcing; Social Editing; Gameful Design |
-
-- Human Computation <!-- .element style="color:grey; list-style:none;" -->
-- Citzien Science <!-- .element style="color:grey; list-style:none;"" -->
-
+|Serious&nbsp;Games; Games&nbsp;with&nbsp;a&nbsp;Purpose; Meaningful&nbsp;Play |Gamification; Crowdsourcing; Social&nbsp;Editing; Gameful&nbsp;Design; Human&nbsp;Computation; Citizen&nbsp;Science |
 
 --
 
-<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/YAWXA-2smwM?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="853" height="480" src="https://www.youtube-nocookie.com/embed/YAWXA-2smwM??vq=hd720&amp;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 ---
 
@@ -296,12 +293,15 @@ Attribut versehen werden können.</p>
 ---
 
 ## Nutzung
-<iframe width="640" height="480" src="https://personae.gcdh.de/ajax/contrib.html" frameborder="0" allowfullscreen></iframe>
+
+![Nutzung seit Alphatest](img/nutzung-alpha.png) <!-- .element height="450px" -->
+siehe: https://personae.gcdh.de/ajax/contrib.html
 
 --
 
 ## Nutzung
-<iframe width="640" height="480" src="https://personae.gcdh.de/ajax/contrib.html?who=user" frameborder="0" allowfullscreen></iframe>
+![Nutzung seit VÖ (4.3.2016)](img/nutzung-live.png) <!-- .element height="450px" -->
+siehe: https://personae.gcdh.de/ajax/contrib.html?who=users
 
 ---
 
