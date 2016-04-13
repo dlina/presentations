@@ -200,34 +200,53 @@
 	<p>Dokumentations der Editionsregeln in einem <a href="https://dlina.github.io/Editing-Rules/">Blogpost</a>.</p>
 </section>
 <section>
-<h3>Grenzen des Erfassbaren</h3>
-
-<h4>Alberti, Konrad: Im Suff</h4>
-<pre><code data-trim data-noescape>
-<sp>
-<speaker xml:id="tg54.2.2.part1">DER HERR,</speaker>
-<stage>
-<hi rend="italic" xml:id="tg54.2.2.1.part1">welcher im Zwischengang hinausgeworfen wurde, 
-oder wenigstens ein ihm auffallend ähnlicher Herr, ist während 
-des Aktes langsam wieder eingetreten.</hi>
-</stage> 
-</code></pre>
-<p><a href="https://textgridlab.org/1.0/tgcrud-public/rest/textgrid:jkjb.0/data">TEI</a></p>
-
-</section>
-<section>
 <h2>Data Editing</h2>
-			<p><small>crowd-editing</small></p>
+			<p><small>Crowdbasierte Anreicherung eines literarischen Volltext-Korpus</small></p>
 				<img alt="Screenshot Plays" height="500" src="../2016-leipzig-plays/img/lvl1-1.png">
 </section>
+<!-- Play(s) -->
+<section data-markdown="" data-separator="^\n---\n$" data-separator-vertical="^\n--\n"  >
+<script type="text/template">
+
+## [Android App](https://play.google.com/store/apps/details?id=com.phonegap.plays)
+![apk](https://upload.wikimedia.org/wikipedia/commons/a/a0/APK_format_icon.png) <!-- .element colspan="2" -->
+
+
+---
+
+
+![homescreen](https://lh3.googleusercontent.com/8UBh_EQq1xJ9DkUTKhxckuDs4pI3Y0SVo-jQzZSB_YiyO229e0uin71a86hncrAuLA=h900) <!-- .element height="600px" -->
+
+---
+
+![Level1welcome](https://lh3.googleusercontent.com/e81AqWzNrT4eaOL0hPArXHu-jAZnfGeVZ7AEAbZy_bKlzbC0zGX3X0WK7Zy9txrikrk=h900) <!-- .element height="600px" -->
+
+---
+
+![Level1 Liste](img/lvl1-1.png) <!-- .element height="600px" -->
+
+---
+
+![Level1 Liste alpha](img/lvl1-2.png) <!-- .element height="600px" -->
+
+---
+
+<iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/rN_iAyU2jMI?vq=hd720&amp;rel=0&amp;controls=0" frameborder="0" allowfullscreen></iframe>
+
+
+
+</script>
+	                </section>
+         
+
 <section>
                         <h2>Visualisierung &amp; Analyse</h2>
                         <p>Für jedes Drama haben wir eine Webseite erstellt: <a href="https://dlina.github.io/linas/">Auflistung</a>):</p>
 						<ul>
-							<li>networks (sticky-node and static)</li>
-							<li>matrixes</li>
-							<li>amounts</li>
-							<li>intermediary format files</li>
+							<li>Netzwerk(e)</li>
+							<li>Matrix</li>
+							<li>Amounts</li>
+							<li>Zwischenformat</li>
 						</ul>
 					</section>
                     <section>
