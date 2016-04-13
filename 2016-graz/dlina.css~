@@ -51,7 +51,11 @@ section.present:nth-child(21) > table:nth-child(2) > tbody:nth-child(1) > tr:nth
     font-size: 1.5em;
 }
 .reveal h4 {
+<<<<<<< HEAD
+   /*  color: #2A76DD; */
+=======
     color: #2A76DD;
+>>>>>>> 7056c47e37d64bb56c0d6e6c48cbce271d435cd8
 }
 .reveal section img {
     /* margin: 15px 0px;
