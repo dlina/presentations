@@ -1,0 +1,351 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="robots" content="noindex, nofollow">
+
+		<title>Vortragsfolien: »Distant-Reading Showcase« (23.06.2016)</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <section>
+                        <h2>»Distant-Reading Showcase«</h2>
+                        <h3>Datennarrative in den Geisteswissenschaften</h3>
+                        <p style="font-size:0.8em;">Frank Fischer</p>
+                        <p style="font-size:0.7em;">National Research University Higher School of Economics  ·  Moscow</p>
+                        <br>
+                        <ul style="font-size:0.6em;">
+    							<li>E-Mail: ffischer@hse.ru</li>
+    							<li>Github: <a href="https://github.com/lehkost">lehkost</a></li>
+    							<li>Twitter: <a href="https://twitter.com/umblaetterer">@umblaetterer</a></li>
+    							<li>Blog 1: <a href="http://weltliteratur.net/">weltliteratur.net – A Black Market for the Digital Humanities</a></li>
+    							<li>Blog 2: <a href="https://dlina.github.io/">Network Analysis of Literary Texts</a></li>
+    					</ul>
+                        <br><br>
+    		            <p style="font-size:0.8em;">DH-Kolloquium  ·  CCeH, Universität zu Köln  ·  Do, 23. Juni 2016</p>
+                    </section>
+<!-- HIDDEN TRACK
+                    <section>
+                        <h3>Anagnorisis</h3>
+                        <iframe height="480" width="440" src="https://twitframe.com/show?url=https://twitter.com/CCeHum/status/487169194652622849"></iframe>
+                    </section>
+-->
+                    <section>
+                        <h3>Das Poster: »Distant-Reading Showcase«</h3>
+                        <img src="images/distant-reading-showcase-poster.jpg" alt="465 drama networks at a glance" height="480">
+                        <p><small>465 Figurennetzwerke aus 200 Jahren dt. Dramengeschichte auf einen Blick.<br>Präsentiert auf der DHd, 9. März 2016, Leipzig. – DOI: <a href="https://dx.doi.org/10.6084/m9.figshare.3101203.v1">10.6084/m9.figshare.3101203.v1</a>.</small></p>
+                    </section>
+
+				</section>
+
+				<section>
+        		<h2>Kapitel</h2>
+					<ol>
+                        <li>Netzwerkanalyse literarischer Texte</li>
+                        <li>Was ist Distant Reading?</li>
+						<li>Datenvisualisierung mit Edward Tufte</li>
+						<li>Ein Datennarrativ: Das Poster</li>
+					</ol>
+				</section>
+
+				<section>
+					<section>
+						<h2>1. Netzwerkanalyse literarischer Texte</h2>
+					</section>
+
+                	<section>
+                		<h3>DLINA-Arbeitsgruppe (1/3)</h3>
+                		<ul style="font-size:0.8em;">
+			            <li>DLINA = (Digital) LIterary Network Analysis</li>
+			            <li>Beiträger_innen (alphabet.): Frank Fischer, Mathias Göbel, Dario Kampkaspar, Christopher Kittel, Hanna-Lena Meiners, Peer Trilcke, Andreas Vogel</li>
+			            <li>Plattformen:
+			            <ul>
+				            <li><a href="https://dlina.github.io">lina.digital (Blog)</a></li>
+				            <li><a href="https://github.com/dlina">github.com/dlina (Projektdaten auf GitHub)</a></li>
+				            <li><a href="https://github.com/lehkost/dramavis">github.com/lehkost/dramavis (Sourcecode <i>dramavis</i>)</a></li>
+				            <li><a href="https://play.google.com/store/apps/details?id=com.phonegap.plays">»Play(s)«-App im Google Play Store</a></li>
+			            </ul>
+			            </li>
+        			</ul>
+                	</section>
+
+                    <section>
+                        <h3>DLINA-Arbeitsgruppe (2/3)</h3>
+                        <ul style="font-size:0.8em;">
+                        <li>Korpora unter Beobachtung (alle in TEI):
+                        <ul>
+                            <li><a href="https://textgridrep.org/">TextGrid Repository</a> (666 deutschsprachige Dramen und Libretti von 1500 bis 1930)</li>
+                            <li><a href="http://www.dramawebben.se/">Dramawebben</a> (68 schwedischsprachige Dramen)</li>
+                            <li><a href="http://www.theatre-classique.fr/">theatre-classique.fr</a> (852 französischsprachige Dramen)</li>
+                        </ul>
+                    </ul>
+                    </section>
+
+                    <section>
+                        <h3>DLINA-Arbeitsgruppe (3/3)</h3>
+                        <ul style="font-size:0.8em;">
+                        <li>DLINA-Arbeitskorpus (15.07 »Sydney«):
+                        <ul>
+                            <li>entstanden auf Basis des TextGrid Repository und stark korrigiert</li>
+                            <li>465 deutschsprachige Dramen (1731 bis 1929)</li>
+                            <li>zur Zusammensetzung siehe den Blogpost <a href="https://dlina.github.io/Introducing-DLINA-Corpus-15-07-Codename-Sydney/">Introducing »dlina Corpus 15.07«</a></li>
+                        </ul>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Analysemethoden (1/4)</h3>
+                        <p>Beispiel: Lessings <i><a href="https://dlina.github.io/88/">Emilia Galotti</a></i> (1772)</p>
+							<img width="275" alt="Analysis, thumbnail 1" src="images/lina_output_network.png">
+							<img width="275" alt="Analysis, thumbnail 2" src="images/lina_output_matrix.png">
+							<img width="275" alt="Analysis, thumbnail 3" src="images/lina_output_amounts.png">
+							<img width="275" alt="Analysis, thumbnail 4" src="images/lina_output_zwischenformat.png">
+                    </section>
+                    <section>
+                        <h3>Analysemethoden (2/4)</h3>
+                        <p style="font-size:0.8em;">Skit: Die größten Plaudertaschen des deutschen Dramas</p>
+						<a href="https://dlina.github.io/The-Biggest-Chatterbox-in-German-Literature/"><img alt="List of most talkative characters in German theatre plays" src="images/top-10-chatterboxes.png"></a>
+                        <p><small>Vgl. Blogpost <a href="https://dlina.github.io/The-Biggest-Chatterbox-in-German-Literature/">»The Biggest Chatterbox in German Literature«</a>.</small></p>
+                    </section>
+                    <section>
+                        <h3>Analysemethoden (3/4)</h3>
+                        <p>Network Size (Median), jahrzehntweise (1730–1930):</p>
+						<img alt="Network size (median) by decade" src="images/network-size-median-by-decade.png">
+                        <p><small>Vgl. Blogpost <a href="https://dlina.github.io/200-Years-of-Literary-Network-Data/">»200 Years of Literary Network Data«</a>.</small></p>
+                    </section>
+                    <section>
+                        <h3>Analysemethoden (4/4)</h3>
+                        <p>Network Density (Mean) per Genre und Jahrhundert:</p>
+						<img alt="Network density (mean) by genre and century" src="images/network-density-mean-by-genre-and-century.png">
+                        <p><small>Vgl. Blogpost <a href="https://dlina.github.io/Network-Values-by-Genre/">»Comedy vs. Tragedy: Network Values by Genre«</a>.</small></p>
+                    </section>
+                    <section>
+                        <h3>Datenanreicherung & -korrektur</h3>
+                        <iframe width="640" height="480" src="https://www.youtube-nocookie.com/embed/rN_iAyU2jMI?vq=hd720&amp;rel=0&amp;controls=0" allowfullscreen></iframe>
+                        <p><small>»Play(s)«-App von Mathias Göbel und Hanna-Lena Meiners. <a href="https://play.google.com/store/apps/details?id=com.phonegap.plays">Im Google Play Store.</a></small></p>
+                    </section>
+				</section>
+
+				<section>
+					<section>
+						<h2>2. Was ist Distant Reading?</h2>
+					</section>
+
+                    <section>
+                    <h3>Die berühmte Stelle</h3>
+                    <br>
+                    <p style="text-align:left; font-size:0.95em;">»[…] if you want to look beyond the canon […], close reading will not do it. It’s not designed to do it, it’s designed to do the opposite. […] we know how to read texts, now let’s learn how not to read them. Distant reading: where distance […] is a condition of knowledge […].«</p>
+                    <p style="text-align:left;"><small>Franco Moretti: <i>Conjectures on World Literature</i>. In: <i>New Left Review</i> 1 (2000).</small></p>
+                    </section>
+
+                    <section>
+                    <h3>Distant Reading, ist es …</h3>
+                        <br>
+                        <ul>
+                            <li>… »a joke«?</li>
+                            <li>… ein polemischer Begriff, ein Buzzword?</li>
+                            <li>… eine computerbasierte Methode zur Analyse von Literatur?</li>
+                            <li>… Morettis Versuch einer kanonkritischen, korpusbasierten Literaturgeschichte?</li>
+                            <li>… ein gescheitertes oder zumindest beendetes Projekt?</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                    <h3>Mehr dazu:</h3>
+                        <br>
+                        <ul style="font-size:0.9em;">
+                            <li>Peer Trilcke, Frank Fischer: <i>Distant Reading With Foucault? Thoughts on the Practice of Distant Reading and on the Operationalisation of Discourse Analysis.</i> In: <i>Foucault-Blog</i>, 26. April 2016. DOI: <a href="http://dx.doi.org/10.13095/uzh.fsw.fb.141">10.13095/uzh.fsw.fb.141</a>.</li>
+                            <li>englische Zusammenfassung: <a href="http://weltliteratur.net/Distant-Reading-with-Foucault/">weltliteratur.net/Distant-Reading-with-Foucault/</a></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                    <h3>Von Zahlen zu Bedeutung</h3>
+                        <br>
+                        <p style="text-align:left; font-size:0.95em;">»The general methodological problem of the digital humanities can be bluntly stated: <b>How do we get from numbers to mea&shy;ning?</b> The objects being tracked, the evidence collected, the ways they’re analyzed—all of these are quantitative. How to move from this kind of evidence and object to qualitative arguments and insights about humanistic subjects—culture, literature, art, etc.—is not clear.«</p>
+                        <p style="text-align:left;"><small>Ryan Heuser u. Long Le-Khac: <i>A Quantitative Literary History of 2,958 Nineteenth-Century British Novels: The Semantic Cohort Method</i>. (= Pamphlets of the Stanford Literary Lab, Nr. 4.) Mai 2012, S. 46.</small></p>
+                    </section>
+
+                    <section>
+                    <h3><i>New Distant Reading!</i></h3>
+                        <br>
+                        <ul>
+                            <li>Arbeitskorpus ausführlich beschreiben und zur Verfügung stellen, Normdaten einbinden.</li>
+                            <li>Über Code reden, über Pre-Processing reden.</li>
+                            <li>Theoretisch gedeckelter statt intuitiver Zugang zu Inhalten.</li>
+                        </ul>
+                    </section>
+				</section>
+
+                <section>
+                    <section>
+                        <h2>3. Datenvisualisierung mit Edward Tufte</h2>
+                    </section>
+
+                    <section>
+                    <h3>Tuftes Visualisierungs-Kompendien</h3>
+                        <br>
+                        <ul>
+                            <li><i>The Visual Display of Quantitative Information</i> (1983, 2nd edition 2001)</li>
+                            <li><i>Envisioning Information</i> (1990)</li>
+                            <li><i>Visual Explanations</i> (1997)</li>
+                            <li><i>Beautiful Evidence</i> (2006)</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                    <h3>Charles Joseph Minard: »Carte figurative …</h3>
+                        <p style="font-size:0.5em;">… des pertes successives en hommes de l’armée française dans la campagne de Russie 1812–1813« (1869)</p>
+                        <img src="images/minard-carte-figurative-from-wikimedia-commons.jpg" alt="Minard's 'Carte figurative'." height="381">
+                        <p><small>Quelle: <a href="https://commons.wikimedia.org/wiki/File:Minard.png">Wikimedia Commons</a>.</small></p>
+                    </section>
+
+                    <section>
+                    <h3>Dimensionen der »Carte figurative«</h3>
+                        <br>
+                        <ul>
+                            <li>geografisch: Karte mit Einmarsch und Rückzug der Deuxième Grande Armée (beige bzw. schwarz), inkl. Teilung und Zusammenschluss von Einheiten</li>
+                            <li>Durchmesser als Indikator für abnehmende Truppenstärke</li>
+                            <li>zeitlicher Verlauf</li>
+                            <li>Temperaturdiagramm</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                    <h3>Zu Tuftes Grundsätzen</h3>
+                        <br>
+                        <ul>
+                            <li>»induce the viewer to think about the substance rather than about methodology, graphic design, the technology of graphic production, or something else«</li>
+                            <li>»present many numbers in a small space«</li>
+                            <li>»encourage the eye to compare different pieces of data«</li>
+                            <li>…</li>
+                            <li>Data-Ink Ratio</li>
+                            <li>»Above all else, show the data.«</li>
+                        </ul>
+                        <p><small>Vgl. <i>The Visual Display of Quantitative Information</i>, 2nd edition [2007], S. 13 u. ö.</small></p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>4. Ein Datennarrativ: Das Poster</h2>
+                    </section>
+
+                    <section>
+                        <h3>»Mapping Shakespeare’s Tragedies«</h3>
+                        <img src="images/grandjean-shakespeare-2015.png" alt="6 (out of 11) Shakespeare tragedies." height="445">
+                        <p><small>Martin Grandjeans Netzwerkvisualisierung für 6 (von 11) Shakespeare-Tragödien (Dezember 2015). Vollständiges Poster und Erläuterung <a href="http://www.martingrandjean.ch/network-visualization-shakespeare/">auf der Website von Grandjean</a>. Sein Vorgehen ist kaum automatisiert (vgl. <a href="http://www.pbs.org/newshour/art/whos-the-real-main-character-in-shakespearen-tragedies-heres-what-the-data-say/">das Interview mit PBS.org vom 22. April 2016</a>), ungeeignet für Distant Reading.</small></p>
+                    </section>
+
+                    <section>
+                        <h3>Poster-Hackathon</h3>
+                        <img src="images/dlina-hackathon_sub_goettingen_02-2016.jpg" alt="Foto vom Hackathon.'." height="440">
+                        <p><small>23.–25. Februar 2016, SUB Göttingen.</small></p>
+                    </section>
+
+                    <section>
+                        <h3>dramavis (Kittel/Fischer 2014ff.)</h3>
+                        <br>
+                        <ul>
+                            <li>Python 3, NetworkX als Netzwerkanalysebibliothek</li>
+                            <li>nimmt XML als Input (im DLINA-eigenen Zwischenformat, für das wir Parser zur Verfügung stellen)</li>
+                            <li>generiert u. a. das Superposter (als SVG)</li>
+                            <li>berechnet Graph-Metriken inkl. random graphs und konvertiert das eingelesene XML in weiterverwendbare CSV-Dateien (z. B. für Gephi oder Cytoscape)
+                            <li>Sourcecode: <a href="https://github.com/lehkost/dramavis">github.com/lehkost/dramavis</a></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Déjà-vu 1: »Distant-Reading Showcase«</h3>
+                        <img src="images/distant-reading-showcase-poster.jpg" alt="465 drama networks at a glance" height="480">
+                        <p><small>465 Figurennetzwerke aus 200 Jahren dt. Dramengeschichte auf einen Blick.<br>Präsentiert auf der DHd, 9. März 2016, Leipzig. – DOI: <a href="https://dx.doi.org/10.6084/m9.figshare.3101203.v1">10.6084/m9.figshare.3101203.v1</a>.</small></p>
+                    </section>
+
+                    <section>
+                        <h3>Detail 1</h3>
+                        <img src="images/poster-detail-1.jpg" alt="Poster-Detail Nr. 1" height="485">
+                        <p><small>Im Fokus: Goethes <i>Götz von Berlichingen</i> (1773).</small></p>
+                    </section>
+
+                    <section>
+                        <h3>Detail 2</h3>
+                        <img src="images/poster-detail-2.jpg" alt="Poster-Detail Nr. 2" height="485">
+                        <p><small>Im Fokus: Schnitzler <i>Reigen</i> (1902), vgl. <a href="https://twitter.com/gimsieke/status/707855735070322688">Gerrit Imsiekes Tweet</a>.</small></p>
+                    </section>
+
+                    <section>
+                        <h3>Detail 3</h3>
+                        <img src="images/poster-detail-3.jpg" alt="Poster-Detail Nr. 3" height="415">
+                        <p><small>Farblich hervorgehobene Autor_innen als chronologische Anhaltspunkte.</small></p>
+                    </section>
+
+                    <section>
+                        <h3>Déjà-vu 2: »Distant-Reading Showcase«</h3>
+                        <img src="images/distant-reading-showcase-poster.jpg" alt="465 drama networks at a glance" height="480">
+                        <p><small>465 Figurennetzwerke aus 200 Jahren dt. Dramengeschichte auf einen Blick.<br>Präsentiert auf der DHd, 9. März 2016, Leipzig. – DOI: <a href="https://dx.doi.org/10.6084/m9.figshare.3101203.v1">10.6084/m9.figshare.3101203.v1</a>.</small></p>
+                    </section>
+
+                    <section>
+                        <h3 style="font-size:1.1em;">Weekend Hack mit <a href="https://twitter.com/goebel_m">@goebel_m</a> und <a href="https://twitter.com/chris_kittel">@chris_kittel</a>: <a href="http://theatre-classique.fr/">theatre-classique.fr</a></h3>
+                        <img src="images/french-corpus-weekend-hack.jpg" alt="465 drama networks at a glance" height="480">
+                        <p><small>842 Figurennetzwerke aus 250 Jahren französischer Dramengeschichte auf einen Blick (extrahiert aus den TEI-Dateien des »Théâtre Classique«-Projekts, <a href="https://github.com/dramacode/theatre-classique">siehe GitHub</a>). Eingefärbt sind: Pierre Corneille, Molière, Racine, Crébillon, Voltaire, Euripide (negative Jahreszahlen). Demnächst mehr dazu.</small></p>
+                    </section>
+
+                </section>
+
+                <section>
+                    <h5>&#60;STRG+C&#62;</h5>
+                    <br><br>
+                    <h3>Danke schön!</h3>
+                    <br><br>
+                    <p style="font-size:0.7em;">Frank Fischer</p>
+                    <ul style="font-size:0.5em;">
+                            <li>E-Mail: ffischer@hse.ru</li>
+                            <li>Github: <a href="https://github.com/lehkost">lehkost</a></li>
+                            <li>Twitter: <a href="https://twitter.com/umblaetterer">@umblaetterer</a></li>
+                            <li>Blog 1: <a href="http://weltliteratur.net/">weltliteratur.net – A Black Market for the Digital Humanities</a></li>
+                            <li>Blog 2: <a href="https://dlina.github.io/">Network Analysis of Literary Texts</a></li>
+                    </ul>
+                    <br><br>
+                    <p style="text-align:right; font-size:0.5em;">(Präsentation mit <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a>.)</p>
+                </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
