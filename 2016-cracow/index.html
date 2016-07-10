@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <meta name="description" content="Digital Network Analysis of Dramatic Texts">
+        <meta name="author" content="Frank Fischer">
+        <meta name="author" content="Mathias Göbel">
+        <meta name="author" content="Dario Kampkaspar">
+        <meta name="author" content="Christopher Kittel">
+        <meta name="author" content="Peer Trilcke">
+
+        <title>Theatre Plays as 'Small Worlds'? (Slides) (2016-07-14)</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/league.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section style="font-size:0.8em;">
+                    <h2>Theatre Plays as 'Small Worlds'?</h2>
+                    <p><b>Network Data on the History and Typology of German Drama, 1730–1930</b></p>
+                    <br>
+                    <p>Peer Trilcke¹, Frank Fischer², Mathias Göbel³,<br>Dario Kampkaspar⁴, Christopher Kittel⁵</p>
+                    <ol style="font-size:0.6em;">
+                        <li>University of Potsdam</li>
+                        <li>Higher School of Economics, Moscow</li>
+                        <li>Göttingen State and University Library</li>
+                        <li>Herzog August Library, Wolfenbüttel</li>
+                        <li>University of Graz</li>
+                    </ol>
+                    <br><br>
+                    <p>These slides: <a href="https://dlina.github.io/presentations/2016-krakow/">https://dlina.github.io/presentations/2016-krakow/</a></p>
+                    <br>
+                    <p>Kraków, <a href="http://dh2016.adho.org/">#dh2016</a>  ·  July 14, 2016</p>
+                </section>
+                <section>
+                    <h2>TOC</h2>
+                    <ol>
+                        <li>Introduction</li>
+                        <li>Theatre Plays as 'Small Worlds'? – Idea</li>
+                        <li>Theatre Plays as 'Small Worlds'? – Study</li>
+                        <li>Outlook</li>
+                    </ol>
+                </section>
+
+
+                <section>
+                    <section>
+                        <h2>1. Introduction</h2>
+                    </section>
+
+                    <section>
+                        <h3>DLINA Working Group</h3>
+                        <br>
+                        <ul>
+                            <li style="font-size:0.8em;">DLINA = Digital LIterary Network Analysis</li>
+                            <li style="font-size:0.8em;">interinstitutional working group consisting of literary scholars and computer scientists</li>
+                            <li style="font-size:0.8em;">members: Frank Fischer, Dario Kampkaspar, Christopher Kittel, Mathias Göbel, Hanna-Lena Meiners, Peer Trilcke, Andreas Vogel</li>
+                            <li style="font-size:0.8em;">Documentation …
+                                <ul>
+                                    <li><a href="https://dlina.github.io">Blog</a></li>
+                                    <li><a href="https://github.com/dlina">DLINA on GitHub</a></li>
+                                    <li><a href="https://github.com/lehkost/dramavis">"dramavis" on GitHub</a></li>
+                                    <li>"Play(s)" <a href="https://github.com/mathias-goebel/mobile-plays">on GitHub</a>  ·  <a href="https://play.google.com/store/apps/details?id=com.phonegap.plays">on Google Play Store</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>DLINA Working Group</h3>
+                        <br>
+                        <ul>
+                            <li style="font-size:0.8em;"><b>main working corpus: "dlina Corpus 15.07"</b> (<a href="https://dlina.github.io/Introducing-DLINA-Corpus-15-07-Codename-Sydney/">see blog post for detailed description</a>)</li>
+                            <li style="font-size:0.8em;">based on <a href="https://textgridrep.org/">TextGrid Repository</a></li>
+                            <li style="font-size:0.8em;">comprises 465 German-language plays from 1731 to 1929</li>
+                            <li style="font-size:0.8em;">objective: automated, philologically curated extraction and analysis of network data from dramatic texts and their philological interpretation</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>DLINA Working Group</h3>
+                        <br>
+                        <ul>
+                            <li style="font-size:0.8em;">network data = interactions between characters
+                            <ul>
+                                <li>operationalisation of 'interaction': "Two characters interact with one another if they perform a speech act within the same segment of a drama (usually a 'scene')."</li>
+                            </ul>
+                            </li>
+                        </ul>
+                        <ul style="font-size:0.8em;">
+                            <li>more info on the automated extraction and analysis of network data:
+                                <ul>
+                                    <li>"Digital Network Analysis of Dramatic Texts" (our talk at DH2015, Sydney), <a href="https://dlina.github.io/presentations/2015-sydney/sydney.html#/">slides</a> and <a href="http://dlina.github.io/Our-Talk-at-DH2015/">transcription</a></li>
+                                    <li>blog posts on <a href="https://dlina.github.io/Introducing-Our-Zwischenformat/">our intermediary DLINA XML format</a>, on <a href="https://dlina.github.io/Editing-Rules/">editing rules</a>, on our all-in-one tool <a href="https://dlina.github.io/dramavis/">dramavis</a></li>
+                                </ul>
+                            </li>
+                            <li style="margin-top:30px;">main subject today: <b>How do we interpret literary network data?</b></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Moretti's Analysis of "Hamlet" (2011)</h3>
+                        <img src="images/moretti-hamlet.gif" alt="Network of Hamlet" height="500">
+                        <p><small>Source: <a href="https://newleftreview.org/II/68/franco-moretti-network-theory-plot-analysis">newleftreview.org</a></small></p>
+                    </section>
+
+                    <section>
+                        <h3>"Mapping Shakespeare’s Tragedies"</h3>
+                        <img src="images/grandjean-shakespeare-2015.png" alt="6 (out of 11) Shakespeare tragedies." height="445">
+                        <p><small>Martin Grandjean's network visualisation of 6 (out of 11) Shakespearean tragedies (Dec., 2015). Full poster and explanations <a href="http://www.martingrandjean.ch/network-visualization-shakespeare/">on Grandjean's website</a>, also cf. <a href="http://www.pbs.org/newshour/art/whos-the-real-main-character-in-shakespearen-tragedies-heres-what-the-data-say/">his interview on PBS.org</a>, April 22, 2016.</small></p>
+                    </section>
+
+                    <section>
+                        <h3>"Distant-Reading Showcase"</h3>
+                        <a href="https://dx.doi.org/10.6084/m9.figshare.3101203.v1"><img src="images/distant-reading-showcase-poster.jpg" alt="465 drama networks at a glance" height="480"></a>
+                        <p><small>"Distant-Reading Showcase", poster presented at #DHd2016 in Leipzig (March 9, 2016).<br>Download in full-res (28.88 MB) via Figshare. DOI: <a href="https://dx.doi.org/10.6084/m9.figshare.3101203.v1">10.6084/m9.figshare.3101203.v1</a>.</small></p>
+                    </section>
+
+                    <section>
+                        <p>So let's focus on …</p>
+                        <br>
+                        <p>… the heterogeneity of drama networks.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>2. Theatre Plays as 'Small Worlds'? – Idea</h2>
+                    </section>
+
+                    <section>
+                        <h3>Interpretation Scenarios</h3>
+                        <br>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td style="font-size:0.8em;text-align:center;">Historical</td>
+                                    <td style="font-size:0.8em;text-align:center;">Typological</td>
+                                </tr>
+                                <tr>
+                                    <td><div style="text-align:center;"><img alt="average degree per decade" src="images/2-4.average.degree.pro.dekade.png" width="400"></div></td>
+                                    <td><div style="text-align:center;"><img alt="two graphs" src="images/vier.graphen.png" width="400"></div></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:0.7em;text-align:center;">Cf. our blog post <br><a href="https://dlina.github.io/200-Years-of-Literary-Network-Data/">"200 Years of Literary Network Data"</a></td>
+                                    <td style="font-size:0.7em;text-align:center;">Current research: <br>types of drama networks</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section>
+                        <h3>Types of Drama Networks</h3>
+                        <br>
+                        <p style="font-size:0.8em;"><b>Background hypotheses:</b></p>
+                        <ul>
+                            <li style="font-size:0.8em;">Dramatic texts are context-sensitive aesthetic models of social formations, which means that …
+                                <ul>
+                                    <li style="font-size:0.8em;">… dramas represent social formations (e.g., nuclear family, royal court, 'society');</li>
+                                    <li style="font-size:0.8em;">… these social formations only exist in their aesthetic representation, as models;</li>
+                                    <li style="font-size:0.8em;">… these models are potentially context-sensitive and interact with real social formations.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Types of Drama Networks:<br>'Small World' Concept</h3>
+                        <br>
+                        <p style="font-size:0.8em;"><b>Approach (in reference to a particular branch of network theory):</b></p>
+                            <ul>
+                                <li style="font-size:0.8em;">"small-world networks" (started by Watts &amp; Strogatz 1998; cf. Watts 2004);
+                                    <ul>
+                                        <li style="font-size:0.8em;">"widespread in biological, social and man-made systems" (Watts &amp; Strogatz 1998, 442)</li>
+                                        <li style="font-size:0.8em;">"highly clustered, like regular lattices, yet have small characteristic path lengths, like random graphs" (Watts &amp; Strogatz 1998, 440)</li>
+                                    </ul>
+                                </li>
+                                <li style="font-size:0.8em;margin-top:15px;">already applied on dramatic texts (Shakespeare): Stiller, Nettle &amp; Dunbar 2003; Stiller &amp; Hudson 2005</li>
+                                <li style="font-size:0.8em;margin-top:15px;">we applied the concept on a much more diverse corpus by help of automatic extraction of network data</li>
+                            </ul>
+                    </section>
+
+                    <section>
+                        <h3>Types of Drama Networks:<br>'Small World' Concept</h3>
+                        <p style="font-size:0.8em;"><b>Detecting 'Small Worlds'</b></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td style="font-size:0.6em;text-align:center;">Regular</td>
+                                    <td style="font-size:0.6em;text-align:center;">'Small world'</td>
+                                    <td style="font-size:0.6em;text-align:center;">Random</td>
+                                </tr>
+                                <tr>
+                                    <td><div style="text-align:center;"><img alt="Regular" src="images/3-2.gotz.regular.png" width="220"></div></td>
+                                    <td><div style="text-align:center;"><img alt="Small World" src="images/3-2.gotz.empirisch.png" width="220"></div></td>
+                                    <td><div style="text-align:center;"><img alt="Random" src="images/3-2.gotz.random.png" width="220"></div></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:0.6em;text-align:center;"></td>
+                                    <td style="font-size:0.6em;text-align:center;"><b>Clustering Coefficient (C)</b></td>
+                                    <td style="font-size:0.6em;text-align:center;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:0.6em;text-align:center;">0,600</td>
+                                    <td style="font-size:0.6em;text-align:center;"><u><b>0,852</b></u></td>
+                                    <td style="font-size:0.6em;text-align:center;"><u><b>0,131</b></u></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:0.6em;text-align:center;"></td>
+                                    <td style="font-size:0.6em;text-align:center;"><b>Average Path Length (APL)</b></td>
+                                    <td style="font-size:0.6em;text-align:center;"></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:0.6em;text-align:center;">6,261</td>
+                                    <td style="font-size:0.6em;text-align:center;"><u><b>2,346</b></u></td>
+                                    <td style="font-size:0.6em;text-align:center;"><u><b>2,258</b></u></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section>
+                        <h3>Types of Drama Networks:<br>'Small World' Concept</h3>
+                        <br>
+                        <p style="font-size:0.8em;"><b>'Small world' networks, definition</b></p>
+                        <ul>
+                            <li style="font-size:0.8em;"><b>Criterion 1:</b> The clustering coefficient (C) of an observed network, in our case the character network of a dramatic text, is significantly higher than the C of a corresponding random network.</li>
+                            <li style="font-size:0.8em;"><b>Criterion 2:</b> The average path length (APL) of an observed network does not differ significantly from the APL of a corresponding random network.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Types of Drama Networks:<br>'Small World' Concept</h3>
+                        <p style="font-size:0.8em;"><b>(Additional) 3rd Criterion: 'Scale Free'</b></p>
+                            <ul style="margin-bottom:30px;">
+                                <li style="font-size:0.7em;">'Scale free' networks: variant of 'small world' networks (described by Albert &amp; Barabási 2002);</li>
+                                <li style="font-size:0.7em;">these networks exhibit a node-degree distribution following a power law</li>
+                            </ul>
+                        <img alt="NDD with power-law distribution" src="images/3-3.Node.Degree.Distribution.png" width="440">
+                    </section>
+
+                    <section>
+                        <h3>Types of Drama Networks:<br>'Small World' Concept</h3>
+                        <p style="font-size:0.8em;"><b>Overview of All Criteria (Indicators)</b></p>
+                        <ul>
+                            <li style="font-size:0.8em;"><b>Criterion 1:</b> The clustering coefficient (C) of an observed network, in our case the character network of a dramatic text, is significantly higher than the C of a corresponding random network.</li>
+                            <li style="font-size:0.8em;"><b>Criterion 2:</b> The average path length (APL) of an observed network does not differ significantly from the APL of a corresponding random network.</li>
+                        </ul>
+                        <ul style="margin-top:30px;">
+                            <li style="font-size:0.8em;margin-top:30px;"><b>Criterion 3 ('scale free'):</b> The node-degree distribution can be best described by a power-law regression.</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>3. Theatre Plays as 'Small Worlds'? – Study</h2>
+                    </section>
+
+                    <section>
+                        <h3>Criterion 1: Clustering Coefficient</h3>
+                        <br>
+                        <ul>
+                            <li style="font-size:0.8em;">The clustering coefficient (C) of an observed network, in our case the character network of a dramatic text, is significantly higher than the C of a corresponding random network.</li>
+                            <li style="font-size:0.8em;margin-top:30px;">Procedure
+                                <ul style="font-size:0.9em;">
+                                    <li>calculated 1,000 random networks for each individual drama network</li>
+                                    <li>calculated the mean value for random networks → Clustering Coefficient (C Random)</li>
+                                    <li>formed the quotient of C and C Random → Clustering Coefficient deviation (C Dev)</li>
+                                    <li style="color:orange;">identified all dramas, where <b>quotient was significantly higher</b> (i.e., bigger than Mean + 2 × SD)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Criterion 1: Clustering Coefficient</h3>
+                        <br>
+                        <img alt="after first round" src="images/3-5.1.23.Small-World-Kandidaten.png" height="440">
+                    </section>
+
+                    <section>
+                        <h3>Criterion 2: Average Path Length</h3>
+                        <br>
+                        <ul>
+                            <li style="font-size:0.8em;">The average path length (APL) of an observed network does not differ significantly from the APL of a corresponding random network.</li>
+                            <li style="font-size:0.8em;margin-top:30px;">Procedure
+                                <ul style="font-size:0.9em;">
+                                    <li>calculated 1,000 random networks for each individual drama network</li>
+                                    <li>calculated the mean value for random networks → Average Path Length (APL Random)</li>
+                                    <li>formed the quotient of APL and APL Random → Average Path Length Deviation (APL Dev)</li>
+                                    <li style="color:orange;">excluded all plays fulfilling criterion 1, <b>but exhibiting an average path length significantly different from that of the random network</b> (i.e., smaller than Mean – 2 × SD or bigger than Mean + 2 × SD, respectively)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Criterion 2: Average Path Length</h3>
+                        <br>
+                        <img alt="excluded in round 2" src="images/3-5.2b.Small-World-Kandidaten.-.ausgeschieden.in.2.Runde.png" height="440">
+                    </section>
+
+                    <section>
+                        <h3>Criterion 2: Average Path Length</h3>
+                        <br>
+                        <img alt="after second round" src="images/3-5.3.17.Small-World-Kandidaten.png" height="440">
+                    </section>
+
+                    <section>
+                        <h3>Intermediate Result</h3>
+                        <p style="font-size:0.7em;"><b>Dramas left after application of criteria 1 &amp; 2:</b></p>
+                        <table style="font-size:0.5em;">
+                            <tbody>
+                                <tr> <th><b>Title</b></th> <th><b>Author</b></th> <th><b>Year</b></th></tr>
+                                <tr> <td>Götz</td> <td>Goethe</td> <td>1773</td></tr>
+                                <tr> <td>Doktor Faust</td> <td>Soden</td> <td>1797</td></tr>
+                                <tr> <td>Prinz Zerbino</td> <td>Tieck</td> <td>1799</td></tr>
+                                <tr> <td>Die Jungfrau von Orleans</td> <td>Schiller</td> <td>1801</td></tr>
+                                <tr> <td>Die Hermannsschlacht</td> <td>Kleist</td> <td>1808</td></tr>
+                                <tr> <td>Halle</td> <td>Arnim</td> <td>1811</td></tr>
+                                <tr> <td>Jerusalem</td> <td>Arnim</td> <td>1811</td></tr>
+                                <tr> <td>Der Eheteufel</td> <td>Gleich</td> <td>1812</td></tr>
+                                <tr> <td>Faust</td> <td>Voß</td> <td>1823</td></tr>
+                                <tr> <td>Der Barometermacher</td> <td>Raimund</td> <td>1823</td></tr>
+                                <tr> <td>Die unheilbringende Zauberkrone</td> <td>Raimund</td> <td>1829</td></tr>
+                                <tr> <td>Die Walpurgisnacht</td> <td>Birch-Pfeiffer</td> <td>1830</td></tr>
+                                <tr> <td>Der böse Geist</td> <td>Nestroy</td> <td>1833</td></tr>
+                                <tr> <td>Andreas Hofer</td> <td>Immermann</td> <td>1835</td></tr>
+                                <tr> <td>Faust</td> <td>Vischer</td> <td>1862</td></tr>
+                                <tr> <td>Nero</td> <td>Panizza</td> <td>1898</td></tr>
+                                <tr> <td>Faust</td> <td>Avenarius</td> <td>1919</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section>
+                        <h3>Criterion 3: Power-Law Distribution</h3>
+                        <ul>
+                            <li style="font-size:0.8em;">The node-degree distribution can be best described by a power-law regression.</li>
+                            <li style="font-size:0.8em;margin-top:30px;">Procedure
+                                <ul style="font-size:0.9em;">
+                                    <li>calculated node-degree distribution per drama</li>
+                                    <li>calculated coefficients of determination (R²) for several regressions (linear, quadratic, exponential, logarithmic, power law)</li>
+                                    <li style="color:orange;">excluded all dramas fulfilling criteria 1 &amp; 2, but failing to meet criterion 3 (i.e., <b>no power-law regression</b>)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Criterion 3: Power-Law Distribution</h3>
+                        <br>
+                        <img alt="excluded in round 3" src="images/3-5.4.ausgeschieden.in.3.Runde.png" height="440">
+                    </section>
+
+                    <section>
+                        <h3>Criterion 3: Power-Law Distribution</h3>
+                        <br>
+                        <img alt="left after round 3" src="images/3-5.5.5.Scale.Free.Dramen.png" height="440">
+                    </section>
+
+                    <section>
+                        <h3>Final Result</h3>
+                        <br>
+                        <p style="font-size:0.8em;">Five dramas meeting criteria 1, 2 &amp; 3:</p>
+                        <table style="font-size:0.7em;margin-top:60px;">
+                            <tbody>
+                                <tr> <th><b>Title</b></th> <th><b>Author</b></th> <th><b>Year</b></th></tr>
+                                <tr> <td>Götz</td> <td>Goethe</td> <td>1773</td></tr>
+                                <tr> <td>Doktor Faust</td> <td>Soden</td> <td>1797</td></tr>
+                                <tr> <td>Jerusalem</td> <td>Arnim</td> <td>1811</td></tr>
+                                <tr> <td>Der Barometermacher</td> <td>Raimund</td> <td>1823</td></tr>
+                                <tr> <td>Der böse Geist</td> <td>Nestroy</td> <td>1833</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section>
+                        <h3>Discussion</h3>
+                        <br>
+                        <p style="font-size:0.9em;"><b>Three (of many) questions:</b></p>
+                        <br>
+                        <ul>
+                            <li style="font-size:0.9em;">1. What does it mean to assign the 'small world' status to a dramatic text?</li>
+                            <li style="font-size:0.9em;">2. If 'small world' dramas are a deviation, a rare species: What, then, is the norm?</li>
+                            <li style="font-size:0.9em;">3. In addition to 'small world' dramas: are there other kinds of structural "deviations"?</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>1. "Theatre Plays as 'Small Worlds'",<br>What Does That Mean?</h2>
+                    </section>
+
+                    <section>
+                        <h3>1. "Theatre Plays as 'Small Worlds'",<br>What Does That Mean?</h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><div style="text-align:center;"><img alt="Götz, 1" src="images/3-6.1a.gotz.-.central.selected.png" height="300"></div></td>
+                                    <td><div style="text-align:center;"><img alt="Götz, 2" src="images/3-6.1b.gotz.-.cliquen.selected.png" height="300"></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="font-size:0.8em;"><b>Central character(s) and formation of cliques</b><br>(Goethe, "Götz")</p>
+                    </section>
+
+                    <section>
+                        <h3>1. "Theatre Plays as 'Small Worlds'",<br>What Does That Mean?</h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td style="font-size:0.45em;text-align:left;">Arnim, "Jerusalem"</td>
+                                    <td style="font-size:0.45em;text-align:right;">Raimund, "Der Barometermacher"</td>
+                                </tr>
+                                <tr>
+                                    <td><div style="text-align:left;"><img alt="Jerusalem" src="images/3-6.2.jerusalem.png" height="180"></div></td>
+                                    <td><div style="text-align:right;"><img alt="Der Barometermacher" src="images/3-6.5.der.barometermacher.png" height="180"></div></td>
+                                </tr>
+                                <tr>
+                                    <td><div style="text-align:left;"><img alt="Dokotor Faustus" src="images/3-6.4.doktor.faust.png" height="180"></div></td>
+                                    <td><div style="text-align:right;"><img alt="Der böse Geist" src="images/3-6.3.der.bose.geist.png" height="180"></div></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:0.45em;text-align:left;">Soden, "Doktor Faustus"</td>
+                                    <td style="font-size:0.45em;text-align:right;">Nestroy, "Der böse Geist"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                     </section>
+
+                     <section>
+                        <h2>2. What is the 'norm'?</h2>
+                    </section>
+
+                    <section>
+                        <h2>2. What is the 'norm'?</h2>
+                        <p style="font-size:0.8em;"><b>'Deviation': power-law distribution in "Götz" (example)</b></p>
+                        <img alt="node-degree distribution in Goethes 'Götz" height="380" src="images/3-7.1.goethe.gotz.-.ndd.png">
+                        <br>
+                        <p style="font-size:0.7em;">plenty of "lower" characters – few "average" characters – very few "upper" characters</p>
+                    </section>
+
+                    <section>
+                        <h2>2. What is the 'norm'?</h2>
+                        <br>
+                        <p style="font-size:0.8em;"><b>Usually ('norm'ally) we see other kinds of distributions:</b></p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><div style="text-align:left;"><img alt="Hebbel, Maria Magdalene" src="images/3-7.2a.hebbel.maria.magdalene.-.ndd.png" height="250"></div></td>
+                                    <td><div style="text-align:right;"><img alt="Schiller, Die Räuber" src="images/3-7.2b.schiller.die.rauber.-.ndd.png" height="250"></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="font-size:0.7em;">plenty of "average" characters</p>
+                    </section>
+
+                    <section>
+                        <h2>3. Other kinds of structural "deviations"?</h2>
+                    </section>
+
+                    <section>
+                        <h3>3. Other kinds of structural "deviations"?</h3>
+                        <br>
+                        <p style="font-size:0.8em;"><b>E.g., reversed power-law regression:</b></p>
+                        <img alt="NDD of Mühsam's play 'Judas'" src="images/3-7.3.muhsam.judas.-.ndd.png" height="300">
+                    </section>
+
+                    <section>
+                        <h3>3. Other kinds of structural "deviations"?</h3>
+                        <br>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td style="font-size:0.6em;text-align:left;">Goethe, "Götz"<br><b>Drama of the "great individual"</b> </td>
+                                    <td style="font-size:0.6em;text-align:right;">Mühsam, "Judas"<br><b>Drama of the crowds</b></td>
+                                </tr>
+                                <tr>
+                                    <td><div style="text-align:left;"><img alt="Götz, spring" src="images/3-7.4a.goethe.gotz.spring.png" height="250"></div></td>
+                                    <td><div style="text-align:right;"><img alt="Mühsam, spring" src="images/3-7.4.muhsam.judas.spring.png" height="250"></div></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:0.7em;text-align:left;"><b>Aristocratic model?</b></td>
+                                    <td style="font-size:0.7em;text-align:right;"><b>Communist model?</b></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>4. Outlook</h2>
+                    </section>
+
+                    <section>
+                        <h3>More Detailed Data Extraction</h3>
+                        <br>
+                        <ul style="font-size:0.8em;">
+                            <li>Finer granulation of types of interaction
+                                <ul>
+                                    <li>detection of individual entrances and exits of characters for more philologically exact interpretations</li>
+                                </ul>
+                            </li>
+                            <li style="margin-top:30px;">Quantitative and qualitative enrichment of character and relation data
+                                <ul>
+                                    <li>quantitative attributes (how much does a character actually say?) → data already extracted</li>
+                                    <li>quantitative interactional attributes (how often do characters interact?) → data already extracted</li>
+                                    <li>qualitative character attributes (gender, social status) → enrichment via <a href="https://play.google.com/store/apps/details?id=com.phonegap.plays">"Play(s)"</a> crowdsourcing app for Android</li>
+                                    <li>qualitative interactional attributes (kinship) → planned</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Corpus and Workflow Optimisation</h3>
+                        <br>
+                        <ul>
+                            <li style="font-size:0.8em;">DLINA tools
+                                <ul>
+                                    <li>further development of all-in-one Python pipeline <a href="https://github.com/lehkost/dramavis">"dramavis"</a>: input of TEI file, DLINA XML format or structured network data (CSV) → output: graph visualisations, network and character values, random-graph values</li>
+                                    <li>GUI and online platform</li>
+                                    <li>social-editing app <a href="https://play.google.com/store/apps/details?id=com.phonegap.plays">"Play(s)"</a> currenty in beta</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4 style="font-size:1.1em;">New Corpora, e.g.: "Theatre classique", 842 French Plays</h4>
+                        <img src="images/french-corpus-weekend-hack.jpg" alt="465 drama networks at a glance" height="440">
+                        <p style="font-size:0.55em;">842 character networks from 250 years of French drama history at a glance (extracted from TEI-encoded files of the "Théâtre Classique" project, <a href="https://github.com/dramacode/theatre-classique">see GitHub</a>). Highlighted authors: Pierre Corneille, Molière, Racine, Crébillon, Voltaire, Euripides (negative year numbers). Result of a <a href="https://twitter.com/umblaetterer/status/748097787678625792">w33k3nd h4ck</a> with <a href="https://twitter.com/goebel_m">@goebel_m</a> & <a href="https://twitter.com/chris_kittel">@chris_kittel</a>.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Bibliography</h3>
+                        <br>
+                        <ul style="font-size:0.6em;">
+                            <li>Réka Albert, Albert-László Barabási: Statistical Mechanics of Complex Networks, in: Reviews of Modern Physics 74 (2002), 47–97.</li>
+                            <li>Albert Lászlo Barabási, Eric Bonabeau: Scale Free Networks, in: Scientific American 288 (2003), 50–59.</li>
+                            <li>Frank Fischer, Mathias Göbel, Dario Kampkaspar, Peer Trilcke: [Blog] Network Analysis of Dramatic Texts, URL: <a href="http://lina.digital">http://lina.digital</a>.</li>
+                            <li>Franco Moretti: <a href="http://litlab.stanford.edu/LiteraryLabPamphlet2.pdf">Network Theory, Plot Analysis</a>, in: Stanford Literary Lab Pamphlets, No. 2 (May 1, 2011).</li>
+                            <li>James Stiller, Daniel Nettle, Robin I. M. Dunbar: The Small World of Shakespeare's Plays, in: Human Nature 14 (2003), 397–408.</li>
+                            <li>James Stiller, Matthew Hudson: Weak Links and Scene Cliques Within the Small World of Shakespeare, in: Journal of Cultural and Evolutionary Psychology 3 (2005), 57–73.</li>
+                            <li>Peer Trilcke: Social Network Analysis (SNA) als Methode einer textempirischen Literaturwissenschaft, in: Philip Ajouri, Katja Mellmann, Christoph Rauen (eds.): Empirie in der Literaturwissenschaft, Münster 2013, 201–247.</li>
+                            <li>Duncan J. Watts, Steven H. Strogatz: Collective Dynamics of 'Small World' Networks, in: Nature 393 (1998), 440–442.</li>
+                            <li>Duncan J. Watts: Six Degrees. The Science of a Connected Age, New York 2003.</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section style="font-size:0.7em;">
+                        <h2>Infos &amp; Updates</h2>
+                        <br>
+                        <p>These slides: <a href="https://dlina.github.io/presentations/2016-krakow/">https://dlina.github.io/presentations/2016-krakow/</a></p>
+                        <p>DLINA Blog: <a href="http://lina.digital">http://lina.digital</a></p>
+                        <p>DLINA data on Github: <a href="https://github.com/dlina">https://github.com/dlina</a></p>
+                        <p>"dramavis" on Github: <a href="https://github.com/lehkost/dramavis">https://github.com/lehkost/dramavis</a></p>
+                        <p>"Play(s)" on Github: <a href="https://github.com/mathias-goebel/mobile-plays">https://github.com/mathias-goebel/mobile-plays</a></p>
+                        <br>
+                        <ul style="list-style:none;"><li>Twitter:
+                            <ul>
+                                <li><a href="https://twitter.com/search?f=tweets&vertical=default&q=%23dlina&src=typd">#dlina</a></li>
+                                <li>Frank Fischer (<a href="https://twitter.com/umblaetterer">@umblaetterer</a>)</li>
+                                <li>Mathias Göbel (<a href="https://twitter.com/goebel_m">@goebel_m</a>)</li>
+                                <li>Christopher Kittel (<a href="https://twitter.com/chris_kittel">@chris_kittel</a>)</li>
+                                <li>Peer Trilcke (<a href="https://twitter.com/peertrilcke">@peertrilcke</a>)</li>
+                            </ul></li>
+                        </ul>
+                        <p style="text-align:right; font-size:0.5em;">(Presentation done with <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a> in Sublime Text 3 on Fedora 24.)</p>
+                    </section>
+                </section>
+
+
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
