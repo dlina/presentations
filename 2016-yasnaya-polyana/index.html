@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="robots" content="noindex, nofollow">
+
+		<title>Анализ социальных сетей в драматическиз текстах</title><!--Теория сетей в драматическиз текстах -->
+
+		<link rel="stylesheet" href="../lib/reveal/css/reveal.css">
+		<link rel="stylesheet" href="../lib/reveal/css/theme/sky.css">
+
+        <!-- adjustments regarding sky.css -->
+        <link rel="stylesheet" href="custom.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="../lib/reveal/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal/css/print/pdf.css' : '../lib/reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                    <h2>Анализ социальных сетей в драматических текстах</h2>
+                    <br>
+                    <p>Франк Фишер  ·  Даниил Скоринкин</p>
+                    <p style="font-size:0.6em;">Школа лингвистики</p>
+                    <p style="font-size:0.5em;">Национальный исследовательский университет Высшая школа экономики  ·  Москва</p>
+                    <br>
+                    <ul style="font-size:0.5em;">
+					   <li>E-mails: ffischer@hse.ru, daskorinkin@edu.hse.ru</li>
+					   <li>Github: <a href="https://github.com/lehkost">lehkost</a>, <a href="https://github.com/danilsko">danilsko</a></li>
+					   <li>Twitter: <a href="https://twitter.com/umblaetterer">@umblaetterer</a>, n/a</li>
+					   <li>Блог (Network Analysis of Dramatic Texts): <a href="http://lina.digital/">lina.digital</a></li>
+					</ul>
+                    <br>
+		            <p style="font-size:0.85em;">Московско-тартуская летняя школа  ·  5 июля, 2016</p>
+				</section>
+
+				<section>
+            		<h2>План презентации</h2>
+                    <br>
+    				<ol>
+    					<li>Что</li>
+    					<li>Зачем</li>
+    					<li>Как</li>
+    				</ol>
+				</section>
+
+				<section>
+					<section>
+						<h2>1. Что</h2>
+					</section>
+
+                	<section>
+                        <h3>Анализ социальных сетей …</h3>
+                        <br>
+                        <blockquote>"… представляет собой исследование социальных сетей, рассматривающее социальные отношения в терминах теории сетей." (<a href="https://ru.wikipedia.org/wiki/Анализ_социальных_сетей">ru.wikipedia.org</a>)</blockquote>
+                    </section>
+
+                    <section>
+                        <h3>Теория сетей …</h3>
+                        <br>
+                        <blockquote>"… изучает графы связей между дискретными объектами." (<a href="https://en.wikipedia.org/wiki/Network_theory">en.wikipedia.org</a>, наш перевод)</blockquote>
+                    </section>
+
+                    <section>
+                        <h3>Пример небольшой сети из <br>8 вершин (узлов) и 10 ребер:</h3>
+                        <br>
+                        <img src="images/Small_Network_(from_Commons).png" alt="simple network" height="266">
+                        <p><small>(Источник: <a href="https://commons.wikimedia.org/wiki/File:Small_Network.png">Wikimedia Commons</a>)</small></p>
+                    </section>
+
+                    <section>
+                        <h3>Сеть литературного влияния (Английская Википедия)</h3>
+                        <img src="images/gephi_graph_influence_filter.png" alt="writers, influence graph" height="477">
+                        <p style="font-size:0.55em;">Писатель A связан с писателем B, если статья о писателе А содержит ссылку на статью B. Размер узла и подписи пропорциональны важности узла, расчитанную по алгоритму <a href="https://ru.wikipedia.org/wiki/PageRank">PageRank</a>.</p>
+                    </section>
+
+                    <section>
+                    <h3>История анализа соицальных сетей</h3>
+                        <br>
+                        <ul style="font-size:0.8em;">
+                            <li>Анализ социальных сетей возник в 1930-е как подход в социальных науках</li>
+                            <li>'Гарвардский прорыв' 1960-х: социологи, математики и программисты разрабатыватют структурно-аналитический подход к социальным феноменам</li>
+                            <li>В 1990-е развитие Интернета, а также новые достижения физики и биоинформатики открывают новые перспективы для анализа социальных сетей; в 2000-е анализом социальных сетей занялись литературоведы</li>
+                            <li>См. P. Trilcke: <i>Social Network Analysis (SNA) als Methode einer textempirischen Literaturwissenschaft</i>. В: P. Ajouri, K. Mellmann, C. Rauen (ред.): <i>Empirie in der Literaturwissenschaft</i>. Münster, 2013, стр. 201–247.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Анализ социальной сети "Гамлета" (Ф. Моретти, 2011)</h3>
+                        <img src="images/moretti-hamlet.gif" alt="Network of Hamlet" height="500">
+                        <p><small>(Источник: <a href="https://newleftreview.org/II/68/franco-moretti-network-theory-plot-analysis">newleftreview.org</a>)</small></p>
+                    </section>
+
+                    <section>
+                    <h3>"Удаленное" чтение (1/2)</h3>
+                    <br>
+                    <p style="text-align:left;font-size:0.95em;">"[…] если вы хотите исследовать что-то кроме канона […], обычное ('близкое') чтение не подойдет. Оно просто не предназначено для этого, оно предназначено для противоположного. […] мы умеем читать тексты, теперь давайте научимся не читать их. 'Удаленное' чтение: удаление от текста […] становится необходимым для понимания […]."</p>
+                    <p style="text-align:left;"><small>Franco Moretti: <i>Conjectures on World Literature</i>. B: <i>New Left Review</i> 1 (2000). (Наш перевод.)</small></p>
+                    </section>
+
+                    <section>
+                    <h3>"Удаленное" чтение (2/2)</h3>
+                        <br>
+                        <h6 style="text-align:left;">Арно Шмидт (1914–1979) об ограничениях обычного чтения:</h6>
+                        <p style="text-align:left;">"Жизнь так коротока! Даже если вы книжный червь и за 5 дней можете прочитать книгу дважды, вы едва ли прочитаете больше 70 в год. За 45 лет чтения (с 15 до 60 лет) это даст вам всего 3150 книг, и их нужно выбирать с умом!"</p>
+                        <p style="text-align:left;"><small>Arno Schmidt: <i>Ich bin erst sechzig</i> (1955). В: Bargfelder Ausgabe, Werkgruppe I, Vol. 4. Zürich, 1987, стр. 30. (Наш перевод.)</small></p>
+                    </section>
+
+                    <section>
+                        <h3>"Визуализируя трагедии Шекспира"</h3>
+                        <img src="images/grandjean-shakespeare-2015.png" alt="6 (out of 11) Shakespeare tragedies." height="445">
+                        <p style="font-size:0.5em;">Мартен Гранжан, Визуализация соцсетей (6 из 11) в трагедиях Шекспира (Декабрь 2015). Полная версия постера с комментариями <a href="http://www.martingrandjean.ch/network-visualization-shakespeare/">доступна на сайте автора</a>. Информация извлечена вручную (см. <a href="http://www.pbs.org/newshour/art/whos-the-real-main-character-in-shakespearen-tragedies-heres-what-the-data-say/">интревью автора на PBS.org, Апрель 22, 2016</a>), такой подход не позволяет осуществлять "удаленное" чтение.</p>
+                    </section>
+
+                    <section>
+                        <h3>Пример "удаленного" чтения</h3>
+                        <img src="images/distant-reading-showcase-poster.jpg" alt="465 drama networks at a glance" height="480">
+                        <p style="font-size:0.5em;">Ф. Фишер, М. Гёбель, Д. Кампкаспар, Х. Киттель, Х.-Л. Майнерс, П. Трильке, А. Фогель, Соцсети героев 465 пьес в одной картинке. Постер был представлен на DHd2016. DOI: <a href="https://dx.doi.org/10.6084/m9.figshare.3101203.v1">10.6084/m9.figshare.3101203.v1</a>.</p>
+                    </section>
+
+                    <section>
+                        <h3>Фрагмент постера #1</h3>
+                        <img src="images/poster-detail-1.jpg" alt="Poster detail no. 1" height="485">
+                        <p><small>Посмотрим на пьесу Гёте "Гёц фон Берлихинген" (1773).</small></p>
+                    </section>
+
+                    <section>
+                        <h3>Фрагмент постера #2</h3>
+                        <img src="images/poster-detail-2.jpg" alt="Poster detail no. 2" height="485">
+                        <p><small>Посмотрим на пьесу Артура Шницлера "Хоровод" (1902).</small></p>
+                    </section>
+
+                    <section>
+                        <h3>Фрагмент постера #3</h3>
+                        <img src="images/poster-detail-3.jpg" alt="Poster detail no. 3" height="415">
+                        <p><small>Часть авторов размечена цветами для отображения <br>хронологической последовательности.</small></p>
+                    </section>
+
+                    <section>
+                        <h3>Пример "удаленного" чтения (Déjà-vu)</h3>
+                        <img src="images/distant-reading-showcase-poster.jpg" alt="465 drama networks at a glance" height="480">
+                        <p style="font-size:0.5em;">Ф. Фишер, М. Гёбель, Д. Кампкаспар, Х. Киттель, Х.-Л. Майнерс, П. Трильке, А. Фогель, Соцсети героев 465 пьес в одной картинке. Постер был представлен на DHd2016. DOI: <a href="https://dx.doi.org/10.6084/m9.figshare.3101203.v1">10.6084/m9.figshare.3101203.v1</a>.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>2. Зачем</h2>
+                    </section>
+
+                    <section>
+                        <h3>Визуализация и анализ (1/4)</h3>
+                        <p>Пример: <a href="https://dlina.github.io/88/">"Эмилия Галотти"</a> Лессинга (1772)</p>
+							<img width="275" alt="Analysis, thumbnail 1" src="images/lina_output_network.png">
+							<img width="275" alt="Analysis, thumbnail 2" src="images/lina_output_matrix.png">
+							<img width="275" alt="Analysis, thumbnail 3" src="images/lina_output_amounts.png">
+							<img width="275" alt="Analysis, thumbnail 4" src="images/lina_output_zwischenformat.png">
+                    </section>
+                    <section>
+                        <h3>Визуализация и анализ (2/4)</h3>
+                        <p style="font-size:0.75em;">Интермедия: Главные болтуны немецкой литературы</p>
+						<a href="https://dlina.github.io/The-Biggest-Chatterbox-in-German-Literature/"><img alt="List of most talkative characters in German theatre plays" src="images/top-10-chatterboxes.png"></a>
+                        <p><small>См. <a href="https://dlina.github.io/The-Biggest-Chatterbox-in-German-Literature/">соответствующую запись</a> в блоге DLINA.</small></p>
+                    </section>
+                    <section>
+                        <h3>Визуализация и анализ (3/4)</h3>
+                        <p>Размер сети (средний) по десятилетиям (1730–1930):</p>
+						<img alt="Network size (median) by decade" src="images/network-size-median-by-decade.png">
+                        <p><small>См. запись <a href="https://dlina.github.io/200-Years-of-Literary-Network-Data/">"200 Years of Literary Network Data"</a> в блоге DLINA.</small></p>
+                    </section>
+                    <section>
+                        <h3>Визуализация и анализ (4/4)</h3>
+                        <p style="font-size:0.8em;">Плотность сети (средняя) для разных жанров (три века):</p>
+						<img alt="Network density (mean) by genre and century" src="images/network-density-mean-by-genre-and-century.png">
+                        <p><small>См. запись <a href="https://dlina.github.io/Network-Values-by-Genre/">"Comedy vs. Tragedy: Network Values by Genre"</a> в блоге DLINA.</small></p>
+                    </section>
+				</section>
+
+                <section>
+                    <section>
+                        <h2>3. Как</h2>
+                    </section>
+
+                    <section>
+                        <h3>dramavis (Киттель/Фишер 2014–2016)</h3>
+                        <br>
+                        <ul>
+                            <li>Python 3, библиотека NetworkX для анализа сетей</li>
+                            <li>Принимает на вход XML (специальный промежуточный формат DLINA, есть конвертер для перевода TEI в формат DLINA)</li>
+                            <li>Выдает "суперпостер" (см. слайды выше) в SVG и соцсети в других форматах</li>
+                            <li>Производит подсчет статистики на графе, конвертирует входной XML в CSV (для загрузки в Gephi или Cytoscape)</li>
+                            <li>Исходный код: <a href="https://github.com/lehkost/dramavis">github.com/lehkost/dramavis</a></li>
+                        </ul>
+                    </section>
+
+					<section>
+					<h3>От цифр к смыслу</h3>
+	                	<br>
+	                	<p style="font-size:0.95em;text-align:left;">"Основная методологическая проблема digital humanities предельно ясна: как перейти от цифр к смыслу? Исследуемые объекты, получаемые данные, методы анализа — все они количественные. Не ясно, как перейти от этих объектов и данных к качественным выводам о литературе, искусстве, явлениях культуры."</p>
+	               		<p style="text-align:left;"><small>Ryan Heuser / Long Le-Khac: <i>A Quantitative Literary History of 2,958 Nineteenth-Century British Novels: The Semantic Cohort Method</i>. (= Pamphlets of the Stanford Literary Lab, N° 4.) May, 2012, стр. 46. (Наш перевод.)</small></p>
+					</section>
+
+					<section>
+					<h3>Недавно опубликованное:</h3>
+						<br>
+						<ul style="font-size:0.9em;">
+							<li>Peer Trilcke / Frank Fischer: <i>Distant Reading With Foucault? Thoughts on the Practice of Distant Reading and on the Operationalisation of Discourse Analysis.</i> In: Foucault-Blog, 26 April 2016. DOI: <a href="http://dx.doi.org/10.13095/uzh.fsw.fb.141">10.13095/uzh.fsw.fb.141</a>.</li>
+							<li>Выжимка на английском: <a href="http://weltliteratur.net/Distant-Reading-with-Foucault/">weltliteratur.net/Distant-Reading-with-Foucault/</a></li>
+						</ul>
+					</section>
+
+                    <section>
+                    <h3>15 канонических текстов для мастер-класса</h3>
+                        <br>
+                        <ol style="font-size:0.7em;">
+                            <li>Фонвизин, "Недоросль" (1782)</li>
+                            <li>Грибоедов, "Горе от ума" (1825)</li>
+                            <li>Пушкин, "Борис Годунов" (1825)</li>
+                            <li>Гоголь, "Ревизор" (1836)</li>
+                            <li>Гоголь, "Женитьба" (1842)</li>
+                            <li>Островский, "Свои люди – сочтемся" (1850)</li>
+                            <li>Островский, "Гроза" (1859)</li>
+                            <li>Алексей Толстой, "Смерть Иоанна Грозного" (1866)</li>
+                            <li>Сухово-Кобылин, "Дело" (или: "Смерть Тарелкина") (1869)</li>
+                            <li>Островский, "Бесприданница" (1879)</li>
+                            <li>Лев Толстой, "Власть тьмы" (1887)</li>
+                            <li>Чехов, "Чайка" (1896)</li>
+                            <li>Чехов, "Дядя Ваня" (1897)</li>
+                            <li>Лев Толстой, "Живой труп" (1900)</li>
+                            <li>Чехов, "Вишневый сад" (1904)</li>
+                        </ol>
+                    </section>
+
+                    <section>
+                        <h3>Формализация взаимодействия героев</h3>
+                        <br>
+                        <pre><code class="hljs" data-trim contenteditable>
+Source,Target,Weight
+Барыня,Варвара,2
+Барыня,Кабанов,1
+Барыня,Кабанова,1
+Барыня,Катерина,2
+Борис,Варвара,4
+Борис,Глаша,1
+Борис,Дикой,1
+Борис,Женщина,1
+Борис,Кабанов,1
+Борис,Кабанова,1
+Борис,Катерина,3
+Борис,Кудряш,4
+Борис,Кулигин,3
+Борис,Первый,1
+Борис,Феклуша,1
+...
+                        </code></pre>
+                        <p style="font-size:0.5em;">"Гроза" Островского, контакты между героями в виде CSV (comma-separated values) таблицы.</p>
+                    </section>
+
+                    <section>
+                        <h3>Островский, "Гроза"</h3>
+                        <img alt="Network graph for Groza" src="images/rusplay-groza.png" height="500">
+                        <p><small>Легко выделить центральную часть сети.</small></p>
+                    </section>
+
+<!--
+                    <section>
+                        <h3>Griboyedov, Gore ot uma</h3>
+                        <img alt="Network graph for Gore ot uma" src="images/rusplay-gore-ot-uma.png" height="500">
+                        <p><small>Easy to spot the core of the network_.</small></p>
+                    </section>
+-->
+
+                    <section>
+                        <h3>Пушкин, "Борис Годунов"</h3>
+                        <img alt="Network graph for Boris Godunov" src="images/rusplay-boris-godunov.png" height="500">
+                        <p><small>Обратите внимание на Гаврилу Пушкина.</small></p>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+
+### Character values for "Boris Godunov"
+
+<br>
+
+| Персонаж                       | Степень | Центральность по посредничеству | Средняя удаленность | Центральность по близости |
+|--------------------------------|---------|---------------------------------|---------------------|---------------------------|
+| Григорий Отрепьев (Самозванец) | 18      | 537.0                           | 16.61               | 0.06                      |
+| Феодор                         | 17      | 276.28                          | 16.47               | 0.06                      |
+| Ксения                         | 15      | 187.81                          | 16.51               | 0.06                      |
+| **Народ**                      | 11      | 606.93                          | 16.39               | 0.06                      |
+| Гаврила Пушкин                 | 11      | **976.12**                      | 16.14               | 0.06                      |
+| Басманов                       | 11      | 862.69                          | 16.1                | 0.06                      |
+| Борис (Царь)                   | 11      | 484.57                          | 16.27               | 0.06                      |
+| Шуйский                        | 10      | 282.14                          | 16.35               | 0.06                      |
+
+<br>
+
+<p style="font-size:0.5em;">Два наблюдения: **1.** Высокая центральность по посредничеству (betweenness centrality) Г. Пушкина (при сравнительно небольшой степени узла) указывает на его важность в качестве промежуточного звена, посредника. – **2.** Неразделимые группы, такие как "народ", важны в структуре сети ("Народ безмолвствует.")</p>
+
+                        </script>
+                    </section>
+
+                    <section>
+                        <h3>Гоголь, "Ревизор"</h3>
+                        <img alt="Network graph for Revizor" src="images/rusplay-revizor.png" height="500">
+                        <p><small>Обратите внимание на Осипа.</small></p>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+
+### Сравнение 4 русских пьес
+
+<br>
+
+| Пьеса                 | Кол-во персонажей | Макс. степень узла | Средняя степень | Плотность | Средняя длина пути |
+|-----------------------|-------------------|--------------------|-----------------|-----------|--------------------|
+| Борис Годунов (1825)  | 80                | 18                 | 5.37            | 0.07      | 3.4                |
+| Горе от ума (1825)    | 29                | 19                 | 9.45            | 0.34      | 1.94               |
+| Ревизор (1836)        | 26                | 23                 | 11.0            | 0.44      | 1.62               |
+| Гроза (1859)          | 19                | 16                 | 8.21            | 0.46      | 1.57               |
+
+<br>
+
+<small>Эти цифры не позволяют нам сказать ничего определенного, кроме того что "Борис Годунов" является пьесой для чтения. Нужно гораздо больше данных, чтобы отслеживать значимые изменения в динамике.</small>
+
+                        </script>
+                    </section>
+
+                    <section>
+                        <h3>"Théâtre classique", 842 французские пьесы</h3>
+                        <img src="images/french-corpus-weekend-hack.jpg" alt="465 drama networks at a glance" height="440">
+                        <p><small>842 соцсети героев; 250 лет французской драматургии в одной картинке (извлечено из TEI документов проекта "Théâtre Classique", <a href="https://github.com/dramacode/theatre-classique">см. GitHub</a>). Цветом выделены: Пьер Корнель, Мольер, Расин, Кребийон, Вольтер, Еврипид (обратная нумерация дат до н.э.). Результат воскресного "хакатона" (<a href="https://twitter.com/goebel_m">@goebel_m</a> + <a href="https://twitter.com/chris_kittel">@chris_kittel</a> + <a href="https://twitter.com/umblaetterer">@umblaetterer</a>).</small></p>
+                    </section>
+
+                </section>
+
+                <section>
+                    <p><small>"Вот, собственно, и все."</small></p>
+                    <br>
+                    <h3>Спасибо!</h3>
+                    <br>
+                    <p>Увидимся на мастер-классе!</p>
+                    <br><br>
+                    <p style="font-size:0.7em;">Франк Фишер  ·  Даниил Скоринкин</p>
+                    <br>
+                    <ul style="font-size:0.5em;">
+                       <li>E-mails: ffischer@hse.ru, daskorinkin@edu.hse.ru</li>
+                       <li>Github: <a href="https://github.com/lehkost">lehkost</a>, <a href="https://github.com/danilsko">danilsko</a></li>
+                       <li>Twitter: <a href="https://twitter.com/umblaetterer">@umblaetterer</a>, n/a</li>
+                       <li>Блог (Network Analysis of Dramatic Texts): <a href="http://lina.digital/">lina.digital</a></li>
+					</ul>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../lib/reveal/lib/js/head.min.js"></script>
+		<script src="../lib/reveal/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../lib/reveal/plugin/markdown/marked.js' },
+					{ src: '../lib/reveal/plugin/markdown/markdown.js' },
+					{ src: '../lib/reveal/plugin/notes/notes.js', async: true },
+					{ src: '../lib/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
