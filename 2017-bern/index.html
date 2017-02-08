@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>DLINA Presentation, DHd2017, Bern</title>
+
+        <meta name="description" content="Network Analysis of Dramatic Texts" />
+        <meta name="author" content="Frank Fischer" />
+        <meta name="author" content="Mathias Göbel" />
+        <meta name="author" content="Dario Kampkaspar" />
+        <meta name="author" content="Christopher Kittel" />
+        <meta name="author" content="Peer Trilcke" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+        <link rel="stylesheet" href="../lib/reveal/css/reveal.css" />
+        <link rel="stylesheet" href="../lib/reveal/css/theme/white.css" id="theme" />
+
+        <!-- adjustments for zenburn.css -->
+        <link rel="stylesheet" href="custom.css">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="../lib/reveal/lib/css/zenburn.css" />
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal/css/print/pdf.css' : '../lib/reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+## Netzwerkdynamik, Plotanalyse
+### Zur Visualisierung und Berechnung der ›progressiven Strukturierung‹ dramatischer Texte<!-- .element: style="font-size:0.9em;" -->
+
+<br />
+Peer Trilcke¹ · Frank Fischer² · Mathias Göbel³<br />Dario Kampkaspar⁴ · Christopher Kittel⁵<!-- .element: style="font-size:0.85em;" -->
+
+<br />
+¹ Universität Potsdam / Theodor-Fontane-Archiv<br />
+² Higher School of Economics, Moskau<br />
+³ Staats- und Universitätsbibliothek Göttingen<br />
+⁴ Herzog August Bibliothek Wolfenbüttel<br>
+⁵ Karl-Franzens-Universität Graz / Open Knowledge Österreich<!-- .element: style="font-size:0.6em;" -->
+
+<!--
+Diese Präsentation: [dlina.github.io/presentations/2017-bern/](https://dlina.github.io/presentations/2017-bern/)
+-->
+
+<br />
+[DHd 2017](http://www.dhd2017.ch/) · Bern/CH · 15. Februar 2017
+
+--
+
+## TOC
+
+<br />
+
+1. Einleitung
+2. Netzwerkdynamik – Plotanalyse?
+3. Visualisierung dynamischer Graphen
+4. Berechnung dynamischer Netzwerke 
+5. Dynamik, Rhythmik. Resümee
+
+---
+
+# 1. Einleitung
+
+--
+
+## dlina-Projekt
+
+**Arbeitsgruppe **
+- F. Fischer (Moskau), M. Göbel (Göttingen), D. Kampkaspar (Wolfenbüttel), C. Kittel (Graz), H.-L. Meiners (Göttingen), D. Skorinkin (Moskau), P. Trilcke (Potsdam)
+- Blog: [lina.digital](https://dlina.github.io/ )
+- Github: [github.com/dlina](https://github.com/dlina) &amp; [github.com/lehkost/dramavis](https://github.com/lehkost/dramavis)
+
+**Forschung**
+- Automatisierte, philologisch kuratierte Extraktion, Analyse und Interpretation von Netzwerkdaten aus literarischen (derzeit v.&nbsp;a.: dramatischen) Texten
+
+--
+
+## dlina-Projekt
+
+**Korpus**
+- Primäres Arbeitskorpus (›under revision‹): »dlina Corpus 15.07«, umfasst 465 deutschsprachige Dramen (1731–1929), entstanden auf Basis des TextGrid Repository
+- Siehe auch: den Blogpost [»Introducing ›dlina Corpus 15.07‹«](https://dlina.github.io/Introducing-DLINA-Corpus-15-07-Codename-Sydney/)
+
+--
+
+## dlina-Projekt
+
+**Netzwerkdaten**
+- Erfasst werden Knoten, d.&nbsp;i. Figuren
+- Erfasst werden Interaktionen zwischen Figuren
+- Operationalisierung von ›Interaktion‹: Wenn zwei Figuren innerhalb eines vorgegebenen Segments (Szene/Auftritt; Akt/Aufzug) des Dramas jeweils mindestens einen Sprechakt vollziehen, dann interagieren sie miteinander.
+
+--
+
+## Reflexion
+
+- in dlina arbeiten wir mit recht abstrakten Modellierungen literarischer Texte, basierend auf der »structural intuition« (Freeman 2004: 4) der formalen Netzwerkanalyse
+- Forschung ist nicht zuletzt der Versuch, die Eigenlogik und den Erkenntniswert dieser abstrakten Modellierungen auszuloten. 
+- Weiterhin offene Frage: In welcher Relation stehen diese Modellierungen zu den tradierten, häufig hermeneutisch konstituierten Objekten der Literaturwissenschaft?
+
+--
+
+## Reflexion
+
+- Forschung geht zwar aus von tradierten Fragestellungen der Literaturwissenschaft. Diese erfahren im Zuge der netzwerkanalytischen Operationalisierung jedoch eine erhebliche Abstraktion. 
+- Eine Konsequenz daraus: Die Antworten, die wir erhalten, sind zunächst einmal keine Aussagen innerhalb des tradierten literaturwissenschaftlichen Diskurses. – Allerdings müssen sie das vielleicht auch nicht sein.
+
+--
+
+## Reflexion
+
+- Das distant reading, so wie wir es betreiben, scheint also – gleichsam – keinen direkten Weg ins Paradies des hermeneutischen Verstehens zu offerieren.
+- Es ist eher der Versuch, eine lange »Reise um die Welt [zu] machen und [zu] sehen, ob [dieses Paradies] […] von hinten irgendwo wieder offen ist« (Kleist).
+
+--
+
+## Aus dem dlina-Itinerar:<br />Der ›Beat‹ des Dramas
+
+![Bildtitel](images/slide_09_drama-change-rate-chart_iphigenie.png)<!-- .element width="640px;" -->
+
+<small>drama-change-rate-chart zu Goethe: Iphigenie auf Tauris (1787)</small>
+
+--
+
+Rest folgt 🐬
+
+
+
+
+
+
+
+
+</script>
+			    </section>
+			</div>
+		</div>
+
+        <script src="../lib/reveal/lib/js/head.min.js"></script>
+        <script src="../lib/reveal/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../lib/reveal/plugin/markdown/marked.js' },
+					{ src: '../lib/reveal/plugin/markdown/markdown.js' },
+					{ src: '../lib/reveal/plugin/notes/notes.js', async: true },
+					{ src: '../lib/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
