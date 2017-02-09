@@ -71,8 +71,9 @@ Diese Präsentation: [dlina.github.io/presentations/2017-bern/](https://dlina.gi
 1. Einleitung
 2. Netzwerkdynamik – Plotanalyse?
 3. Visualisierung dynamischer Graphen
-4. Berechnung dynamischer Netzwerke 
+4. Berechnung dynamischer Netzwerke
 5. Dynamik, Rhythmik. Resümee
+6. Bibliografie
 
 ---
 
@@ -112,14 +113,14 @@ Diese Präsentation: [dlina.github.io/presentations/2017-bern/](https://dlina.gi
 ## Reflexion
 
 - in dlina arbeiten wir mit recht abstrakten Modellierungen literarischer Texte, basierend auf der »structural intuition« (Freeman 2004: 4) der formalen Netzwerkanalyse
-- Forschung ist nicht zuletzt der Versuch, die Eigenlogik und den Erkenntniswert dieser abstrakten Modellierungen auszuloten. 
+- Forschung ist nicht zuletzt der Versuch, die Eigenlogik und den Erkenntniswert dieser abstrakten Modellierungen auszuloten.
 - Weiterhin offene Frage: In welcher Relation stehen diese Modellierungen zu den tradierten, häufig hermeneutisch konstituierten Objekten der Literaturwissenschaft?
 
 --
 
 ## Reflexion
 
-- Forschung geht zwar aus von tradierten Fragestellungen der Literaturwissenschaft. Diese erfahren im Zuge der netzwerkanalytischen Operationalisierung jedoch eine erhebliche Abstraktion. 
+- Forschung geht zwar aus von tradierten Fragestellungen der Literaturwissenschaft. Diese erfahren im Zuge der netzwerkanalytischen Operationalisierung jedoch eine erhebliche Abstraktion.
 - Eine Konsequenz daraus: Die Antworten, die wir erhalten, sind zunächst einmal keine Aussagen innerhalb des tradierten literaturwissenschaftlichen Diskurses. – Allerdings müssen sie das vielleicht auch nicht sein.
 
 --
@@ -137,16 +138,486 @@ Diese Präsentation: [dlina.github.io/presentations/2017-bern/](https://dlina.gi
 
 <small>drama-change-rate-chart zu Goethe: Iphigenie auf Tauris (1787)</small>
 
+---
+
+# 2. Netzwerkdynamik – Plotanalyse?
+
 --
 
-Rest folgt 🐬
+### Bisher: statische Netzwerke
 
+<br />
+![Bildtitel](images/slide_10_static-network_emilia.png)<!-- .element width="640px;" -->
 
+<br />
+<small>Statischer Netzwerkgraph zu Lessing: Emilia Galotti (1772)</small>
 
+--
 
+## Netzwerkdynamik
 
+<br />
+- Allerdings: Literarische Texte (und damit auch ›ihre‹ Netzwerke) entfalten sich in der Zeit.
+- Neues Ziel: Das Netzwerk des Dramas in seiner sukzessiven Transformation beschreiben und seine einzelnen Zustände miteinander vergleichen.
+- Fokus also auf Netzwerkdynamik bzw. dynamische Netzwerke
 
+--
 
+## Plotanalyse?
+
+- Damit womöglich ein Schritt in Richtung eines geradezu paradiesischen Versprechens von Franco Moretti (2011): Netzwerkanalyse als Plotanalyse.
+  - »the repeated attempts to redefine parameters of plot reflect both the centrality and the complexity of the temporal dimension of narrative« (Dannenberg 2005:  435)
+  - Plot als Konzept zur Beschreibung der »progressive structuration« (Kukkonen 2013: §4) von Texten
+
+---
+
+# 3. Visualisierung dynamischer Graphen
+
+--
+
+## Ein Beispiel
+
+![Bildtitel](images/slide_15_screenshot_dynamic-graph.png)<!-- .element width="640px;" -->
+
+<small>https://maladesimaginaires.github.io/intnetviz/ – siehe auch Aris Xanthos, Isaac Pante, Yannick Rochat, Martin Grandjean: Visualising the Dynamics of Character Networks. URL: http://dh2016.adho.org/abstracts/407</small>
+
+--
+
+## Probleme der Graph-Visualisierung
+
+<br />
+- »too close« für die Analyse größerer Korpora
+- eher brauchbar für didaktische Zwecke
+
+---
+
+# 4. Berechnung dynamischer Netzwerke
+
+--
+
+### Zwei Fragerichtungen
+
+- Zeitpunkt-orientiert (Indices u.&nbsp;a.)
+  - Identifizieren eines Zeitpunkts: An welchem Zeitpunkt innerhalb der ›progressiven Strukturierung‹ eines Textes ereignet sich X?
+  - Quantifizieren eines Zeitpunkts: Was ereignet sich am Zeitpunkt Y eines Textes?
+
+- Geschehens-orientiert (Change Rates u.&nbsp;a.)
+  - Wie lässt sich die (Abfolge von Struktur-Zuständen der) ›progressiven Strukturierung‹ eines Textes charakterisieren?
+
+--
+
+### Zeitpunkt-orientiert
+
+- Identifizieren eines Zeitpunkts
+  - all-in-index: Wann sind alle Figuren eines Dramas mindestens einmal aufgetreten?
+  - central-character-index: Wann tritt die ›zentrale‹ Figur eines Dramas zum ersten Mal auf?
+
+- Quantifizieren eines Zeitpunkts
+  - final-scene-size-measure: Wie viele Figuren des Dramas sind in der letzten Szene eines Dramas auf der Bühne?
+
+--
+
+### Zum Beispiel: all-in-index
+
+<br />
+- Voraussetzung
+  - Normalisierte Bestimmung eines Zeitpunkts im Drama
+  - Erfolgt mittels des ›Progressionsindex‹
+
+<br />
+![Bildtitel](images/slide_20_bsp-progressionsindex.png)<!-- .element width="800px;" -->
+
+--
+
+### Zum Beispiel: all-in-index
+
+<br />
+![Bildtitel](images/slide_21_all-in-index_6-plays.png)<!-- .element width="640px;" -->
+
+<small>all-in-index für 6 ausgewählte Dramen – Mean (orange Linie) bezieht sich auf das Gesamtkorpus</small>
+
+--
+
+### Geschehens-orientiert
+
+<br />
+- Ziel: Wert für die Dynamik der ›progressiven Strukturierung‹ ermitteln.
+- Zwischenbemerkung: Reduktion des Korpus auf Texte mit mehr als 5 Akten/Szenen (nun noch 331 Texte)
+- Idee: Die drama-change-rate.
+- Lösungsansatz: Die ›gute alte‹ Konfigurationsmatrix – als ›Segmentmatrix‹.
+
+--
+
+### Die Segmentmatrix
+
+<br />
+![Bildtitel](images/slide_23_segmentmatrix_iphigenie.png)<!-- .element width="800px;" -->
+
+<br />
+<small>Segmentmatrix zu Goethe: Iphigenie auf Tauris (1787)<br />Blaues Feld = Figur ist im Segment auf der Bühne</small>
+
+--
+
+### Die Segmentmatrix
+
+<br />
+![Bildtitel](images/slide_24_segmentmatrix_iphigenie_liaison.png)<!-- .element width="800px;" -->
+
+<br />
+<small>Segmentmatrix zu Goethe: Iphigenie auf Tauris (1787)<br />Orangenes Feld = Figur ist in aufeinanderfolgenden Segmenten auf der Bühne (*liaison des scenes*)</small>
+
+--
+
+### Berechnung der drama-change-rate
+
+<br />
+![Bildtitel](images/slide_25_segmentmatrix_iphigenie_act1.png)<!-- .element width="480px;" -->
+
+<br />
+<small>Segmentmatrix zum 1. Akt von Goethe: Iphigenie auf Tauris (1787)</small>
+
+--
+
+### Berechnung der drama-change-rate
+
+<br />
+![Bildtitel](images/slide_26_segmentmatrix_iphigenie_act1-edits.png)<!-- .element width="640px;" -->
+
+<br />
+<small>Segmentmatrix zum 1. Akt von Goethe: Iphigenie auf Tauris (1787)</small>
+
+--
+
+### Berechnung der drama-change-rate
+
+<br />
+![Bildtitel](images/slide_27_segmentmatrix_iphigenie_act1-edit1.png)<!-- .element width="560px;" -->
+
+<br />
+<small>Segmentmatrix zum 1. Akt von Goethe: Iphigenie auf Tauris (1787)</small>
+
+--
+
+### Berechnung der drama-change-rate
+
+<br />
+![Bildtitel](images/slide_28_segmentmatrix_iphigenie_act1-edit2.png)<!-- .element width="560px;" -->
+
+<br />
+<small>Segmentmatrix zum 1. Akt von Goethe: Iphigenie auf Tauris (1787)</small>
+
+--
+
+### Der ›Beat‹ von *Iphigenie*
+
+<br />
+![Bildtitel](images/slide_29_drama-change-rate-chart_iphigenie.png)<!-- .element width="640px;" -->
+
+<br />
+<small>drama-change-rate-chart zu Goethe: Iphigenie auf Tauris (1787)<br />drama-change-rate-measures«: Mean = 0.598 – SD = 0.163</small>
+
+--
+
+### Der ›Beat‹ von *Iphigenie*
+
+<br />
+![Bildtitel](images/slide_30_drama-change-rate-chart_iphigenie_mean.png)<!-- .element width="640px;" -->
+
+<br />
+<small>drama-change-rate-chart zu Goethe: Iphigenie auf Tauris (1787) – orange Linie (horizontal): Mean<br />drama-change-rate-measures«: Mean = 0.598 – SD = 0.163</small>
+
+--
+
+### Der ›Beat‹ von *Iphigenie*
+
+<br />
+![Bildtitel](images/slide_31_drama-change-rate-chart_iphigenie_acts.png)<!-- .element width="640px;" -->
+
+<br />
+<small>drama-change-rate-chart zu Goethe: Iphigenie auf Tauris (1787) – orange Linien (vertikal): Akte<br />drama-change-rate-measures«: Mean = 0.598 – SD = 0.163</small>
+
+--
+
+### 200 Jahre drama-change-rate
+
+<br />
+![Bildtitel](images/slide_32_200-years-drama-change-rate.png)<!-- .element width="640px;" -->
+
+<small>drama-change-rate-mean für 331 Dramen<br />Grundlage: dlina-Korpus, Niedrigsegmentstücke (Segmentzahl < 6) aussortiert</small>
+
+--
+
+### 200 Jahre drama-change-rate:<br />Die Mitte
+
+<br />
+![Bildtitel](images/slide_33_200-years-drama-change-rate_mean.png)<!-- .element width="640px;" -->
+
+<small>drama-change-rate-mean für 331 Dramen
+Grundlage: dlina-Korpus, Niedrigsegmentstücke (Segmentzahl < 6) aussortiert</small>
+
+--
+
+### 200 Jahre drama-change-rate:<br />Die Ausreißer
+
+<br />
+![Bildtitel](images/slide_34_200-years-drama-change-rate_outliers.png)<!-- .element width="640px;" -->
+
+<small>drama-change-rate-mean für 331 Dramen<br />Grundlage: dlina-Korpus, Niedrigsegmentstücke (Segmentzahl < 6) aussortiert</small>
+
+--
+
+### Ein Mean-Ausreißer nach oben
+
+<br />
+![Bildtitel](images/slide_35_drama-change-rate-chart_egmont_mean.png)<!-- .element width="640px;" -->
+
+<small>drama-change-rate-chart zu Goethe: Egmont (1788) – orange Linie (horizontal): Mean<br />drama-change-rate-measures«: Mean = 0.993 – SD = 0.023</small>
+
+--
+
+### Weitere Mean-Ausreißer nach oben
+
+![Bildtitel](images/slide_36-1_drama-change-rate-chart_goetz_mean.png)<!-- .element width="360px;" -->
+![Bildtitel](images/slide_36-2_drama-change-rate-chart_hofmeister_mean.png)<!-- .element width="360px;" -->
+![Bildtitel](images/slide_36-3_drama-change-rate-chart_verkehrte-welt_mean.png)<!-- .element width="360px;" -->
+![Bildtitel](images/slide_36-4_drama-change-rate-chart_napoleon_mean.png)<!-- .element width="360px;" -->
+
+<small>Oben links: Goethe: *Götz von Berlichingen* (1773); rechts: Lenz: *Der Hofmeister* (1774) –<br />Unten links: Tieck: *Die verkehrte Welt* (1800); rechts: Grabbe: *Napoleon oder die hundert Tage* (1831)</small>
+
+--
+
+### Mean-Ausreißer nach unten
+
+![Bildtitel](images/slide_37-1_drama-change-rate-chart_schauspieldirektor_mean.png)<!-- .element width="360px;" -->
+![Bildtitel](images/slide_37-2_drama-change-rate-chart_buergergeneral_mean.png)<!-- .element width="360px;" -->
+![Bildtitel](images/slide_37-3_drama-change-rate-chart_hochzeitsreise_mean.png)<!-- .element width="360px;" -->
+![Bildtitel](images/slide_37-4_drama-change-rate-chart_ohne-gegenwart_mean.png)<!-- .element width="360px;" -->
+
+<small>Oben links: Stephanie: *Der Schauspieldirektor* (1786); rechts Goethe: *Der Bürgergeneral* (1793) –<br />Unten links: Benedix: *Die Hochzeitsreise* (1849); rechts: Rilke: *Ohne Gegenwart* (1898)</small>
+
+--
+
+### Wie lese ich<br />drama-change-rate-charts?
+
+- **Lektion 1: Dynamik → Arithmetisches Mittel (Mean)**
+  - Mean-Ausreißer nach oben = hochdynamische Dramen (ein Großteil oder gar alle Figuren werden zwischen den Segmenten ausgetauscht)
+  - Mean-Ausreißer nach unten = wenigdynamische Dramen (ein kleiner Teil oder gar keine Figuren werden zwischen den Segmenten ausgetauscht)
+
+- **Lektion 2: Rhythmik → Standardabweichung (SD)**
+
+--
+
+### SD-Ausreißer nach oben
+
+<br />
+![Bildtitel](images/slide_39-1_drama-change-rate-chart_jubelfeier_mean.png)<!-- .element width="420px;" -->
+![Bildtitel](images/slide_39-3_drama-change-rate-chart_faust-1_mean.png)<!-- .element width="420px;" -->
+
+<br />
+<small>Links: Benkowitz: *Die Jubelfeier der Hölle, der Faust der jüngere* (1801) – SD = 0.334;<br />rechts: Goethe: *Faust I* (1808) – SD = 0.326</small>
+
+--
+
+### SD-Ausreißer nach unten
+
+<br />
+![Bildtitel](images/slide_39-2_drama-change-rate-chart_anatol_mean.png)<!-- .element width="420px;" -->
+![Bildtitel](images/slide_39-4_drama-change-rate-chart_der-reigen_mean.png)<!-- .element width="420px;" -->
+
+<br />
+<small>Links: Schnitzler: *Anatol* (1893) – SD = 0.079;<br />rechts: Schnitzler: *Der Reigen* (1902) – SD = 0.026 </small>
+
+--
+
+### Zwischenergebnis:<br />Zwei Extremtypen-Paare (1/2)
+
+<br />
+![Bildtitel](images/slide_40-1_drama-change-rate-chart_hofmeister_mean.png)<!-- .element width="420px;" -->
+![Bildtitel](images/slide_40-2_drama-change-rate-chart_buergergeneral_mean.png)<!-- .element width="420px;" -->
+
+<br />
+<small>Mean-Ausreißer und SD-Ausreißer (links jeweils nach oben, rechts nach unten) – orange Linie: Mean.<br />
+Links: Lenz: *Der Hofmeister* (1774);<br />rechts: Goethe: *Der Bürgergeneral* (1793).</small>
+
+--
+
+### Zwischenergebnis:<br />Zwei Extremtypen-Paare (2/2)
+
+<br />
+![Bildtitel](images/slide_40-3_drama-change-rate-chart_jubelfeier_mean.png)<!-- .element width="420px;" -->
+![Bildtitel](images/slide_40-4_drama-change-rate-chart_der-reigen_mean.png)<!-- .element width="420px;" -->
+
+<br />
+<small>Mean-Ausreißer und SD-Ausreißer (links jeweils nach oben, rechts nach unten) – orange Linie: Mean.<br />
+Links: Benkowitz: *Die Jubelfeier der Hölle, der Faust der jüngere* (1801);<br />rechts: Schnitzler: *Der Reigen* (1902).</small>
+
+--
+
+### Bis jetzt im Fokus: Die Ausreißer
+
+<br />
+![Bildtitel](images/slide_41_200-years-drama-change-rate_outliers.png)<!-- .element width="680px;" -->
+
+<small>drama-change-rate-mean für 331 Dramen<br />Grundlage: dlina-Korpus, Niedrigsegmentstücke (Segmentzahl < 6) aussortiert</small>
+
+--
+
+### Letzter Fokus: Die ›Mitte‹
+
+<br />
+![Bildtitel](images/slide_42_200-years-drama-change-rate_mean.png)<!-- .element width="680px;" -->
+
+<small>drama-change-rate-mean für 331 Dramen<br />Grundlage: dlina-Korpus, Niedrigsegmentstücke (Segmentzahl < 6) aussortiert</small>
+
+--
+
+### Der drama-change-rate-Normaltyp
+
+<br />
+![Bildtitel](images/slide_43_200-years-drama-change-rate_mean-plays.png)<!-- .element width="680px;" -->
+
+<small>drama-change-rate-mean für 331 Dramen<br />Grundlage: dlina-Korpus, Niedrigsegmentstücke (Segmentzahl < 6) aussortiert</small>
+
+--
+
+### Vier drama-change-rate-Normaltypen
+
+![Bildtitel](images/slide_44-1_drama-change-rate-chart_pietisterey_mean.png)<!-- .element width="320px;" -->
+![Bildtitel](images/slide_44-2_drama-change-rate-chart_wallensteins-tod_mean.png)<!-- .element width="320px;" -->
+![Bildtitel](images/slide_44-3_drama-change-rate-chart_herrgottschnitzer_mean.png)<!-- .element width="320px;" -->
+![Bildtitel](images/slide_44-4_drama-change-rate-chart_bettler-von-syrakus_mean.png)<!-- .element width="320px;" -->
+
+<small>Oben rechts: L.&nbsp;A.&nbsp;V. Gottsched: *Die Pietisterey im Fischbein-Rocke* (1736);<br />links: Schiller: *Wallensteins Tod* (1799) –<br />Unten rechts: Ganghofer: *Der Herrgottschnitzer von Ammergau* (1880);<br />links: Sudermann: *Der Bettler von Syrakus* (1911)</small>
+
+--
+
+### Der ›Beat‹ eines Normaltyps
+
+<br />
+![Bildtitel](images/slide_45_drama-change-rate-chart_herrgottschnitzer_mean.png)<!-- .element width="680px;" -->
+
+<small>drama-change-rate-chart zu Ganghofer: Der Herrgottschnitzer von Ammergau (1880)<br />drama-change-rate-measures: Mean = 0.646 – SD = 0.229</small>
+
+--
+
+### Der ›Beat‹ eines Normaltyps
+
+<br />
+![Bildtitel](images/slide_46_drama-change-rate-chart_herrgottschnitzer_mean-acts.png)<!-- .element width="680px;" -->
+
+<small>drama-change-rate-chart zu Ganghofer: Der Herrgottschnitzer von Ammergau (1880)<br />drama-change-rate-measures: Mean = 0.646 – SD = 0.229</small>
+
+---
+
+# 5. Dynamik, Rhythmik. Resümee
+
+--
+
+## Dynamik, Rhythmik
+
+- (U.&nbsp;a.) ein neues Beschreibungsinventar
+  - Dynamik der drama-change-rate
+  - Rhythmik der drama-change-rate
+
+- (U.&nbsp;a.) die Frage …
+  - was für einen (der Abstraktion folgenden) Weg zum Verständnis des (historischen oder typologischen) Phänomens ›Drama‹ dieses Beschreibungsinventar eröffnet?
+
+--
+
+## Resümee
+
+(U.&nbsp;a.) eine abschließende Frage …
+- Gibt es womöglich wahrnehmungspsychologische Begründungen für die Rhythmik der drama-change-rate?
+- Im Sinne von …
+  - Die ›normale‹ Rhythmik (Normaltyp) erfüllt ein Grundbedürfnis: Mischung aus Dynamisierung und Konstanz (solide Unterhaltung)?
+  - Die ›abweichende‹ Rhythmik (Ausreißer) stellt demgegenüber avantgardistischen Typus dar: Extremer Wechsel (Überforderung) oder extreme Gleichförmigkeit (Langeweile)?
+
+---
+
+## 6. Bibliografie
+
+--
+
+## Bibliografie (1/4)
+
+<small>
+- Agarwal, A., Corvalan, A., Jensen, J., Rambow, O. (2012). Social Network Analysis of Alice in Wonderland. Proceedings of the Workshop on Computational Linguistics for Literature, Montréal, S.&nbsp;88–96, http://www.aclweb.org/anthology/W12-2513 [letzter Zugriff 9.2.2017].
+- Carley, K. M. (2003). Dynamic Network Analysis. Breiger, R., Carley, K. M., Pattison, P. (eds.): Dynamic Social Network Modeling and Analysis. Workshop Summary and Papers. Washington D. C., S.&nbsp;133–145, http://www.nap.edu/read/10735/chapter/9 [letzter Zugriff 9.2.2017].
+- Dannenberg, H. (2005). Plot. Herman, D., Jahn, M., Ryan, M.-L. (eds.): The Routledge Encyclopedia of Narrative Theory. London: Routledge, S.&nbsp;435–439.
+- Fischer, F., Göbel, M., Kampkaspar, D., Trilcke, P. (2015). Digital Network Analysis of Dramatic Texts. Digital Humanities 2015. Conference Abstracts. University of Western Sydney, [online](http://dh2015.org/abstracts/xml/FISCHER_Frank_Digital_Network_Analysis_of_Dramati/FISCHER_Frank_Digital_Network_Analysis_of_Dramatic_Text.html) [letzter Zugriff 9.2.2017].
+- de Nooy, W. (2006). Stories, Scripts, Roles, and Networks. Structure and Dynamics 1.2 http://escholarship.org/uc/item/8508h946 [letzter Zugriff 9.2.2017].
+- Elson, D. K., Dames, N., McKeown, K. R. (2010). Extracting Social Networks from Literary Fiction. Proceedings of ACL 2010, Uppsala, S.&nbsp;138–147 http://dl.acm.org/ft_gateway.cfm?id=1858696&amp;type=pdf&amp;CFID=659731302&amp;CFTOKEN=83466756 [letzter Zugriff 25.8.2016].
+
+</small>
+
+--
+
+## Bibliografie (2/4)
+
+<small>
+- Federico, P., Aigner, W., Miksch, S., Windhager, F., Zenk, L. (2011). A Visual Analytics Approach to Dynamic Social Networks. Proceedings of the 11th International Conference on Knowledge Management and Knowledge Technologies (i-KNOW). Graz, http://publik.tuwien.ac.at/files/PubDat_198995.pdf [letzter Zugriff 9.2.2017].
+- Freeman, L. C. (2004). The Development of Social Network Analysis. A Study in the Sociology of Science. Vancouver: Empirical Press.
+- Jannidis, F., Reger, I., Krug, M., Weimer, L., Macharowsky, L., Puppe, F. (2016). Comparison of Methods for the Identification of Main Characters in German Novels. Digital Humanities 2016. Conference Abstracts. Jagiellonian University & Pedagogical University, Kraków, S.&nbsp;578–582 http://dh2016.adho.org/abstracts/297 [letzter Zugriff 9.2.2017].
+- Kittel, C., Fischer, F. (2016). dramavis (v0.2.1). GitHub repo: https://github.com/lehkost/dramavis [letzter Zugriff 9.2.2017].
+Kukkonen, K. (2013). Plot. Hühn, P. et al. (eds.): The Living Handbook of Narratology. Hamburg. http://www.lhn.uni-hamburg.de/article/plot [letzter Zugriff 9.2.2017].
+- Moretti, F. (2011). Network Theory, Plot Analysis. Stanford Literary Lab Pamphlets, No.&nbsp;2 (1.&nbsp;Mai 2011), http://litlab.stanford.edu/LiteraryLabPamphlet2.pdf [letzter Zugriff 9.2.2017].
+
+</small>
+
+--
+
+## Bibliografie (3/4)
+
+<small>
+- Park, G.-M., Kim, S.-H., Cho, H.-G. (2013). Structural Analysis on Social Network Constructed from Characters in Literature Texts. Journal of Computers 8.9, S.&nbsp;2442–2447, http://ojs.academypublisher.com/index.php/jcp/article/view/jcp080924422447/7672 [letzter Zugriff 9.2.2017].
+- Pfister, M. (1977). Das Drama. Theorie und Analyse. München: Fink.
+- Pohl, M., Reitz, F., Birke, P. (2008). As Time Goes by. Integrated Visualization and Analysis of Dynamic Networks. AVI 2008 – Proceedings of the Working Conference on Advanced Visual Interfaces, Neapel, S.&nbsp;372–375, http://doi.acm.org/10.1145/1385569.1385636 [letzter Zugriff 9.2.2017].
+- Prado, S. D., Dahmen, S. R., Bazzan, A. L. C., Mac Carron, P., Kenna, R. (2016). Temporal Network Analysis of Literary Texts. Advances in Complex Systems (ACS) 19(3), S.&nbsp;1–19, https://arxiv.org/pdf/1602.07275 [letzter Zugriff 9.2.2017].
+- Rochat, Yannick (2014). Character Networks and Centrality. Thèse de Doctorat, Lausanne, https://infoscience.epfl.ch/record/203889/files/yrochat_thesis_infoscience.pdf [letzter Zugriff 9.2.2017].
+- Stiller, J., Nettle, D., Dunbar, R. I. M. (2003). The Small World of Shakespeare's Plays. Human Nature 14, S.&nbsp;397–408, https://www.staff.ncl.ac.uk/daniel.nettle/shakespeare.pdf [letzter Zugriff 9.2.2017].
+
+</small>
+
+--
+
+## Bibliografie (4/4)
+
+<small>
+- Stiller, J., Hudson, M. (2005). Weak Links and Scene Cliques Within the Small World of Shakespeare. Journal of Cultural and Evolutionary Psychology 3, S.&nbsp;57–73.
+- Trilcke, P., Fischer, F., Göbel, M., Kampkaspar, D. (2015). 200 Years of Literary Network Data [blogpost], https://dlina.github.io/200-Years-of-Literary-Network-Data/ [letzter Zugriff 9.2.2017].
+- Trilcke, P., Fischer, F., Göbel, M., Kampkaspar, D., Kittel, C. (2016). Theatre Plays as 'Small Worlds'? Network Data on the History and Typology of German Drama, 1730–1930. Digital Humanities 2016. Conference Abstracts. Jagiellonian University &amp; Pedagogical University, Kraków, S.&nbsp;385–387 http://dh2016.adho.org/abstracts/407 [letzter Zugriff 9.2.2017].
+- Waumans, M. C., Nicodème, T., Bersini, H. (2015). Topology Analysis of Social Networks Extracted from Literature. Plos One, 3&nbsp;June 2015, http://dx.doi.org/10.1371/journal.pone.0126470 [letzter Zugriff 9.2.2017].
+- Xanthos, A., Pante, I., Rochat, Y., Grandjean, M. (2016). Visualising the Dynamics of Character Networks. Digital Humanities 2016. Conference Abstracts. Jagiellonian University &amp; Pedagogical University, Kraków, S.&nbsp;417–419 http://dh2016.adho.org/abstracts/407 [letzter Zugriff 9.2.2017].
+
+</small>
+
+--
+
+## Weiterlesen
+
+- [DLINA-Blog (lina.digital)](http://lina.digital)
+- [DLINA-Daten auf Github](https://github.com/dlina)
+- [*dramavis* auf Github](https://github.com/lehkost/dramavis)
+- [*Play(s)* auf Github](https://github.com/mathias-goebel/mobile-plays)
+- Twitter:
+  - [#dlina](https://twitter.com/search?f=tweets&vertical=default&q=%23dlina&src=typd)
+  - Frank Fischer ([@umblaetterer](https://twitter.com/umblaetterer))
+  - Mathias Göbel (<a href="https://twitter.com/goebel_m">@goebel_m</a>)
+  - Christopher Kittel (<a href="https://twitter.com/chris_kittel">@chris_kittel</a>)
+  - Peer Trilcke (<a href="https://twitter.com/peertrilcke">@peertrilcke</a>)
+
+<!-- .element: style="text-align:center; font-size:0.6em;" -->(Presentation done with [reveal.js](http://lab.hakim.se/reveal-js/) in Sublime Text 3 on Fedora 25.)
+
+--
+
+### Addendum: final-scene-size-measure
+
+<br />
+![Bildtitel](images/slide_53_final-scene-size-measure.png)<!-- .element width="720px;" -->
+
+--
+
+Ende der Präsentation 🐬
 
 </script>
 			    </section>
