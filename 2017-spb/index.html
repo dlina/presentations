@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>RusDraCor Presentation, Corpora 2017, St. Petersburg</title>
+
+        <meta name="description" content="Network Analysis of Dramatic Texts" />
+        <meta name="author" content="Frank Fischer" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+        <link rel="stylesheet" href="../lib/reveal/css/reveal.css" />
+        <link rel="stylesheet" href="../lib/reveal/css/theme/white.css" id="theme" />
+
+        <!-- adjustments for zenburn.css -->
+        <link rel="stylesheet" href="custom.css">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="../lib/reveal/lib/css/zenburn.css" />
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal/css/print/pdf.css' : '../lib/reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+## INTRODUCING RusDraCor
+### A TEI-Encoded Russian Drama Corpus <br />for the Digital Literary Studies<!-- .element: style="font-size:0.9em;" -->
+
+<br /><br />
+Frank Fischer · Tatyana Orlova · German Palchikov <br />Daniil Skorinkin · Natasha Tyshkevich<!-- .element: style="font-size:0.75em;" -->
+
+<br />
+(Higher School of Economics, Moscow)<!-- .element: style="font-size:0.75em;" -->
+
+<br /><br /><br />
+<!-- .element: style="font-size:0.6em;" -->This presentation: [dlina.github.io/presentations/2017-spb/](https://dlina.github.io/presentations/2017-spb/)
+
+<br />
+<!-- .element: style="font-size:0.9em;" -->[Corpora 2017](https://events.spbu.ru/events/anons/corpora-2017/) · St. Petersburg/RU · 29 June 2017
+
+--
+
+## TOC
+
+<br />
+
+1. Introduction
+2. Corpus Creation
+3. Extracting Structural Data
+4. Analytics
+5. Bibliography and Acknowledgements
+
+---
+
+## 1. Introduction
+
+--
+
+## Who We Are
+
+<br />
+- NUG ([Nauchno-Uchebnaya Gruppa](https://www.hse.ru/en/science/scifund/nug)) on Digital Literary Studies at the [Centre for Digital Humanities](https://hum.hse.ru/digital/) at HSE, Moscow
+- members: Nika Faynberg, Frank Fischer, Matvey Kolbasov, Svetlana&nbsp;Laschuk, Kirill Mazur, Tatyana Orlova, German&nbsp;Palchikov, Irina Pavlova, Ivan Pozdniakov, Evgeniya Shlosman, Daniil Skorinkin, Natasha Tyshkevich
+
+--
+
+## Objective
+
+<br />
+- create and maintain a corpus of Russian-language drama from the middle of the 18th to the first third of the 20th century
+- XML-based markup standard TEI ([Text Encoding Initiative](https://en.wikipedia.org/wiki/Text_Encoding_Initiative))
+- focus on extra-linguistic, structural annotations, especially social relations
+- main goal: a large-scale social network analysis of literary (dramatic) texts ("distant reading")
+
+---
+
+## 2. Corpus Creation
+
+--
+
+## Other Drama Corpora in TEI
+
+<br />
+- ["Théâtre Classique"](http://www.theatre-classique.fr/): 930 plays from the 17th and 18th century
+- ["Shakespeare His Contemporaries"](http://shakespearehiscontemporaries.northwestern.edu/): 510 plays from the Shakespeare era, cf. Mueller 2014
+- [DLINA corpus](https://dlina.github.io/): 465 German-language plays from 1730 till 1930, cf. Fischer et al. 2016
+- [Dramawebben](http://www.dramawebben.se/): 62 Swedish plays
+
+--
+
+## RusDraCor Guidelines
+
+<br />
+- converting existing digitisations of texts ([ilibrary](http://ilibrary.ru/), [Wikisource](https://ru.wikisource.org/), [ФЭБ](http://feb-web.ru/), …) 
+- modern orthography
+- no downstream fixes of spelling mistakes or the likes (our main focus is structural, not philological): if we find mistakes, we try to get them fixed upstream, if at all
+- published under a Creative Commons license
+- participation welcome: if you want to add annotation layers, be our guest
+
+--
+
+## RusDraCor Corpus Metrics
+
+<br />
+- **66** plays to date (29 June 2017) – our goal while growing the corpus is to increase representativeness
+- &#60;text&#62;: **2,383,325** tokens
+- &#60;sp&#62;: **2,027,528** tokens
+- &#60;stage&#62; directions: **87,357**
+- &#60;persName&#62;: **998**
+- male characters: **726**
+- female characters: **219**
+- rest are uncertain or groups ("Народ", "Голоса")
+
+--
+
+## Get the Corpus
+
+<br /><br />
+<!-- .element: style="font-size:0.65em;" --><code>svn export &#104;ttps://github.com/lehkost/RusDraCor/trunk/tei</code>
+
+<br />
+- 66 files in TEI-XML (~ 10,2 MB)
+- there will be more in the second half of 2017 and onward
+
+---
+
+## 3. Extracting Structural Data
+
+--
+
+### Our Approach to <br />Literary Network Analysis (1)
+
+<br />
+- following older structuralist approaches in Literary Studies (Barthes 1972, Lotman 1977, Titzmann 1977), but automatising our data collection
+- long-term objective: provide data to describe the structure and evolution of different compositional types of plays
+
+--
+
+### Our Approach to <br />Literary Network Analysis (2)
+
+<br />
+- network data = interactions between characters
+- operationalisation of 'interaction': "Two characters interact with one another if they perform a speech act within the same segment of a drama (usually a 'scene')." (following an idea of Solomon Marcus, "Poetica matematică", 1970)
+
+--
+
+#### Extract from Pushkin's "Boris Godunov"
+
+<br />
+```xml
+(…)
+<text>
+ <front>
+  <docTitle>
+   <titlePart type="main">Борис Годунов</titlePart>
+  </docTitle>
+  <div type="dedication">
+   <p>Драгоценной для россиян памяти Николая Михайловича
+     Карамзина сей труд, гением его вдохновенный, с
+     благоговением и благодарностию посвящает</p>
+   <p>Александр Пушкин</p>
+  </div>
+ </front>
+ <body>
+  <div type="scene">
+   <head>КРЕМЛЕВСКИЕ ПАЛАТЫ</head>
+   <stage>(1598 года, 20 февраля)</stage>
+   <stage>Князья Шуйский и Воротынский. </stage>
+   <sp who="#Vorotynskij">
+    <speaker>Воротынский</speaker>
+    <l>Наряжены мы вместе город ведать,</l>
+    <l>Но, кажется, нам не за кем смотреть:</l>
+    <l>Москва пуста; вослед за патриархом</l>
+    <l>К монастырю пошел и весь народ.</l>
+    <l>Как думаешь, чем кончится тревога?</l>
+   </sp>
+   <sp who="#Shujskij">
+    <speaker>Шуйский</speaker>
+    <l>Чем кончится? Узнать немудрено:</l>
+    <l>Народ еще повоет да поплачет,</l>
+    <l>Борис еще поморщится немного,</l>
+    <l>Что пьяница пред чаркою вина,</l>
+    <l>И наконец по милости своей</l>
+    <l>Принять венец смиренно согласится,</l>
+    <l>А там — а там он будет нами править</l>
+    <l part="I">По-прежнему.</l>
+   </sp>
+(…)
+```
+
+<br />
+<small>(encoded in TEI)</small>
+
+--
+
+### Network Graph for "Boris Godunov"
+
+<br />
+![Bildtitel](images/Boris_Godunov_Network_Graph_2017-06-21.jpg)<!-- .element width="850px;" -->
+
+<br />
+<small>(extracted with our TEI2CSV converter, visualised in Gephi)</small>
+
+---
+
+## 4. Analytics
+
+--
+
+### Network Sizes
+
+<br />
+![Development of network sizes (plays with 3 and more acts)](images/russian_drama_newtwork_size_chronological.jpg)<!-- .element width="825px;" -->
+
+--
+
+### Network Densities
+
+<br />
+![Network densities by genre](images/russian_drama_density_by_genre.jpg)<!-- .element width="825px;" -->
+
+--
+
+### Distribution of Speech Acts By Gender
+
+<br />
+![Distribution of speech acts by gender](images/russian_drama_speech_acts_by_gender.jpg)<!-- .element width="850px;" -->
+
+--
+
+### RusDraCor Showcase
+
+![RusDraCor Showcase](images/Screenshot_Shinyapp_2017-06-21.jpg)<!-- .element width="760px;" -->
+
+<small>[https://rusdracor.shinyapps.io/showcase/](https://rusdracor.shinyapps.io/showcase/) (by Ivan Pozdniakov)</small>
+
+---
+
+## 5. Bibliography and Acknowledgements
+
+--
+
+### Bibliography
+
+<br />
+- <!-- .element: style="font-size:0.65em;" -->Fischer, F.; Göbel, M.; Kampkaspar, D.; Trilcke, P.: Theatre Plays as 'Small Worlds'? Network Data on the History and Typology of German Drama, 1730–1930. DH2016, Kraków. URL: http://dh2016.adho.org/abstracts/360.
+- <!-- .element: style="font-size:0.65em;" -->Glorieux, F.: Dramagraphie 0.2. Online source, April 4th, 2016. URL: http://resultats.hypotheses.org/749.
+- <!-- .element: style="font-size:0.65em;" -->Moretti, F.: Network Theory, Plot Analysis. New Left Review 68 (2011), 80–102.
+- <!-- .element: style="font-size:0.65em;" -->Mueller, M.: Shakespeare His Contemporaries: Collaborative Curation and Exploration of Early Modern Drama in a Digital Environment. Digital Humanities Quarterly. 8.3 (2014).
+- <!-- .element: style="font-size:0.65em;" -->Schöch, C.; Henny, U.; Calvo Tello, J.: cligs/textbox: Spring is coming release. Data set, Zenodo, March 10 th , 2017. URL: http://doi.org/10.5281/zenodo.376666.
+- <!-- .element: style="font-size:0.65em;" -->Xanthos, A. et al.: Visualising the Dynamics of Character Networks. Proceedings, DH2016. Jagiellonian University &amp; Pedagogical University, Kraków, 417–419.
+- <!-- .element: style="font-size:0.65em;" -->Yarcho, B. I.: Raspredelenie reci v pjatiaktnoj tragedii (K voprosu o klassicizme i romantizme). Primecanija M. V. Akimovoj; s predisloviem M. I. Šapira. Philologica 4, 8/10 (1997); 201–288.
+
+---
+
+#### Acknowledgements
+
+<br />
+This talk was prepared within the framework of the Academic Fund Program at the National Research University Higher School of Economics (HSE) in 2017–2018 (grant No 17-05-0054) and by the Russian Academic Excellence Project "5-100".<!-- .element: style="text-align:center; font-size:0.7em;" -->
+
+
+</script>
+			    </section>
+			</div>
+		</div>
+
+        <script src="../lib/reveal/lib/js/head.min.js"></script>
+        <script src="../lib/reveal/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../lib/reveal/plugin/markdown/marked.js' },
+					{ src: '../lib/reveal/plugin/markdown/markdown.js' },
+					{ src: '../lib/reveal/plugin/notes/notes.js', async: true },
+					{ src: '../lib/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
