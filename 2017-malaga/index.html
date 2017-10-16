@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Easy Linavis (Simple Network Visualisation for Literary Texts), HDH2017, Málaga</title>
+
+        <meta name="description" content="Network Analysis of Dramatic Texts" />
+        <meta name="author" content="Frank Fischer" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+        <link rel="stylesheet" href="../lib/reveal/css/reveal.css" />
+        <link rel="stylesheet" href="../lib/reveal/css/theme/white.css" id="theme" />
+
+        <!-- adjustments for zenburn.css -->
+        <link rel="stylesheet" href="custom.css">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="../lib/reveal/lib/css/zenburn.css" />
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal/css/print/pdf.css' : '../lib/reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+## Easy Linavis (ezlinavis)
+### Simple visualización en red para textos literarios<!-- .element: style="font-size:0.9em;" -->
+
+<br /><br /><br />
+Frank Fischer &nbsp;·&nbsp; Carsten Milling<!-- .element: style="font-size:0.75em;" -->
+
+(Higher School of Economics, Moscú)<!-- .element: style="font-size:0.75em;" -->
+
+<br /><br /><br />
+<!-- .element: style="font-size:0.65em;" -->Esta presentación: [dlina.github.io/presentations/2017-malaga/](https://dlina.github.io/presentations/2017-malaga/)
+
+<br /><br />
+<!-- .element: style="font-size:0.9em;" -->[HDH2017](http://hdh2017.es/) &nbsp;·&nbsp; Málaga 🇪🇸 &nbsp;·&nbsp; Jueves 19 de octubre de 2017
+
+--
+
+## Índice
+
+<br />
+
+1. Introducción
+2. Análisis de red de textos dramáticos
+3. **ezlinavis**
+4. Bibliografía y agradecimientos
+
+---
+
+## 1. Introducción
+
+--
+
+## Quienes Somos
+
+<br />
+- un grupo de estudios literarios digitales en el [Centro de Humanidades Digitales](https://hum.hse.ru/digital/) de HSE, Moscú
+
+--
+
+## Objetivo
+
+<br />
+- crear y mantener un corpus de dramas en alemán y ruso desde mediados del siglo 18 hasta el primer tercio del siglo 20
+- TEI estándar de marcado basado en XML ([Text Encoding Initiative](https://en.wikipedia.org/wiki/Text_Encoding_Initiative))
+- objetivo principal: análisis a gran escala de redes sociales en textos dramáticos ("lectura a distancia")
+
+--
+
+#### Distant-Reading Showcase (2016)
+
+![465 network graphs](images/dlina-corpus-465-cleaned-drama-networks-superposter-900px.jpg)<!-- .element width="740px;" -->
+
+<small>Póster con gráficos de red de 465 dramas en alemán (1730–1930). <br />Publicado en DHd2016, Leipzig. – DOI: [10.6084/m9.figshare.3101203.v1](https://doi.org/10.6084/m9.figshare.3101203.v1).</small>
+
+
+--
+
+## Pero hoy …
+
+<br />
+... nos centramos en la didáctica:
+
+<br />
+¿Cómo extraemos o creamos <br />datos de red de textos literarios?<!-- .element: style="font-size:1.2em;" -->
+
+---
+
+## 2. Análisis de red de <br />textos dramáticos
+
+--
+
+### La teoría de red …
+
+<br>
+"… es el estudio de los gráficos como representación de las relaciones (…) entre objetos discretos." ([Wikipedia](https://en.wikipedia.org/wiki/Network_theory))
+
+--
+
+#### Gráfico de red de ejemplo pequeño <br />con 8 vértices (nodos) y 10 bordes:
+
+<br>
+![Simple network (from Wikimedia Commons)](images/small_network.png)<!-- .element width="434px;" -->
+
+<br>
+<small>Fuente: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Small_Network.png)</small>
+
+--
+
+#### Gráfica de red para "Electra" de Perez Galdós
+
+![Network graph for Electra](images/perez-galdos-electra.png)<!-- .element height="500px;" -->
+
+<small>Basado en *interacciones*.</small>
+
+--
+
+### ¿Qué es una interacción?
+
+<br />
+- nuestro método (inspirado por [Solomon Marcus](https://en.wikipedia.org/wiki/Solomon_Marcus), 1973): dos personajes se enlazan entre sí si ambos están realizando un acto de discurso en un segmento (escena) de una obra de teatro
+- esta es nuestra operacionalización, pero hay otros métodos para extraer la red social de un texto literario, realmente depende de su pregunta de investigación
+
+--
+
+### Formalización de interacciones
+
+<br />
+<pre><code class="hljs" data-trim contenteditable>
+Source,Target,Weight
+...
+Dorotea,Electra,3
+Dorotea,Evarista,2
+Dorotea,Marqués,1
+Dorotea,Máximo,1
+Dorotea,Pantoja,1
+Electra,Evarista,9
+Electra,Gil,1
+Electra,La Sombra,1
+Electra,Mariano,4
+Electra,Marqués,13
+Electra,Máximo,13
+Electra,Pantoja,10
+Electra,Patros,4
+...
+</code></pre>
+
+<br />
+<small>"Electra" de Perez Galdós, interacciones codificadas en una lista **CSV** (valores separados por comas).</small>
+
+--
+
+### Automatización (1/2)
+
+<br />
+- el proyecto se basa en la extracción automática de redes sociales de grandes corpora en TEI
+- operacionalizar este tipo de extracción es un acto no trivial, a veces ambiguo, aunque hablemos de textos muy estructurados como los dramas
+
+--
+
+### Automatización (2/2)
+
+<br />
+- como introducción a las dificultades de la automatización hemos desarrollado nuestra herramienta **ezlinavis**
+- el propósito no es competir con métodos más sofisticados de extraer redes de textos literarios
+- destinado al uso didáctico en la enseñanza, para dar los primeros pasos de la teoría a la práctica
+
+---
+
+## 3. ezlinavis
+
+--
+
+### Captura de pantalla
+
+![ezlinavis screenshot](images/ezlinavis-screenshot-perez-galdos.png)<!-- .element height="450px;" -->
+
+<small>**ezlinavis** en acción.</small>
+
+--
+
+#### Un tipo de formalización mucho más versátil
+
+<br />
+<pre><code class="hljs" data-trim contenteditable>
+# ACTO PRIMERO
+## ESCENA PRIMERA
+José
+Marqués
+## ESCENA II
+Don Urbano
+Marqués
+## ESCENA III
+Cuesta
+Marqués
+Don Urbano
+## ESCENA IV
+Cuesta
+Patros
+## ESCENA V
+Cuesta
+Pantoja
+## ESCENA VI
+Evarista
+Marqués
+Pantoja
+Don Urbano
+Cuesta
+...
+</code></pre>
+
+<br />
+<small>"Electra" de Pérez Galdós, un listado línea por línea de personajes por escena.</small>
+
+--
+
+### Demostración en vivo
+
+<br /><br />
+**[https://dlina.github.io/ezlinavis/](https://dlina.github.io/ezlinavis/)**
+
+--
+
+### Notas de Producción
+
+<br />
+- programa de código abierto, puede ser instalado en su propio servidor/localhost
+- [React.js](https://facebook.github.io/react/) para construir la interfase
+- el gráfico de vista previa en la columna derecha se genera en vivo, para ello utilizamos [Sigma.js](http://sigmajs.org/)
+- el formato CSV se crea en vivo, basado en el contenido introducido (o copiado y pegado) por el usuario en la columna izquierda
+- este CSV de 4 columnas se puede guardar e importar directamente en Gephi u otro software de visualización de red
+
+--
+
+#### Tratamiento posterior en Gephi (ejemplo)
+
+<br />
+![Puschkin's Boris Godunov, network graph](images/Boris_Godunov_Network_Graph_2017-06-21.jpg)<!-- .element width="850px;" -->
+
+<br />
+<small>["Boris Godunov"](https://en.wikipedia.org/wiki/Boris_Godunov_(play%29) de Pushkin tras el tratamiento posterior <br />de un archivo CSV en Gephi (por German Palchikov).</small>
+
+---
+
+## 4. Bibliografía y agradecimientos
+
+--
+
+### Bibliografía
+
+<br />
+- <!-- .element: style="font-size:0.8em;" -->Bode, K.: The Equivalence of 'Close' and 'Distant' Reading; Or, Toward a New Object for Data-Rich Literary History. MLQ 78.1 (2017). (Preprint [here](https://katherinebode.files.wordpress.com/2014/07/bode-article_mlq_final.pdf).)
+- <!-- .element: style="font-size:0.8em;" -->Fischer, F.; Göbel, M.; Kampkaspar, D.; Trilcke, P. (2015). [Digital Network Analysis of Dramatic Texts.](http://dh2015.org/abstracts/xml/FISCHER_Frank_Digital_Network_Analysis_of_Dramati/FISCHER_Frank_Digital_Network_Analysis_of_Dramatic_Text.html) DH2015.
+- <!-- .element: style="font-size:0.8em;" -->Jannidis, F. (2017): Netzwerke. In: Jannidis F.; Kohle, H.; Rehbein, M. (eds.): Digital Humanities. Eine Einführung, 147–161.
+- <!-- .element: style="font-size:0.8em;" -->Moretti, F. (2011): Network Theory, Plot Analysis. New Left Review 68, 80–102.
+- <!-- .element: style="font-size:0.8em;" -->Tolstoy, L. (1887): Vlast’ t’my. (Digital copy via [rvb.ru](http://rvb.ru/tolstoy/01text/vol_11/01text/0269.htm).)
+
+--
+
+#### Agradecimientos
+
+<br />
+This talk was prepared within the framework of the Academic Fund Program at the National Research University Higher School of Economics (HSE) in 2017–2018 (grant No 17-05-0054) and by the Russian Academic Excellence Project "5-100".<!-- .element: style="text-align:center; font-size:0.7em;" -->
+
+
+</script>
+			    </section>
+			</div>
+		</div>
+
+        <script src="../lib/reveal/lib/js/head.min.js"></script>
+        <script src="../lib/reveal/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../lib/reveal/plugin/markdown/marked.js' },
+					{ src: '../lib/reveal/plugin/markdown/markdown.js' },
+					{ src: '../lib/reveal/plugin/notes/notes.js', async: true },
+					{ src: '../lib/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
