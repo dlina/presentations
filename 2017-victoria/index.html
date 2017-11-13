@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Life(!) on Stage Presentation, TEI 2017, Victoria</title>
+
+        <meta name="description" content="Network Analysis of Dramatic Texts" />
+        <meta name="author" content="Frank Fischer" />
+        <meta name="author" content="Tatiana Orlova" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+        <link rel="stylesheet" href="../lib/reveal/css/reveal.css" />
+        <link rel="stylesheet" href="../lib/reveal/css/theme/blood.css" id="theme" />
+
+        <!-- adjustments for zenburn.css -->
+        <link rel="stylesheet" href="custom.css">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="../lib/reveal/lib/css/zenburn.css" />
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../lib/reveal/css/print/pdf.css' : '../lib/reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section data-markdown="" data-separator="^\n---\n" data-separator-vertical="^\n--\n" data-charset="utf-8">
+<script type="text/template">
+
+# Life(!) on Stage
+### Building an interface for the network analysis of TEI-encoded drama corpora<!-- .element: style="font-size:1em;" -->
+
+<br />
+Frank Fischer¹ · Mathias Göbel² · Carsten Milling¹ · Tatiana Orlova¹ · German Palchikov¹ · Irina Pavlova¹ · Ivan Pozdniakov¹ · Daniil Skorinkin¹ · Peer Trilcke³<!-- .element: style="font-size:0.75em;" -->
+
+<br />
+¹ Higher School of Economics, Moscow<!-- .element: style="font-size:0.6em;" --><br />
+² Göttingen State and University Library<!-- .element: style="font-size:0.6em;" --><br />
+³ University of Potsdam · Theodor Fontane Archive<!-- .element: style="font-size:0.6em;" -->
+
+<br /><br />
+<!-- .element: style="font-size:0.6em;" -->This presentation: [dlina.github.io/presentations/2017-victoria/](https://dlina.github.io/presentations/2017-victoria/)
+
+<br />
+<!-- .element: style="font-size:0.9em;" -->[TEI 2017](http://hcmc.uvic.ca/tei2017/) <small>([#tei2017Vic](https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=%23tei2017Vic&amp;src=typd))</small> &nbsp;·&nbsp; Victoria 🇨🇦 &nbsp;·&nbsp; 14 Nov 2017
+
+--
+
+## TOC
+
+<br />
+
+1. Introduction
+2. Corpus Creation
+3. Extracting Structural Data
+4. Analysis
+5. Crowd-Based Annotation
+
+---
+
+## 1. Introduction
+
+--
+
+## Who We Are
+
+<br />
+- German-Russian research group in digital literary studies ([DLINA](http://dlina.github.io/) + [NUG](https://hum.hse.ru/digital/rusdracor/)), based at University of Potsdam and Higher School of Economics, Moscow
+
+--
+
+## Objective
+
+<br />
+- create and maintain a TEI corpus of German- and Russian-language drama from the middle of the 18th to the first third of the 20th century (roughly 200 years)
+- focus on structural annotations, especially social relations (interacting ```<speaker>```s)
+- main goal: "distant reading" = a large-scale social network analysis of dramatic texts
+
+--
+
+### Distant-Reading Showcase
+
+![465 drama networks at a glance](images/distant-reading-showcase-poster.jpg)<!-- .element width="720px;" -->
+
+<small>"Distant-Reading Showcase", poster presented at #DHd2016 in Leipzig (March 9, 2016).<br />Download in full-res (28.88 MB) via Figshare. DOI: [10.6084/m9.figshare.3101203.v1](https://dx.doi.org/10.6084/m9.figshare.3101203.v1).</small>
+
+---
+
+## 2. Corpus Creation
+
+--
+
+## Types of Corpora
+
+<br />
+- digital scholarly editions are at the core of the digital humanities
+- if we want to scale up our research, we have to find find a way to make use of "un-scholarly" editions
+- <u>corpus aggregation</u> aims at profiting from the thousands of digitised texts, which can be flawed due to bad OCR, or are not semantically structured
+- conversion into basic TEI and structural correction
+
+--
+
+## Other Drama Corpora in TEI
+
+<br />
+- [Théâtre Classique](http://www.theatre-classique.fr/) by Paul Fièvre: 1060 plays from the 17th and 18th century (and counting)
+- [Shakespeare His Contemporaries](http://shakespearehiscontemporaries.northwestern.edu/): 510 plays from the Shakespeare era, cf. Mueller 2014
+- [Dramawebben](http://www.dramawebben.se/): 62 Swedish plays
+- [BETTE](https://github.com/GHEDI/BETTE): 25 Spanish plays from the Edad de Plata
+- …
+
+--
+
+## Our Corpora
+
+<br />
+- [GerDraCor](https://github.com/dracor-org/gerdracor/): 465 German-language plays from 1730 till 1930
+- [RusDraCor](https://github.com/dracor-org/rusdracor/): 74 Russian-language plays from the same time span
+- converting existing digitisations of texts ([TextGrid Repository](https://textgridrep.de/), [ilibrary](http://ilibrary.ru/), [Wikisource](https://ru.wikisource.org/), [ФЭБ](http://feb-web.ru/), …) 
+- new plays added every so often
+- no downstream curation of philological mistakes, because focus is on structural data (if possible, we initiate upstream fixes, e.g., when converting texts from Wikisource)
+
+---
+
+## 3. Extracting Structural Data
+
+--
+
+### Our Approach to <br />Literary Network Analysis
+
+<br />
+- following older formalist and structuralist approaches in Literary Studies, but automatising our data collection
+- network data = interactions between characters
+- operationalisation of 'interaction': "Two characters interact with one another if they perform a speech act within the same segment of a drama (usually a 'scene')." (following an idea of Solomon Marcus, "Poetica matematică", 1970)
+
+--
+
+#### …?
+
+![Godunov](images/boris-godunov-commons.jpg)<!-- .element width="360px;" -->
+
+<!-- .element: class="fragment" -->Boris Godunov (c. 1551–1605).<br /><small><br />(Source: [Wikimedia Commons](https://goo.gl/uhweko))</small>
+
+--
+
+#### &nbsp;
+
+![Dmitriy](images/dymitr-samozwaniec-otrepiew-commons.jpg)<!-- .element width="440px;" -->
+
+False Dmitry I (c. 1582–1606).<br /><small><br />(Source: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Dymitr_Samozwaniec_Otrepiew.JPG))</small>
+
+--
+
+#### Extract from Pushkin's "Boris Godunov"
+
+<br />
+```xml
+(…)
+<text>
+ <front>
+  <docTitle>
+   <titlePart type="main">Борис Годунов</titlePart>
+  </docTitle>
+  <div type="dedication">
+   <p>Драгоценной для россиян памяти Николая Михайловича
+     Карамзина сей труд, гением его вдохновенный, с
+     благоговением и благодарностию посвящает</p>
+   <p>Александр Пушкин</p>
+  </div>
+ </front>
+ <body>
+  <div type="scene">
+   <head>КРЕМЛЕВСКИЕ ПАЛАТЫ</head>
+   <stage>(1598 года, 20 февраля)</stage>
+   <stage>Князья Шуйский и Воротынский. </stage>
+   <sp who="#Vorotynskij">
+    <speaker>Воротынский</speaker>
+    <l>Наряжены мы вместе город ведать,</l>
+    <l>Но, кажется, нам не за кем смотреть:</l>
+    <l>Москва пуста; вослед за патриархом</l>
+    <l>К монастырю пошел и весь народ.</l>
+    <l>Как думаешь, чем кончится тревога?</l>
+   </sp>
+   <sp who="#Shujskij">
+    <speaker>Шуйский</speaker>
+    <l>Чем кончится? Узнать немудрено:</l>
+    <l>Народ еще повоет да поплачет,</l>
+    <l>Борис еще поморщится немного,</l>
+    <l>Что пьяница пред чаркою вина,</l>
+    <l>И наконец по милости своей</l>
+    <l>Принять венец смиренно согласится,</l>
+    <l>А там — а там он будет нами править</l>
+    <l part="I">По-прежнему.</l>
+   </sp>
+(…)
+```
+
+<br />
+<small>Our TEI version of the play.</small>
+
+--
+
+<!-- data-transition="zoom" data-background="#A0C66B" -->
+
+### Network Graph for "Boris Godunov"
+
+<br />
+![Bildtitel](images/Boris_Godunov_Network_Graph_2017-06-21.jpg)<!-- .element width="900px;" -->
+
+<br />
+<small>(extracted with our TEI2CSV converter, visualised in Gephi)</small>
+
+--
+
+### RusDraCor Showcase
+
+<br />
+![RusDraCor Showcase](images/Screenshot_Shinyapp_2017-11-12.jpg)<!-- .element width="800px;" -->
+
+<small>[https://rusdracor.shinyapps.io/showcase/](https://rusdracor.shinyapps.io/showcase/)</small>
+
+---
+
+## 4. Analysis
+
+--
+
+### Network Sizes Over Time
+
+<br />
+![Development of network sizes (plays with 3 and more acts)](images/200-years-of-literary-network-data.png)<!-- .element width="700px;" -->
+
+<small>German drama corpus (465 plays): number of characters (median) by decade.</small>
+
+--
+
+### Network Density By Genre
+
+<br />
+![Network densities by genre](images/density-by-genre-and-century.png)<!-- .element width="600px;" -->
+
+<small>German drama corpus (465 plays): density (mean), by genre and century.</small>
+
+--
+
+#### Ostrovskiy's "Groza": Annotated List of Speakers
+
+<br />
+```xml
+(…)
+<particDesc>
+ <listPerson>
+  <person xml:id="Kuligin" sex="MALE">
+   <persName>Кулигин</persName>
+  </person>
+  <person xml:id="Kudrjash" sex="MALE">
+   <persName>Кудряш</persName>
+  </person>
+  <person xml:id="Shapkin" sex="MALE">
+   <persName>Шапкин</persName>
+  </person>
+  <person xml:id="Dikoj" sex="MALE">
+   <persName>Дикой</persName>
+  </person>
+  <person xml:id="Boris" sex="MALE">
+   <persName>Борис</persName>
+  </person>
+  <person xml:id="Feklusha" sex="FEMALE">
+   <persName>Феклуша</persName>
+  </person>
+  <person xml:id="Kabanova" sex="FEMALE">
+   <persName>Кабанова</persName>
+  </person>
+  <person xml:id="Kabanov" sex="MALE">
+   <persName>Кабанов</persName>
+  </person>
+  <person xml:id="Varvara" sex="FEMALE">
+   <persName>Варвара</persName>
+  </person>
+  <person xml:id="Katerina" sex="FEMALE">
+   <persName>Катерина</persName>
+  </person>
+  <person xml:id="Barynja" sex="FEMALE">
+   <persName>Барыня</persName>
+  </person>
+  <person xml:id="Glasha" sex="FEMALE">
+   <persName>Глаша</persName>
+  </person>
+  <person xml:id="Pervyj_dejstvije_4" sex="MALE">
+   <persName>1-й (Действие четвертое)</persName>
+  </person>
+  <person xml:id="Vtoroj_dejstvije_4" sex="MALE">
+   <persName>2-й (Действие четвертое)</persName>
+  </person>
+  <person xml:id="Zhenschina" sex="FEMALE">
+   <persName>Женщина (Действие четвертое)</persName>
+  </person>
+  <person xml:id="OdinIzNaroda" sex="MALE">
+   <persName>Один из народа (Действие пятое)</persName>
+  </person>
+  <person xml:id="NeskolkoGolosov" sex="UNKNOWN">
+   <persName>Несколько голосов (Действие пятое)</persName>
+  </person>
+  <person xml:id="Drugoj" sex="MALE">
+   <persName>Другой из народа (Действие пятое)</persName>
+  </person>
+  <person xml:id="Tretij" sex="MALE">
+   <persName>Третий (Действие пятое)</persName>
+  </person>
+  <person xml:id="Pervyj_dejstvije_5" sex="MALE">
+   <persName>1-й</persName>
+  </person>
+  <person xml:id="Vtoroj_dejstvije_5" sex="MALE">
+   <persName>2-й</persName>
+  </person>
+  <person xml:id="OdinIzVozvrativshihsja" sex="MALE">
+   <persName>Один из возвратившихся (Действие пятое)</persName>
+  </person>
+  <person xml:id="DrugojIzVozvrativshihsja" sex="MALE">
+   <persName>Другой из возвратившихся (Действие пятое)</persName>
+  </person>
+ </listPerson>
+</particDesc>
+(…)
+```
+
+<br />
+<small>(extract from &#60;body&#62; of TEI file)</small>
+
+--
+
+### Distribution of Speech Acts By Gender
+
+<br />
+![Distribution of speech acts by gender](images/russian_drama_speech_acts_by_gender.jpg)<!-- .element width="850px;" -->
+
+--
+
+### Our Corpus-Based Research So Far
+
+- overview: https://dlina.github.io/talks/
+- 'small world' phenomenon in dramatic texts
+- plot analysis (progressive structuration)
+- study on the "epistemic thing" of the digital literary studies
+- multi-dimensional protagonist detection
+- [dramavis](https://dlina.github.io/dramavis/), all-in one tool for the analysis of literary network data
+- RusDraCor Shinyapp
+- [ezlinavis](http://dlina.github.io/ezlinavis/), simple network viz for literary texts
+- "Play(s)", a gamification approach on annotation
+
+---
+
+## 5. Crowd-Based Annotation
+
+--
+
+### "Play(s)"
+
+<br />
+- app for [Android](https://play.google.com/store/apps/details?id=com.phonegap.plays) and [web](https://personae.gcdh.de/), developed by M. Göbel and H.-L. Meiners
+- methodological background: gamification, serious games, games with a purpose, meaningful play, crowd-sourcing, social editing, citizen science
+- correct and annotate to get points and enter the highscore
+- correct speaker names, unify groups of people speaking at the same time, add gender info
+
+--
+
+![Play(s)](images/plays-welcome.png) <!-- .element height="600px" -->
+
+--
+
+### "Play(s)" Live Demo
+
+<br />
+
+https://play.google.com/store/apps/details?id=com.phonegap.plays
+
+or
+
+https://personae.gcdh.de/
+
+--
+
+![Play(s)](images/plays-users.png) <!-- .element height="540px" -->
+
+<small>"Play(s)", usage statistics (level per user).</small>
+
+---
+
+**https://dlina.github.io/**
+
+<br />
+**https://hum.hse.ru/digital/rusdracor/**
+
+<br /><br /><br />
+Thank you!
+
+--
+
+#### Acknowledgements
+
+<br />
+This talk was prepared within the framework of the Academic Fund Program at the National Research University Higher School of Economics (HSE) in 2017–2018 (grant No 17-05-0054) and by the Russian Academic Excellence Project "5-100".<!-- .element: style="text-align:center; font-size:0.7em;" -->
+
+
+</script>
+			    </section>
+			</div>
+		</div>
+
+        <script src="../lib/reveal/lib/js/head.min.js"></script>
+        <script src="../lib/reveal/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../lib/reveal/plugin/markdown/marked.js' },
+					{ src: '../lib/reveal/plugin/markdown/markdown.js' },
+					{ src: '../lib/reveal/plugin/notes/notes.js', async: true },
+					{ src: '../lib/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
